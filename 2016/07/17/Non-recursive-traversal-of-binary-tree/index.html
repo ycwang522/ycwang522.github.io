@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="yongchunxiaofen.top">
-  <title>二叉树的非递归遍历 | Hexo</title>
+  <title>二叉树的非递归遍历 | 栈点</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前序遍历的非递归实现以如下二叉树为例，分析：  　根据先序遍历的顺序，先访问根结点，再访问左子树，最后访问右子树，而对于每个子树来说，又按照同样的访问顺序进行遍历。上图的先序遍历顺序为：ABDECF  思路分析非递归的实现思路如下： 对于任意节点P，  输出结点P，然后将其入栈，再看P的左孩子是否为空； 若P的左孩子不为空，则置P的左孩子为当前节点，重复上一步的过程； 若P的左孩子为空，则将栈顶节">
 <meta name="keywords" content="二叉树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二叉树的非递归遍历">
 <meta property="og:url" content="yongchunxiaofen.top/2016/07/17/Non-recursive-traversal-of-binary-tree/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="栈点">
 <meta property="og:description" content="前序遍历的非递归实现以如下二叉树为例，分析：  　根据先序遍历的顺序，先访问根结点，再访问左子树，最后访问右子树，而对于每个子树来说，又按照同样的访问顺序进行遍历。上图的先序遍历顺序为：ABDECF  思路分析非递归的实现思路如下： 对于任意节点P，  输出结点P，然后将其入栈，再看P的左孩子是否为空； 若P的左孩子不为空，则置P的左孩子为当前节点，重复上一步的过程； 若P的左孩子为空，则将栈顶节">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="http://img.blog.csdn.net/20131023202806187?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbnNfY29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="前序遍历的非递归实现以如下二叉树为例，分析：  　根据先序遍历的顺序，先访问根结点，再访问左子树，最后访问右子树，而对于每个子树来说，又按照同样的访问顺序进行遍历。上图的先序遍历顺序为：ABDECF  思路分析非递归的实现思路如下： 对于任意节点P，  输出结点P，然后将其入栈，再看P的左孩子是否为空； 若P的左孩子不为空，则置P的左孩子为当前节点，重复上一步的过程； 若P的左孩子为空，则将栈顶节">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20131023202806187?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbnNfY29kZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="栈点" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -56,7 +56,7 @@
 		  <h1 class="header-author"><a href="/">ycwang</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">栈点</p>
+		<p class="header-subtitle">不念过去，不畏将来</p>
 		
 
 		<nav class="header-menu">
@@ -116,7 +116,7 @@
 			  <h1 class="header-author js-header-author">ycwang</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>栈点<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>不念过去，不畏将来<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -472,15 +472,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">转义字符</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Beautiful Soup</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">转义字符</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,18 +496,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">C</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">小端模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">中缀表达式</a>
               </li>
              
@@ -520,7 +508,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">C</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">小端模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Qt</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">windeployqt</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -528,7 +532,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">windeployqt</a>
+                <a href="javascript:void(0)" class="js-tag color3">查找</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,6 +548,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">编程语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">汇编</a>
               </li>
              
@@ -552,11 +560,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">编程语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">查找</a>
+                <a href="javascript:void(0)" class="js-tag color1">C++小结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,10 +569,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">代码规范</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">C++小结</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,14 +592,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RIP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">OSFP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CIDR</a>
               </li>
              
@@ -616,7 +608,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+                <a href="javascript:void(0)" class="js-tag color4">RIP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">OSFP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,6 +621,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C/S</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">STL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态绑定</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,14 +672,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态绑定</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
@@ -692,15 +692,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">段式内存管理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">pragma once</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">idndef</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">段式内存管理</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -760,15 +760,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">常用工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">C++11</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cctype</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">常用工具</a>
               </li>
              
               <li class="article-tag-list-item">
