@@ -7,13 +7,16 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="一个想好好学习的小学生">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/page/6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en">
+<meta property="og:description" content="一个想好好学习的小学生">
+<meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="一个想好好学习的小学生">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -37,6 +40,10 @@
         <a href="/" id="logo">Hexo</a>
       </h1>
       
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">栈点</a>
+        </h2>
+      
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
@@ -51,7 +58,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -62,14 +69,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-static-virtual-function" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-computer-networks-03" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/08/static-virtual-function/" class="article-date">
-  <time datetime="2016-06-08T07:22:30.000Z" itemprop="datePublished">2016-06-08</time>
+    <a href="/2016/07/06/computer-networks-03/" class="article-date">
+  <time datetime="2016-07-06T09:32:34.000Z" itemprop="datePublished">2016-07-06</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/C/">C++</a>
+    <a class="article-category-link" href="/categories/计算机网络/">计算机网络</a>
   </div>
 
   </div>
@@ -80,7 +87,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/08/static-virtual-function/">为什么虚函数(virtual)不能是static函数</a>
+      <a class="article-title" href="/2016/07/06/computer-networks-03/">计算机网络（三）：划分子网和构造超网</a>
     </h1>
   
 
@@ -88,255 +95,80 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>简而言之，<strong>成员函数实例相关，静态函数类相关。</strong></p>
-<p>虚函数，是一种特殊的成员函数，用来实现运行时多态。</p>
-<ul>
-<li>静态成员函数，可以不通过对象来调用，没有隐藏的this指针。</li>
-<li>virtual函数一定要通过对象来调用，有隐藏的this指针。</li>
-</ul>
-<font color="red">所以，关键问题是static成员没有this指针。</font>
+        <h3 id="划分子网"><a href="#划分子网" class="headerlink" title="划分子网"></a>划分子网</h3><p>一个拥有许多物理网络的单位，可将所属的物理网络划分为若干个子网。</p>
+<p>划分子网的方法是：从网络的主机号借用若干位作为子网号subnet-ID，当然主机号也就相应少了同样的位数。<br>于是两级IP地址在本单位内部就变为三级IP地址、<code>网络号、子网号和主机号。</code></p>
+<p>也可以用以下记法来表示：</p>
+<pre><code>IP地址::={&lt;网络号&gt;,&lt;子网号&gt;,&lt;主机号&gt;}
+</code></pre><p>划分子网后IP地址由原来的两级结构变成了三级结构。<br>划分子网只是把IP地址的主机号host-ID这部分进行再划分，而不改变IP地址 原来的网络号net-ID.</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/07/06/computer-networks-03/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/06/computer-networks-03/" data-id="cjdfbj34x002zt4jhzhrfvo25" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CIDR/">CIDR</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/子网/">子网</a></li></ul>
 
-<p>static function 是静态决议（编译的时候就绑定了）</p>
-<p>而virtual function 是动态决议的（运行时才绑定）</p>
-<p>引用stackoverflow网友@Kerrek SB 的回答：</p>
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-computer-networks-02" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/05/computer-networks-02/" class="article-date">
+  <time datetime="2016-07-05T13:04:12.000Z" itemprop="datePublished">2016-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机网络/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/05/computer-networks-02/">计算机网络（二）：网际协议IP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="网络层提供的两种服务"><a href="#网络层提供的两种服务" class="headerlink" title="网络层提供的两种服务"></a>网络层提供的两种服务</h2><p>因特网的设计思路：<strong>网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。网络层不提供服务质量的承诺。</strong></p>
 <blockquote>
-<p>That would make no sense. The point of virtual member functions is that they are dispatched based on the dynamic type of the object instance on which they are called. On the other hand, static functions are not related to any instances and are rather a property of the class. Thus it makes no sense for them to be virtual. If you must, you can use a non-static dispatcher.</p>
+<p>这种设计思路可以使网络中的路由器可以做的比较简单，而且价格低廉。如果主机中的进程之间的通信需要是可靠的，就由网络的主机中的运输层负责（包括差错处理、流量控制等）。<br>采用这种设计的好处是：网络的造价降低，运行方式灵活，能适应各种应用。</p>
 </blockquote>
-<p>即是说：virtual成员函数的关键是动态类型绑定的实例调用。然而，静态函数和任何类的实例都不相关，它是class的属性。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/08/static-virtual-function/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/08/static-virtual-function/" data-id="cjdfbj3b00075t4jhfknxqp6q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-comma-expression-and-comma-operator" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/07/comma-expression-and-comma-operator/" class="article-date">
-  <time datetime="2016-06-07T02:36:15.000Z" itemprop="datePublished">2016-06-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/C/">C++</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/07/comma-expression-and-comma-operator/">逗号运算符和逗号表达式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="逗号运算符和逗号表达式"><a href="#逗号运算符和逗号表达式" class="headerlink" title="逗号运算符和逗号表达式"></a>逗号运算符和逗号表达式</h1><h2 id="逗号运算符"><a href="#逗号运算符" class="headerlink" title="逗号运算符"></a>逗号运算符</h2><p>逗号运算符是以逗号为分隔符的列表中最后一个表达式的值。<br>本质上讲，逗号的作用是导致一系列运算都被顺序执行。</p>
-<p>最右边的那个表达式的值将作为整个逗号表达式的值，其他的表达式的值将会被丢弃。</p>
-<p><strong>逗号运算符是所有运算符中级别最低的。</strong></p>
-<p>例如，有如下表达式：</p>
-<pre><code>var = (count = 19, incr = 10, count + 1);
-</code></pre><p>上式在计算时，首先将count的值赋给19，将10赋值给incr，然后在最后一个表达式中，将最右边的count+1的计算结果20赋给var。<br>上面表达式中的括号是必须得，因为逗号运算符的优先级低于赋值操作符。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/07/comma-expression-and-comma-operator/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/07/comma-expression-and-comma-operator/" data-id="cjdfbj3340027t4jhlwahhp43" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-小结/">C++小结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-simple-use-of-typedef" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/07/simple-use-of-typedef/" class="article-date">
-  <time datetime="2016-06-07T02:33:27.000Z" itemprop="datePublished">2016-06-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/C/">C++</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/07/simple-use-of-typedef/">typedef用法小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="typedef使用小结"><a href="#typedef使用小结" class="headerlink" title="typedef使用小结"></a>typedef使用小结</h1><p>stackoverflow上看到的一个问题。</p>
-<pre><code>typedef void(*FunctionFunc)();
-</code></pre><h1 id="Three-Question"><a href="#Three-Question" class="headerlink" title="Three Question:"></a>Three Question:</h1><p>1.Why is <code>typedef</code> used?<br>2.The syntax looks odd;after <code>void</code> should there not be a function name or something? It looks like an anonymous function.<br>3.Is a function pointer created to store the memory address of a function ?</p>
-<p>三个问题概括一下就是：</p>
+<h3 id="数据报"><a href="#数据报" class="headerlink" title="数据报"></a>数据报</h3><p>数据报是<strong>通过网络传输的数据的基本单元，包含一个报头和数据本身。</strong></p>
 <ul>
-<li>使用typedef有什么好处</li>
-<li>语法和常见的语法不同</li>
-<li>创建一个函数指针是不是来存储函数的内存地址的？
-        
-          <p class="article-more-link">
-            <a href="/2016/06/07/simple-use-of-typedef/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/07/simple-use-of-typedef/" data-id="cjdfbj39i006et4jh6gtq2i32" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-小结/">C++小结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git-use-list" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/04/git-use-list/" class="article-date">
-  <time datetime="2016-06-04T02:17:37.000Z" itemprop="datePublished">2016-06-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Git/">Git</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/04/git-use-list/">Git常用指令速查</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><p>名词解释：</p>
-<pre><code>workspace：        工作区
-Index/Stage：    暂存区
-Repository：        仓库区（或本地仓库）
-Remote：            远程仓库
-</code></pre><h1 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h1><pre><code># 在当前目录新建一个Git代码库
-$git init
-
-# 新建一个目录，将其初始化为Git代码库
-$git init [project-name]
-
-# 下载一个项目和它的整个代码历史
-$ git clone [url]
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/04/git-use-list/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/04/git-use-list/" data-id="cjdfbj35x003st4jh91n8yacl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-simple-use-of-gitcafe" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/03/simple-use-of-gitcafe/" class="article-date">
-  <time datetime="2016-06-03T12:45:44.000Z" itemprop="datePublished">2016-06-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Gitcafe/">Gitcafe</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/03/simple-use-of-gitcafe/">Gitcafe使用笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="gitcafe使用小记"><a href="#gitcafe使用小记" class="headerlink" title="gitcafe使用小记"></a>gitcafe使用小记</h1><p>这是原来的域名，<a href="https://gitcafe.com/。" target="_blank" rel="noopener">https://gitcafe.com/。</a><br>后来gitcafe被合并到 Coding.net。<br>所以新的域名是：<a href="https://coding.net/" target="_blank" rel="noopener">https://coding.net/</a></p>
-<h2 id="注册帐号"><a href="#注册帐号" class="headerlink" title="注册帐号"></a>注册帐号</h2><ul>
-<li>新建项目，可以选择public或者private。我选择的是public。</li>
+<li>报头：描述数据的目的地以及和其他数据之间的关系</li>
+<li>数据</li>
 </ul>
-<h2 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h2><ol>
-<li>下载<a href="https://git-scm.com/download/" target="_blank" rel="noopener">Git客户端</a>，安装。</li>
-<li>在Git上配置SSH密钥。</li>
-<li>启动Git，生成一个存放SSH的文件夹。<br> <code>mkdir ~/.ssh</code></li>
-<li>生成Gitcafe的SSH密钥。</li>
-</ol>
+<p>数据报是完备的、独立的数据实体，该实体携带要从源计算机传递到目的计算机的信息，该信息不依赖于以前在源计算机和目的计算机以及传输网络间的交换。</p>
+<p>在IP网络中传输的数据单位称为IP数据包。<br>IP数据包的报头至少为20个字节，其中包括版本号,报头长度，服务类型，数据报总长度，标识，标志，片偏移，生存时间，协议和头部校验和，源，目的IP地址，先项。</p>
         
           <p class="article-more-link">
-            <a href="/2016/06/03/simple-use-of-gitcafe/#more">Read More</a>
+            <a href="/2016/07/05/computer-networks-02/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/03/simple-use-of-gitcafe/" data-id="cjdfbj39d0069t4jhnbx6m7pw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/05/computer-networks-02/" data-id="cjdfbj347002lt4jha2sfgbs3" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Gitcafe/">Gitcafe</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IP/">IP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网际协议/">网际协议</a></li></ul>
 
     </footer>
   </div>
@@ -345,14 +177,14 @@ $ git clone [url]
 
 
   
-    <article id="post-assembly-language" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-computer-networks-01" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/06/02/assembly-language/" class="article-date">
-  <time datetime="2016-06-02T03:06:16.000Z" itemprop="datePublished">2016-06-02</time>
+    <a href="/2016/07/04/computer-networks-01/" class="article-date">
+  <time datetime="2016-07-04T12:24:43.000Z" itemprop="datePublished">2016-07-04</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/汇编/">汇编</a>
+    <a class="article-category-link" href="/categories/计算机网络/">计算机网络</a>
   </div>
 
   </div>
@@ -363,7 +195,7 @@ $ git clone [url]
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/02/assembly-language/">VS中的反汇编代码学习</a>
+      <a class="article-title" href="/2016/07/04/computer-networks-01/">计算机网络（一）：计算机网络概述</a>
     </h1>
   
 
@@ -371,190 +203,55 @@ $ git clone [url]
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="反汇编"><a href="#反汇编" class="headerlink" title="反汇编"></a>反汇编</h1><h2 id="程序在内存中的模型"><a href="#程序在内存中的模型" class="headerlink" title="程序在内存中的模型"></a>程序在内存中的模型</h2><p>编译器为程序分配的内存在逻辑上可分为：<font color="brown">代码段、数据段、堆、栈</font></p>
-<pre><code>代码段： 保存程序文本
-数据段： 保存初始化的全局变量和静态变量
-BSS：    未初始化的全局变量和静态变量
-堆：        动态内存分配，向地址增大的方向增长
-栈：        存放局部变量，向地址减小的方向增长
-</code></pre><p><img src="http://images.cnitblog.com/i/432341/201403/250854505149178.png" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/02/assembly-language/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/02/assembly-language/" data-id="cjdfbj326001mt4jh4h35uqsd" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-type-casts" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/06/02/type-casts/" class="article-date">
-  <time datetime="2016-06-02T03:03:29.000Z" itemprop="datePublished">2016-06-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/C/">C++</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/02/type-casts/">强制类型转换</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先看一道例子：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a =<span class="number">6336</span>;</span><br><span class="line">	<span class="keyword">char</span> *b = (<span class="keyword">char</span> *)&amp;a;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,*b);</span><br><span class="line">	getchar();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果为：-64。</p>
-<p>暂且不分析上边的题目，从内存模型入手分析。</p>
-<p>C中，每一个变量都对应一个地址。地址空间中的值即0或1的高低电平。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/06/02/type-casts/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/06/02/type-casts/" data-id="cjdfbj3bm007nt4jhpkplth7c" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/类型转换/">类型转换</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-complex-pointer" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/31/complex-pointer/" class="article-date">
-  <time datetime="2016-05-31T15:01:57.000Z" itemprop="datePublished">2016-05-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/C/">C++</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/31/complex-pointer/">复杂指针解析</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="右左法则—-复杂指针解析-lt-转-gt"><a href="#右左法则—-复杂指针解析-lt-转-gt" class="headerlink" title="右左法则—-复杂指针解析&lt;转&gt;"></a>右左法则—-复杂指针解析&lt;转&gt;</h1><p><a href="http://blog.csdn.net/code_crash/article/details/4854965" target="_blank" rel="noopener">http://blog.csdn.net/code_crash/article/details/4854965</a></p>
-<p>首先看看如下一个声明：</p>
-<p><code>int* ( *( *fun )( int* ) )[10];</code></p>
-<p>这是一个会让初学者感到头晕目眩、感到恐惧的函数指针声明。在熟练掌握C/C++的声明语法之前，不学习一定的规则，想理解好这类复杂声明是比较困难的。</p>
-<p>C/C++所有复杂的声明结构，都是由各种声明嵌套构成的。</p>
-<p>如何解读复杂指针声明？右左法则是一个很著名、很有效的方法。</p>
-<p>不过，右左法则其实并不是C/C++标准里面的内容，它是从C/C++标准的声明规定中归纳出来的方法。</p>
-<p>C/C++标准的声明规则，是用来解决如何创建声明的，而右左法则是用来解决如何辩识一个声明的，从嵌套的角度看，两者可以说是一个相反的过程。右左法则的英文原文是这样说的：</p>
-<blockquote>
-<p>The right-left rule: Start reading the declaration from the innermost parentheses, go right, and then go left. When you encounter parentheses, the direction should be reversed. Once everything in the parentheses has been parsed, jump out of it. Continue till the whole declaration has been parsed.</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2016/05/31/complex-pointer/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/31/complex-pointer/" data-id="cjdfbj33b002at4jhf3n582dc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/指针/">指针</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Escape-character" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/31/Escape-character/" class="article-date">
-  <time datetime="2016-05-31T14:59:41.000Z" itemprop="datePublished">2016-05-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/C/">C++</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/31/Escape-character/">C++中的转义序列</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="C-中的转义序列"><a href="#C-中的转义序列" class="headerlink" title="C++中的转义序列"></a>C++中的转义序列</h1><p>两类字符不能直接使用：</p>
+        <p>计算机网络最重要的两功能</p>
 <ul>
-<li>一类是不可打印字符，例如退格等。因为没有可视的图符。</li>
-<li>另一类是有特殊含义的字符（单引号，双引号，问号，反斜线）等。</li>
+<li>连通性<ul>
+<li>交换信息</li>
 </ul>
-<p>这些情况下会用到转义序列，转移序列均以反斜线<code>\</code>开始。</p>
-<p>C++规定了如下的转义字符：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">换行符	\n		横线制表符	\t</span><br><span class="line">响铃符	\a		纵向制表符	\v</span><br><span class="line">退格符	\b		双引号		\<span class="string">"</span></span><br><span class="line"><span class="string">反斜线	\\		问号			\?</span></span><br><span class="line"><span class="string">单引号	\'		回车符		\r</span></span><br><span class="line"><span class="string">```    </span></span><br><span class="line"><span class="string">程序中，上述转义符被当作一个字符来使用。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;!-- more --&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">泛化的转义序列，形式是`\x`后跟一个或多个十六进制数字，或者`\`后边跟1个、2个、或者3个八进制数字。例如</span></span><br><span class="line"><span class="string">```cpp</span></span><br><span class="line"><span class="string">\7（响铃）		\12（换行符）</span></span><br><span class="line"><span class="string">\40（空格）		\0（空字符）</span></span><br><span class="line"><span class="string">\115（字符M）	\x4d（字符M）</span></span><br></pre></td></tr></table></figure>
-<p>注意:</p>
-<p>如果反斜线后边跟着的八进制数字超过3个，只有前3个数字与<code>\</code>构成转义序列。</p>
-<p>例如”<code>\1234</code>“表示两个字符，即<font color="brown"><strong>八进制数</strong></font><code>123</code>对应的字符以及字符<code>4</code>.</p>
-<p>相反，<code>\x</code>要用到后边跟着的所有数字，例如”<code>\x1234</code>“表示一个16位的字符，该字符由这4个<font color="red"><strong>十六进制数</strong></font>所对应的比唯一确定。</p>
-<p>例题：</p>
-<p>以下程序段的输出结果是：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[]=<span class="string">"\\123456\123456\t"</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="built_in">strlen</span>(s));</span><br></pre></td></tr></table></figure></p>
-<p>答案：12</p>
-
+</li>
+<li>共享<ul>
+<li>信息共享</li>
+<li>硬件共享</li>
+<li>软件共享</li>
+</ul>
+</li>
+</ul>
+<p>网络：由若干<strong>结点</strong>和连接结点的<strong>链路</strong>组成。</p>
+<p><strong>网络将许多计算机连接在一起，而因特网则把许多网络连接在一起。</strong></p>
+<p>ISP：Internet Service Provider，互联网服务提供者，因特网服务提供商。</p>
+<h2 id="因特网的组成"><a href="#因特网的组成" class="headerlink" title="因特网的组成"></a>因特网的组成</h2><ul>
+<li>边缘部分<ul>
+<li>由所有连接在因特网上的主机组成。<font color="green">用户直接使用</font></li>
+</ul>
+</li>
+<li>核心部分<ul>
+<li>由大量网络和连接这些网络的路由器组成。<font color="green">为边缘部分提供服务</font></li>
+</ul>
+</li>
+</ul>
+<p><strong>计算机通信</strong>：主机A的某个进程和主机B上的另一个进程进行通信</p>
+<p>网络边缘的终端系统中运行的程序之间的通信方式可分为：</p>
+<ul>
+<li>客户服务器方式（C/S方式）：client-server<ul>
+<li>客户是服务请求方，服务器是服务提供方。</li>
+<li>服务请求方和服务提供方都要使用网络核心部分所提供的服务</li>
+</ul>
+</li>
+<li>对等方式（P2P方式）：Peer-to-Peer方式</li>
+</ul>
+<p>客户程序和服务器程序的一些特点：</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/07/04/computer-networks-01/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/31/Escape-character/" data-id="cjdfbj2zh0004t4jhqeilta70" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/04/computer-networks-01/" data-id="cjdfbj33g002et4jh3pc93sip" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转义字符/">转义字符</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络/">计算机网络</a></li></ul>
 
     </footer>
   </div>
@@ -563,14 +260,14 @@ BSS：    未初始化的全局变量和静态变量
 
 
   
-    <article id="post-calculate-runtime-of-code" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-operator-system-8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/31/calculate-runtime-of-code/" class="article-date">
-  <time datetime="2016-05-31T09:19:40.000Z" itemprop="datePublished">2016-05-31</time>
+    <a href="/2016/07/03/operator-system-8/" class="article-date">
+  <time datetime="2016-07-03T08:58:49.000Z" itemprop="datePublished">2016-07-03</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/C/">C++</a>
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
   </div>
 
   </div>
@@ -581,7 +278,7 @@ BSS：    未初始化的全局变量和静态变量
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/31/calculate-runtime-of-code/">计算代码运行时间</a>
+      <a class="article-title" href="/2016/07/03/operator-system-8/">操作系统学习（八）：段式内存管理</a>
     </h1>
   
 
@@ -589,21 +286,97 @@ BSS：    未初始化的全局变量和静态变量
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="计算代码的运行时间"><a href="#计算代码的运行时间" class="headerlink" title="计算代码的运行时间"></a>计算代码的运行时间</h1><h2 id="包含头文件"><a href="#包含头文件" class="headerlink" title="包含头文件"></a>包含头文件</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="在程序执行的起始点，插入代码"><a href="#在程序执行的起始点，插入代码" class="headerlink" title="在程序执行的起始点，插入代码"></a>在程序执行的起始点，插入代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">clock_t</span> start,finish;</span><br><span class="line">start=clock();</span><br></pre></td></tr></table></figure>
-<h2 id="在程序执行的终点，插入代码："><a href="#在程序执行的终点，插入代码：" class="headerlink" title="在程序执行的终点，插入代码："></a>在程序执行的终点，插入代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">finish=clock();</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"共耗时%.3lf秒"</span>，((<span class="keyword">double</span>)finish - start)/<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+        <h2 id="分页系统的缺点"><a href="#分页系统的缺点" class="headerlink" title="分页系统的缺点"></a>分页系统的缺点</h2><p>分页系统的缺点</p>
+<ul>
+<li>共享困难</li>
+<li>一个进程只能占有一个虚拟地址空间<ul>
+<li>造成的问题就是，一个程序的大小至多只能和虚拟空间一样大，其所有的内容必须从这个共同的虚拟空间分配。</li>
+</ul>
+</li>
+</ul>
+<p>基于以上的这些麻烦引出了分段管理系统</p>
+<hr>
+<h2 id="分段管理系统"><a href="#分段管理系统" class="headerlink" title="分段管理系统"></a>分段管理系统</h2><p><strong>分段管理</strong>：将一个程序按照逻辑单元分成多个程序段，每一个段使用自己单独的虚地址空间。</p>
+<p>例如对于编译器来说，可以分成编译器工作所需要的5个段，占用5个虚地址空间。</p>
+<p><img src="https://ituku.tk/di/ZJIGM/-1-.png" alt=""></p>
+<center><strong>图1.编译器程序5个虚地址空间以解决空间增长困难的问题</strong></center>
         
           <p class="article-more-link">
-            <a href="/2016/05/31/calculate-runtime-of-code/#more">Read More</a>
+            <a href="/2016/07/03/operator-system-8/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/31/calculate-runtime-of-code/" data-id="cjdfbj32v0020t4jhd342wo1e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/07/03/operator-system-8/" data-id="cjdfbj37u0055t4jhwx7vb2il" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/段式内存管理/">段式内存管理</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-operator-system-7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/03/operator-system-7/" class="article-date">
+  <time datetime="2016-07-03T08:58:38.000Z" itemprop="datePublished">2016-07-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/03/operator-system-7/">操作系统学习（七）：分页存储管理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="交换产生的问题："><a href="#交换产生的问题：" class="headerlink" title="交换产生的问题："></a>交换产生的问题：</h2><ul>
+<li><p>内存和磁盘的交换产生碎片</p>
+</li>
+<li><p>地址空间增长困难</p>
+<ul>
+<li><p>空间增长效率低下</p>
+</li>
+<li><p>空间增长存在“天花板”限制</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>碎片产生的原因：每个程序大小不同</p>
+<p>解决办法：将空间按照某种规定大小进行分配。只要将<font color="green">虚拟内存与物理内存都分成大小一样的部分，我们称为页</font>。然后按页分配，即可以克服碎片问题。</p>
+<p>解决空间增长受限的原因：一个程序需要完全加载到内存中才可以运行</p>
+<p>解决办法：使程序无需全部加载就可以运行。</p>
+<ul>
+<li>用分页的思想处理：将当前需要的页面放在内存中，暂时不用的页面放在磁盘上。</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/07/03/operator-system-7/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/03/operator-system-7/" data-id="cjdfbj37r0052t4jh2wntjvic" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分页管理/">分页管理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li></ul>
 
     </footer>
   </div>
@@ -616,7 +389,7 @@ BSS：    未初始化的全局变量和静态变量
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/7/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -625,7 +398,7 @@ BSS：    未初始化的全局变量和静态变量
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
     </div>
@@ -654,7 +427,7 @@ BSS：    未初始化的全局变量和静态变量
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
@@ -664,7 +437,7 @@ BSS：    未初始化的全局变量和静态变量
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
@@ -700,7 +473,7 @@ BSS：    未初始化的全局变量和静态变量
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
+      &copy; 2018 ycwang<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

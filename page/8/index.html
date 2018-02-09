@@ -7,13 +7,16 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="一个想好好学习的小学生">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/page/8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en">
+<meta property="og:description" content="一个想好好学习的小学生">
+<meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="一个想好好学习的小学生">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -37,6 +40,10 @@
         <a href="/" id="logo">Hexo</a>
       </h1>
       
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">栈点</a>
+        </h2>
+      
     </div>
     <div id="header-inner" class="inner">
       <nav id="main-nav">
@@ -51,7 +58,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -62,10 +69,64 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-c-point" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-operator-system-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/30/c-point/" class="article-date">
-  <time datetime="2016-05-30T01:53:48.000Z" itemprop="datePublished">2016-05-30</time>
+    <a href="/2016/06/30/operator-system-1/" class="article-date">
+  <time datetime="2016-06-30T09:06:51.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/30/operator-system-1/">操作系统学习（一）：操作系统基本知识之基本术语</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>内核态和用户态：</p>
+<ul>
+<li>内核态：占有计算机中的所有资源</li>
+<li>用户态：少部分资源</li>
+</ul>
+<p>微内核结构：只将操作系统核心中的核心放在内核态运行，其他功能都移到用户态，这就同时提高了效率和安全性。</p>
+<p><img src="https://ituku.tk/di/QOMG2/-1.png" alt=""></p>
+<center><strong>图1.微内核的操作系统结构</strong></center>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/30/operator-system-1/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/30/operator-system-1/" data-id="cjdfbj372004kt4jh6rr0xzlr" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-the-use-of-voltile" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/30/the-use-of-voltile/" class="article-date">
+  <time datetime="2016-06-30T02:33:53.000Z" itemprop="datePublished">2016-06-30</time>
 </a>
     
   <div class="article-category">
@@ -80,7 +141,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/30/c-point/">C语言点滴</a>
+      <a class="article-title" href="/2016/06/30/the-use-of-voltile/">voltile的用法</a>
     </h1>
   
 
@@ -88,33 +149,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>拜读赵岩老师的《C语言点滴》，目的是为了查漏补缺，在重新温习C语言基础的基础上对一些之前并未关注或者遗忘的细节给予重新定位和重视。——ycwang.2015-12-16</p>
-<h2 id="2-5编程风格"><a href="#2-5编程风格" class="headerlink" title="2.5编程风格"></a>2.5编程风格</h2><ul>
-<li>不应该写一个很长的函数，一个函数只实现一个功能。</li>
-<li>编程字体的选择：等宽字体为佳。<blockquote>
-<p>常见的等宽字体</p>
-</blockquote>
-</li>
-<li>Monaco</li>
-<li>Lucida Console</li>
-<li>Lucida Sans Typewriter</li>
-<li>Consolas</li>
-<li>Courier New</li>
-</ul>
-<h1 id="第3章-数据类型"><a href="#第3章-数据类型" class="headerlink" title="第3章 数据类型"></a><center><font color="brown">第3章 数据类型</font></center></h1><p>C语言中仅有四种数据类型，分别为<strong>整型、浮点型、指针型和聚合类型</strong>（包括数组和结构体），剩下的都是从这四种类型派生或组合而来的。——<a href="http://book.douban.com/subject/3012360/" target="_blank" rel="noopener">《C和指针》</a></p>
-<p>接上，例如char就是一个短整型。<br>
+        <p>volatile是一个类型修饰符，修饰<strong>被不同线程访问和修改的变量。</strong></p>
+<p>被voltile类型定义的变量，系统调用的时候直接从对应的内存中提取，而不是利用cache中的原有数值，以适应它的未知何时发生变化。</p>
+<p>volatile一般修饰多线程间被多个任务共享的变量和并行设备硬件寄存器等。</p>
+<p>准确的说，优化器在用到volatile变量时每次都重新读取变量的值，而不是使用保存在寄存器中的备份。</p>
         
           <p class="article-more-link">
-            <a href="/2016/05/30/c-point/#more">Read More</a>
+            <a href="/2016/06/30/the-use-of-voltile/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/30/c-point/" data-id="cjdfbj32j001tt4jhhhhginvz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/30/the-use-of-voltile/" data-id="cjdfbj3br007rt4jhhioc7hob" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程语言/">编程语言</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/voltile/">voltile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
 
     </footer>
   </div>
@@ -123,363 +173,10 @@
 
 
   
-    <article id="post-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-sizeof-string" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/27/hexo-blog/" class="article-date">
-  <time datetime="2016-05-27T09:08:43.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/hexo-blog/">使用Github+Hexo搭建博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Step0-安装Git"><a href="#Step0-安装Git" class="headerlink" title="Step0 安装Git"></a>Step0 安装Git</h2><h2 id="Step1-安装Node-js"><a href="#Step1-安装Node-js" class="headerlink" title="Step1 安装Node.js"></a>Step1 安装Node.js</h2><p>该步请自行谷歌，最好选择默认路径，省去配置路径的麻烦。</p>
-<h2 id="Step2-安装Hexo"><a href="#Step2-安装Hexo" class="headerlink" title="Step2 安装Hexo"></a>Step2 安装Hexo</h2><pre><code>`npm install -g hexo` 
-</code></pre><ul>
-<li>升级hexo到最新版（可以忽略）</li>
-</ul>
-<pre><code>`npm update hexo -g`
-</code></pre><p>这一步时间比较长，听首歌静静等待安装。</p>
-<ul>
-<li><p>初始化</p>
-<p>  <code>hexo init &lt;folder&gt;</code></p>
-</li>
-</ul>
-<p>指定你的文件夹路径，便会在该文件夹内初始化。</p>
-<p>npm会自动安装依赖环境</p>
-<pre><code>`npm install`
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2016/05/27/hexo-blog/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/hexo-blog/" data-id="cjdfbj36g0045t4jh6fn6yihy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hightlight-of-jekyll" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/27/hightlight-of-jekyll/" class="article-date">
-  <time datetime="2016-05-27T08:23:37.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Jekyll/">Jekyll</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/hightlight-of-jekyll/">Jekyll的中的代码高亮&lt;转&gt;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="代码高亮方式选择"><a href="#代码高亮方式选择" class="headerlink" title="代码高亮方式选择"></a>代码高亮方式选择</h3><h4 id="1-小片段"><a href="#1-小片段" class="headerlink" title="1.小片段"></a>1.小片段</h4><p>直接使用“ ` ”符号包含起来，或者使用一个tab直接利用markdown来做高亮</p>
-<h4 id="2-Pygments渲染"><a href="#2-Pygments渲染" class="headerlink" title="2.Pygments渲染"></a>2.Pygments渲染</h4><p>Jekyll通过<a href="http://pygments.org/" target="_blank" rel="noopener">Pygments</a>可以直接处理代码高亮</p>
-<p>在Github Pages的<a href="https://github.com/mojombo/jekyll/wiki/Liquid-Extensions" target="_blank" rel="noopener">文档</a>里，也提到了这个方式，但是总觉得这样有点不是很舒服，打破了markdown的格式</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/05/27/hightlight-of-jekyll/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/hightlight-of-jekyll/" data-id="cjdfbj366003zt4jh6w7cb47x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jekyll/">Jekyll</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-share-windows-and-linux" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/27/share-windows-and-linux/" class="article-date">
-  <time datetime="2016-05-27T08:22:11.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/share-windows-and-linux/">Windows和Linux切换最终解决方案&lt;转&gt;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="尝试和选择"><a href="#尝试和选择" class="headerlink" title="尝试和选择"></a>尝试和选择</h2><p>一台机器使用Windows和Linux一般有以下几个方式：</p>
-<ul>
-<li>Windows和Linux真正的双系统，开机两个引导</li>
-<li>Linux下虚拟Windows（一般是xp）</li>
-<li>Windows下虚拟Linux</li>
-</ul>
-<p>除了以上几个，还有一些其他方法，都没啥映像，在此不讨论。</p>
-<p>选择两个系统无非是因为工作原因，Linux下开发，Windows下娱乐或者Word等。出现这种矛盾实在是纠结，在尝试过上述三种方案以后，我选择了在Windows下虚拟一个Linux，原因如下：</p>
-<ul>
-<li>使用Vmware虚拟实在是比Virtual Box好用（主要是功能）</li>
-<li>Windows下的软件体验真的不错，而且是越来越好。虽然Linux下有各种开源软件功能一点都不差，但是你无法逃避的现实就是，用户体验真的不够。</li>
-<li>双系统经常切换非常麻烦</li>
-<li>Windows系统问题，虚拟出来的真的不好用</li>
-<li>Linux真正需要的，字符界面就够用，所以一般不需要占太大资源</li>
-</ul>
-<p>根据这几点，结果就定了，那么Windows下虚拟Linux怎样做最好呢?</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/05/27/share-windows-and-linux/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/share-windows-and-linux/" data-id="cjdfbj38x005yt4jhzhhz9xgc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-some-error-install-jekyll" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/27/some-error-install-jekyll/" class="article-date">
-  <time datetime="2016-05-27T08:20:41.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Jekyll/">Jekyll</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/some-error-install-jekyll/">jekyll安装过程中可能会遇到的一些错误及解决办法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h1><blockquote>
-<p>Dependency Error: Yikes! It looks like you don’t have jekyll-paginate or one of its dependencies installed. In order to use Jekyll as currently configured, you’ll need to install this gem. The full error message from Ruby is: ‘cannot load such file – jekyll-paginate’ If you run into trouble, you can find helpful resources at Getting Help</p>
-<p>jekyll 3.1.2 | Error: jekyll-paginate</p>
-</blockquote>
-<p>解决办法：安装jekyll时候直接运行<code>gem install jekyll-paginate</code>即可解决。</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/05/27/some-error-install-jekyll/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/some-error-install-jekyll/" data-id="cjdfbj39z006pt4jhiywf926j" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jekyll/">Jekyll</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-simple-use-of-git" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/27/simple-use-of-git/" class="article-date">
-  <time datetime="2016-05-27T08:18:08.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Git/">Git</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/simple-use-of-git/">Git基本指令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>执行git init，git add以及git commit之后，需要如下做：</p>
-<h3 id="…or-create-a-new-repository-on-the-command-line"><a href="#…or-create-a-new-repository-on-the-command-line" class="headerlink" title="…or create a new repository on the command line"></a>…or create a new repository on the command line</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# simpleEditor&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/ycwang522/simpleEditor.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<h3 id="…or-push-an-existing-repository-from-the-command-line"><a href="#…or-push-an-existing-repository-from-the-command-line" class="headerlink" title="…or push an existing repository from the command line"></a>…or push an existing repository from the command line</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/ycwang522/simpleEditor.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<h1 id="Git使用教程"><a href="#Git使用教程" class="headerlink" title="Git使用教程"></a>Git使用教程</h1><ul>
-<li><p>设置用户名：<code>git config --global user.name &quot;Your Name Here&quot;</code>  </p>
-</li>
-<li><p>设置邮箱：<code>git  config --global user.email &quot;your email&quot;</code></p>
-</li>
-</ul>
-<p>在网页上新建<code>repository</code>，点击如下图所示的网址<br><img src="http://img.my.csdn.net/uploads/201309/28/1380301612_9211.png" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2016/05/27/simple-use-of-git/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/simple-use-of-git/" data-id="cjdfbj3920061t4jhvmaw2sf3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-an-issue-in-markdownPad" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/27/an-issue-in-markdownPad/" class="article-date">
-  <time datetime="2016-05-27T08:16:35.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Markdown/">Markdown</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/an-issue-in-markdownPad/">MarkdownPad 2 在win10下出错：HTML 渲染错误(This view has crashed) 的解决办法 + MarkdownPad2.5 注册码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>在win10上安装MarkdownPad2 时，出现如下的错误信息：HTML渲染组出错，这个问题可以通过安装某个缺失组件来解决，是否想要了解详细信息？</p>
-</blockquote>
-<p><img src="https://ituku.tk/di/CWXG1/9703407c1a94f6b0c1c73b162e25782d-thumb.png" alt=""></p>
-<p>MarkdownPad 的FAQ文档中给出了解决办法：<a href="http://markdownpad.com/faq.html#livepreview-directx" target="_blank" rel="noopener">http://markdownpad.com/faq.html#livepreview-directx</a></p>
-<blockquote>
-<p>LivePreview is not working - it displays an error message stating This view has crashed!</p>
-</blockquote>
-<hr>
-<p>官方给出的解释是：这个问题一般多见于win8（*当然现在win10也有，官方文档该更新啦）。错误的表现形式即：不能实时预览Markdown生成的HTML页面。</p>
-<blockquote>
-<p>This issue has been specifically observed in Windows 8. You may see an error message <a href="http://markdownpad.com/img/faq/markdownpad-livepreview-crash-directx.png" target="_blank" rel="noopener"><strong>as shown here</strong></a>, and no HTML will be rendered when you type in the Markdown Editor pane.</p>
-</blockquote>
-<hr>
-<font color="blue">为了修复这个问题，你需要安装这么一个SDK工具包，点击链接获取。</font>
-
-<blockquote>
-<p>To fix this issue, please try installing the <a href="http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe" target="_blank" rel="noopener"><strong>Awesomium 1.6.6 SDK</strong></a>.</p>
-</blockquote>
-<hr>
-<p>如果还没有解决，那就买个新电脑吧！</p>
-<p>哦！不是，让你再装个微软的渲染插件</p>
-<blockquote>
-<p>If you continue to experience issues, please install <a href="http://www.microsoft.com/en-us/download/details.aspx?id=8109" target="_blank" rel="noopener"><strong>Microsoft’s DirectX End-User Runtimes (June 2010)</strong></a>.</p>
-</blockquote>
-<hr>
-<h1 id="彩蛋：MarkdownPad2-5-注册码"><a href="#彩蛋：MarkdownPad2-5-注册码" class="headerlink" title="彩蛋：MarkdownPad2.5 注册码"></a>彩蛋：MarkdownPad2.5 注册码</h1><p>邮箱：<code>Soar360@live.com</code></p>
-<p>授权密钥：</p>
-<blockquote>
-<p>GBPduHjWfJU1mZqcPM3BikjYKF6xKhlKIys3i1MU2eJHqWGImDHzWdD6xhMNLGVpbP2M5SN6bnxn2kSE8qHqNY5QaaRxmO3YSMHxlv2EYpjdwLcPwfeTG7kUdnhKE0vVy4RidP6Y2wZ0q74f47fzsZo45JE2hfQBFi2O9Jldjp1mW8HUpTtLA2a5/sQytXJUQl/QKO0jUQY4pa5CCx20sV1ClOTZtAGngSOJtIOFXK599sBr5aIEFyH0K7H4BoNMiiDMnxt1rD8Vb/ikJdhGMMQr0R4B+L3nWU97eaVPTRKfWGDE8/eAgKzpGwrQQoDh+nzX1xoVQ8NAuH+s4UcSeQ==</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/an-issue-in-markdownPad/" data-id="cjdfbj320001jt4jh95zg540s" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MarkdownPad/">MarkdownPad</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-effective-cpp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/27/effective-cpp/" class="article-date">
-  <time datetime="2016-05-27T08:13:10.000Z" itemprop="datePublished">2016-05-27</time>
+    <a href="/2016/06/30/sizeof-string/" class="article-date">
+  <time datetime="2016-06-30T02:33:13.000Z" itemprop="datePublished">2016-06-30</time>
 </a>
     
   <div class="article-category">
@@ -494,7 +191,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/effective-cpp/">Effective C++ 读书笔记</a>
+      <a class="article-title" href="/2016/06/30/sizeof-string/">关于sizeof（string）的问题</a>
     </h1>
   
 
@@ -502,31 +199,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><h2>1 尽可能使用const</h2>
-
-</li>
-</ul>
-<hr>
-<pre><code>如果const出现在星号左边，比如 `const int *p`，则说明被指向的对象是常量，
-
-即p指向的数据是常量，不允许赋值等运算；但是如果const出现在星号右边，
-
-比如`int *const p`，说明指针是是常量。如果出现在两边，说明两者都是常量。
-</code></pre><hr>
-<p>注：如果被指物是常量，有些程序员会将const写在类型前面，而有些人会将其写在类型后边，星号前边。均可。</p>
+        <h1 id="关于sizeof-string"><a href="#关于sizeof-string" class="headerlink" title="关于sizeof(string)"></a>关于sizeof(string)</h1><p>偶然间测试sizeof(string)的时候，在32位+win10+vs2013机子上测试如下一段代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str1 = <span class="string">"Hello world"</span>;</span><br><span class="line"><span class="built_in">string</span> str2[] = &#123; <span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="keyword">sizeof</span>(str1)&lt;&lt;<span class="string">" "</span>&lt;&lt;<span class="keyword">sizeof</span>(str2)&lt;&lt;<span class="string">" "</span>&lt;&lt;<span class="keyword">sizeof</span>(<span class="built_in">string</span>)&lt;&lt;<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure></p>
+<p>得到结果分别为：28，84,28</p>
+<p>查阅资料时发现，输出结果和不同的编译器有关。</p>
+<p>string的实现在各类库中可能有所不同，但是在同一库中相同一点是，无论你的string里放多长的字符串，sizeof()都是固定的，字符串所占空间是从堆中动态分配的，与sizeof()无关。</p>
         
           <p class="article-more-link">
-            <a href="/2016/05/27/effective-cpp/#more">Read More</a>
+            <a href="/2016/06/30/sizeof-string/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/effective-cpp/" data-id="cjdfbj35m003kt4jhk3k1lrvb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/30/sizeof-string/" data-id="cjdfbj39m006ht4jhr7w8poa3" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sizeof/">sizeof</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/string/">string</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/位域/">位域</a></li></ul>
 
     </footer>
   </div>
@@ -535,63 +223,10 @@
 
 
   
-    <article id="post-make-blog-jekyll" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ID-number-check" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/27/make-blog-jekyll/" class="article-date">
-  <time datetime="2016-05-27T08:06:02.000Z" itemprop="datePublished">2016-05-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/make-blog-jekyll/">使用jekyll+Github搭建个人独立博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="step-1-选择GitHub作为博客服务器"><a href="#step-1-选择GitHub作为博客服务器" class="headerlink" title="step 1.选择GitHub作为博客服务器"></a>step 1.选择GitHub作为博客服务器</h1><p>*更详细的方法参考<a href="https://pages.github.com/" target="_blank" rel="noopener"><font color="blue">GitHub Pages官方文档</font></a></p>
-<ul>
-<li><p>注册<a href="https://github.com" target="_blank" rel="noopener"><font color="blue">GitHub</font></a><br>登陆<a href="https://github.com，创建属于自己的GitHub帐号（废话）。" target="_blank" rel="noopener">https://github.com，创建属于自己的GitHub帐号（废话）。</a><br><img src="https://ituku.tk/di/2V1WO/1.jpg" alt=""></p>
-</li>
-<li><p>建立一个仓库</p>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2016/05/27/make-blog-jekyll/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/make-blog-jekyll/" data-id="cjdfbj36x004gt4jhqanlt320" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jekyll/">Jekyll</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-sort-algorithms" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/27/sort-algorithms/" class="article-date">
-  <time datetime="2016-05-27T08:03:41.000Z" itemprop="datePublished">2016-05-27</time>
+    <a href="/2016/06/26/ID-number-check/" class="article-date">
+  <time datetime="2016-06-26T08:36:41.000Z" itemprop="datePublished">2016-06-26</time>
 </a>
     
   <div class="article-category">
@@ -606,7 +241,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/27/sort-algorithms/">七种常见经典排序算法总结（C++实现）</a>
+      <a class="article-title" href="/2016/06/26/ID-number-check/">身份证号码验证算法</a>
     </h1>
   
 
@@ -614,26 +249,78 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>排序算法是非常常见也非常基础的算法，以至于大部分情况下它们都被集成到了语言的辅助库中。排序算法虽然已经可以很方便的使用，但是理解排序算法可以帮助我们找到解题的方向。</p>
-<h2 id="1-冒泡排序-Bubble-Sort"><a href="#1-冒泡排序-Bubble-Sort" class="headerlink" title="1. 冒泡排序 (Bubble Sort)"></a>1. 冒泡排序 (Bubble Sort)</h2><p>冒泡排序是最简单粗暴的排序方法之一。它的原理很简单，每次从左到右两两比较，把大的交换到后面，每次可以确保将前M个元素的最大值移动到最右边。</p>
-<p><strong>步骤</strong></p>
-<ol>
-<li>从左开始比较相邻的两个元素x和y，如果 x &gt; y 就交换两者</li>
-<li>执行比较和交换，直到到达数组的最后一个元素</li>
-<li>重复执行1和2，直到执行n次，也就是n个最大元素都排到了最后</li>
-</ol>
+        <p>经常会见到一些鉴别身份证号码是否真实的辨别，根据网上的身份证号码验证算法，做以总结。</p>
+<p><img src="http://ww2.sinaimg.cn/mw690/7cc829d3gw1f54ibvilhxj20g40c30tg.jpg" alt=""></p>
+<h2 id="一-18位身份证号码的结构"><a href="#一-18位身份证号码的结构" class="headerlink" title="一.18位身份证号码的结构"></a>一.18位身份证号码的结构</h2><p>公民身份证号码是特征组合码，由十七位数字和一位校验码组成。</p>
+<p>排列从左往右依次为：<strong>六位数字地址码， 八位数字出生日期码， 三位数字顺序码 和一位校验码</strong></p>
+<h3 id="1-地址码"><a href="#1-地址码" class="headerlink" title="1.地址码"></a>1.<strong>地址码</strong></h3><p>表示编码对象常住户口所在县(市、旗、区)的行政区域划分代码，按GB/T2260的规定执行。</p>
         
           <p class="article-more-link">
-            <a href="/2016/05/27/sort-algorithms/#more">Read More</a>
+            <a href="/2016/06/26/ID-number-check/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/27/sort-algorithms/" data-id="cjdfbj3av0070t4jhdds2rvc4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/26/ID-number-check/" data-id="cjdfbj30d000gt4jhost1udgm" class="article-share-link">Teilen</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-5-principles-of-object-oriented" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/06/25/5-principles-of-object-oriented/" class="article-date">
+  <time datetime="2016-06-25T09:08:05.000Z" itemprop="datePublished">2016-06-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/25/5-principles-of-object-oriented/">面向对象的五个基本原则</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><font color="green">单一职责原则</font>（Single-Resposibility Principle）：一个类，最好只做一件事，只有一个引起它的变化。单一职责原则可以看做是低耦合、高内聚在面向对象原则上的引申，将职责定义为引起变化的原因，以提高内聚性来减少引起变化的原因。 </li>
+</ul>
+<ul>
+<li><p><font color="green">开放封闭原则</font>（Open-Closed principle）：软件实体应该是可扩展的，而不可修改的。也就是，对扩展开放，对修改封闭的。 </p>
+</li>
+<li><p><font color="green">Liskov替换原则</font>（Liskov-Substituion Principle）：子类必须能够替换其基类。这一思想体现为对继承机制的约束规范，只有子类能够替换基类时，才能保证系统在运行期内识别子类，这是保证继承复用的基础。 </p>
+</li>
+<li><p><font color="green">依赖倒置原则</font>（Dependecy-Inversion Principle）：依赖于抽象。具体而言就是高层模块不依赖于底层模块，二者都同依赖于抽象；抽象不依赖于具体，具体依赖于抽象。 </p>
+</li>
+<li><p><font color="green">接口隔离原则</font>（Interface-Segregation Principle）：使用多个小的专门的接口，而不要使用一个大的总接口</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/06/25/5-principles-of-object-oriented/" data-id="cjdfbj2zl0005t4jhrp57galx" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面向对象/">面向对象</a></li></ul>
 
     </footer>
   </div>
@@ -646,7 +333,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/9/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -655,7 +342,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
     </div>
@@ -684,7 +371,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
@@ -694,7 +381,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
@@ -730,7 +417,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
+      &copy; 2018 ycwang<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
