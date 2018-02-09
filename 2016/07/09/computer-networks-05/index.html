@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>计算机网络（五）：运输层 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="运输层协议概述进程之间的通信运输层向它上面的应用层提供通信服务。它属于面向通信部分的最高层，同时也是属于用户功能的最底层。  网络的边缘部分中的两个主机使用网络的核心部分的功能进行端到端的通信时，只有主机的协议栈才有运输层，而网络核心部分中的路由器在转发分组时都只用到下三次的功能。  从IP层来说，通信的两个端机是两个主机。 严格讲，通信的实体是两个主机中的进程。 IP协议虽然通过源地址和目的地址">
+<meta name="keywords" content="TCP,UDP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络（五）：运输层">
+<meta property="og:url" content="http://yoursite.com/2016/07/09/computer-networks-05/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="运输层协议概述进程之间的通信运输层向它上面的应用层提供通信服务。它属于面向通信部分的最高层，同时也是属于用户功能的最底层。  网络的边缘部分中的两个主机使用网络的核心部分的功能进行端到端的通信时，只有主机的协议栈才有运输层，而网络核心部分中的路由器在转发分组时都只用到下三次的功能。  从IP层来说，通信的两个端机是两个主机。 严格讲，通信的实体是两个主机中的进程。 IP协议虽然通过源地址和目的地址">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ituku.tk/di/ZIUML/udpe-e-.png">
+<meta property="og:image" content="https://ituku.tk/di/XDOZK/udp-ae-.png">
+<meta property="og:image" content="https://ituku.tk/di/POILT/-e-.png">
+<meta property="og:image" content="https://ituku.tk/di/BHD3D/-e-1-.png">
+<meta property="og:image" content="https://ituku.tk/di/XWD9E/qq-20160709155914.png">
+<meta property="og:image" content="https://ituku.tk/di/WHKKA/qq-20160709165024.png">
+<meta property="og:image" content="https://ituku.tk/di/2J25Y/1.png">
+<meta property="og:updated_time" content="2016-07-11T14:16:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络（五）：运输层">
+<meta name="twitter:description" content="运输层协议概述进程之间的通信运输层向它上面的应用层提供通信服务。它属于面向通信部分的最高层，同时也是属于用户功能的最底层。  网络的边缘部分中的两个主机使用网络的核心部分的功能进行端到端的通信时，只有主机的协议栈才有运输层，而网络核心部分中的路由器在转发分组时都只用到下三次的功能。  从IP层来说，通信的两个端机是两个主机。 严格讲，通信的实体是两个主机中的进程。 IP协议虽然通过源地址和目的地址">
+<meta name="twitter:image" content="https://ituku.tk/di/ZIUML/udpe-e-.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-computer-networks-05" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/09/computer-networks-05/" class="article-date">
+  <time datetime="2016-07-09T09:56:30.000Z" itemprop="datePublished">2016-07-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机网络/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机网络（五）：运输层
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="运输层协议概述"><a href="#运输层协议概述" class="headerlink" title="运输层协议概述"></a>运输层协议概述</h1><h2 id="进程之间的通信"><a href="#进程之间的通信" class="headerlink" title="进程之间的通信"></a>进程之间的通信</h2><p><strong>运输层向它上面的应用层提供通信服务。</strong>它属于面向通信部分的最高层，同时也是属于用户功能的最底层。</p>
+<blockquote>
+<p>网络的边缘部分中的两个主机使用网络的核心部分的功能进行端到端的通信时，只有主机的协议栈才有运输层，而网络核心部分中的路由器在转发分组时都只用到下三次的功能。</p>
+</blockquote>
+<p>从IP层来说，通信的两个端机是两个主机。</p>
+<p>严格讲，通信的实体是两个主机中的进程。</p>
+<p>IP协议虽然通过源地址和目的地址进行通信，将分组送到目的主机，但是<strong>这个分组停留在主机的网络层而没有交付给主机中的应用进程。</strong>，所以从运输层的角度来看，<strong>通信的真正端点并不是主机而是主机中的进程。</strong></p>
+<p>运输层一个很重要的功能：</p>
+<ul>
+<li>复用（multiplexing）：指在发送方不同的应用进程都可以使用同一个运输层协议传送数据</li>
+<li>分用（demultiplexing）：接收方的运输层在剥去报文的首部后能够把这些数据正确交付到目的应用进程。</li>
+</ul>
+<a id="more"></a>
+<p><strong>运输层提供应用进程间的逻辑通信</strong>：表示运输层之间的通信好像是沿着水平方向传送数据。但事实上运输层并没有一条水平方向的物理连接。要传送的数据是沿着多个层次传送的。</p>
+<p>网络层和运输层之间的区别：</p>
+<ul>
+<li>网络层为<font color="green"><strong>主机之间</strong></font>提供逻辑通信</li>
+<li>运输层为<font color="red"><strong>应用进程之间</strong></font>提供端到端的逻辑通信</li>
+</ul>
+<p>根据应用程序的不同需求，运输层需要有两种不同的运输协议，即<strong>面向连接的TCP和无连接的UDP</strong>。</p>
+<p>运输层向高层用户屏蔽了下面网络核心的细节，使应用进程看见的就是好像在两个运输层实体之间有一条端到端逻辑通信信道。</p>
+<ul>
+<li>运输层采用面向连接的TCP协议时，尽管下面的网络是不可靠的，但这种逻辑通信信道就相当于一条全双工的可靠信道。</li>
+<li>采用UDP协议时，仍然是一条不可靠信道。</li>
+</ul>
+<h2 id="传输层的两个主要协议"><a href="#传输层的两个主要协议" class="headerlink" title="传输层的两个主要协议"></a>传输层的两个主要协议</h2><ol>
+<li>用户数据报协议UDP（User Datagram Protocol）：UDP用户数据报。传送数据时不需要先建立连接。</li>
+<li>传输控制协议TCP（Transmission Control Protocol）：TCP报文段。数据传送前必须建立连接，传输结束后释放连接。</li>
+</ol>
+<p>协要议端口号:端口。虽然通信的终点是应用进程，但我们只要把要传送的报文交到目的主机的某一个合适的目的端口，剩下的工作就由TCP来完成。</p>
+<blockquote>
+<p>由此可见，两个计算机要进行通信，不但要知道对方的IP地址（为了找到对方的计算机），还需要知道对方的端口号（找到对方的计算机中的应用进程）</p>
+</blockquote>
+<h3 id="TCP-和UDP的区别："><a href="#TCP-和UDP的区别：" class="headerlink" title="TCP 和UDP的区别："></a>TCP 和UDP的区别：</h3><p>TCP和UDP都是一种常用的通信方式，在特定的条件下发挥不同的作用，具体而言，两者的区别主要表现在以下几个方面：</p>
+<ul>
+<li><font color="green">TCP是面向连接的传输控制协议，而UDP提供的是无连接的数据报服务。</font></li>
+<li>TCP具有高可靠性，确保传输数据的正确性，不出现丢失或乱序；UDP传输时，不建立连接，不对数据报进行检查与修改，无需等待对方的应答，可能会出现分组丢失、重复、乱序等情况。</li>
+<li>TCP对系统资源要求较多，UDP反之。</li>
+<li><font color="green">UDP具有较好的实时性，工作效率比TCP高。</font></li>
+<li>UDP的段结构比TCP段结构简单，因此网络开销也小。</li>
+</ul>
+<h1 id="用户数据报协议UDP"><a href="#用户数据报协议UDP" class="headerlink" title="用户数据报协议UDP"></a>用户数据报协议UDP</h1><p>UDP只在IP的数据报服务之上增加了很少一点的功能，这就是<font color="green">复用和分用的功能以及差错检测的功能</font>。<br>UDP的主要特点有：</p>
+<ul>
+<li><strong>UDP是无连接的</strong>。发送数据前不需要建立连接</li>
+<li><strong>UDP使用最大努力交付</strong></li>
+<li>UDP是面向报文的。UDP一次交付一个完整的报文。</li>
+</ul>
+<p><img src="https://ituku.tk/di/ZIUML/udpe-e-.png" alt=""></p>
+<center><strong>图1.UDP是面向报文的</strong></center>
+
+<ul>
+<li>UDP没有阻塞控制</li>
+<li>UDP支持一对一，一对多和多对一的交互通信</li>
+<li>UDP首部开销小，只有8个字节，而TCP的首部为20个字节。</li>
+</ul>
+<h2 id="UDP的首部格式"><a href="#UDP的首部格式" class="headerlink" title="UDP的首部格式"></a>UDP的首部格式</h2><p>数据字段+首部字段</p>
+<p>首部字段占用8个字节，包括四个字段，每个字段都是两个字节</p>
+<ul>
+<li>源端口</li>
+<li>目的端口</li>
+<li>长度</li>
+<li>检验和</li>
+</ul>
+<p><img src="https://ituku.tk/di/XDOZK/udp-ae-.png" alt=""></p>
+<center><strong>图2.UDP基于端口的分用</strong></center>
+
+<hr>
+<h1 id="传输控制协议"><a href="#传输控制协议" class="headerlink" title="传输控制协议"></a>传输控制协议</h1><h2 id="TCP最主要的特点"><a href="#TCP最主要的特点" class="headerlink" title="TCP最主要的特点"></a>TCP最主要的特点</h2><ul>
+<li>面向连接的传输层协议，使用前先建立连接。</li>
+<li>每一条TCP只能有两个端点，每一条TCP连接只能是点对点的。</li>
+<li>提供可靠交付的服务。无差错、不丢失、不重复、安旭到达。</li>
+<li>全双工通信，通信双发的应用进程在任何时候都能发送数据。</li>
+<li>面向字节流。“流”指流入进程或者从进程流出的字节序列。</li>
+</ul>
+<h2 id="TCP的连接"><a href="#TCP的连接" class="headerlink" title="TCP的连接"></a>TCP的连接</h2><p>每一条TCP连接有两个端点，<strong>套接字（socket）或插口</strong>。<strong>端口号拼接到IP地址</strong>即构成了套接字。</p>
+<p>套接字的表示方法：点分十进制的IP地址后面写上端口号，中间使用冒号或者逗号隔开。<br>比如IP地址是192.3.4.5，而端口号是80.则套接字即为（192.3.4.5:80）。</p>
+<p><strong>每一条TCP连接唯一地被通信两端的两个端点（两个套接字）所确定。</strong></p>
+<pre><code>TCP连接::={socket1,socket2}={(IP1:port1),(IP2:port2)}
+</code></pre><h1 id="可靠传输的工作原理"><a href="#可靠传输的工作原理" class="headerlink" title="可靠传输的工作原理"></a>可靠传输的工作原理</h1><h2 id="停止等待协议"><a href="#停止等待协议" class="headerlink" title="停止等待协议"></a>停止等待协议</h2><p>停止等待：每发送完一个分组就停止发送，等待对方确认。收到确认后再发送下一个分组。</p>
+<p><img src="https://ituku.tk/di/POILT/-e-.png" alt=""></p>
+<center><strong>图3.停止等待协议的无差错情况</strong></center>
+
+<h3 id="传输出现差错的情况"><a href="#传输出现差错的情况" class="headerlink" title="传输出现差错的情况"></a>传输出现差错的情况</h3><p>B接收M1时检测出了问题，就直接丢弃M1，而不通知A。</p>
+<p>可靠传输协议的设计思想是：</p>
+<blockquote>
+<p>A只要超过了一段时间仍然没收到确认，就认为刚才发送的分组丢失了，因而重新传送前面发送过的分组。这叫做超时重传。<br>通过设置超时计时器来完成。</p>
+</blockquote>
+<p><img src="https://ituku.tk/di/BHD3D/-e-1-.png" alt=""></p>
+<center><strong>图4.停止等待协议的超时重传情况</strong></center>
+
+<p>应该注意的几点：</p>
+<ul>
+<li>A发送完一个分组之后，必须暂时保留已发送分组的副本。只有确认后才能清除暂时保留的分组副本。</li>
+<li>分组和确认分组都必须编号。</li>
+<li>超时计时器设置的重传时间应当<strong>比数据在分组传输的平均往返时间更长一些。</strong></li>
+</ul>
+<h3 id="确认丢失和确认迟到"><a href="#确认丢失和确认迟到" class="headerlink" title="确认丢失和确认迟到"></a>确认丢失和确认迟到</h3><p>确认丢失时，会重新传送该分组，分组到达B时：</p>
+<ul>
+<li>丢弃这个重复的分组M1，不向上层交付</li>
+<li>向A发送确认</li>
+</ul>
+<p>确认迟到时，也会进行超时重传，并且会收下迟到的确认但什么也不会做。</p>
+<p>基于以上的确认和重传机制，可以在<strong>不可靠的传输网络上实现可靠的通信。</strong><br>像上述的这种可靠传输协议常常称为<strong>自动重传请求ARQ</strong>。</p>
+<h3 id="信道利用率"><a href="#信道利用率" class="headerlink" title="信道利用率"></a>信道利用率</h3><p>为了提高传输效率，发送方可以不使用低效率的停止等待协议，而是采用流水线传输。<br>流水线传输就是发送方可连续发送多个分组，不必每发送完一个分组就停顿下来等地对方确认。这样可使信道上一直有数据不间断地在传送。</p>
+<h1 id="TCP报文段的首部格式"><a href="#TCP报文段的首部格式" class="headerlink" title="TCP报文段的首部格式"></a>TCP报文段的首部格式</h1><p>首部+数据两部分</p>
+<p>TCP的全部功能都体现在它首部中各字段的作用。</p>
+<p>TCP报文前20个字节是固定的，后面的4N个字节是根据需要而增加的。因此最小长度是20个字节。<br>包括以下部分：</p>
+<ul>
+<li>源端口和目的端口，各占2个字节。</li>
+<li>序号，占4个字节。</li>
+<li>确认号</li>
+<li>实际长度</li>
+<li>保留</li>
+<li>紧急URG。当URG=1时，表明紧急指针字段有效，提高优先级。</li>
+<li>确认ACK（ACKnowledge）仅当ACK=1时确认号字段才有效。TCP规定，连接建立后所有传送的报文段都必须把ACK置为1.</li>
+<li>推送PSH。</li>
+<li>复位RST。当RST=1时，表明TCP连接中出现严重差错，必须释放连接，然后再重新建立运输连接。</li>
+<li>同步SYN。在连接建立时用来同步序号。<font color="green">SYN=1而ACK=0时，表明这是一个链接请求报文段。对方若同意建立连接，则在相应的报文段中SYN=1和ACK=1。</font>因此，SYN置为1表示这是一个链接请求或链接接受报文。</li>
+<li>终止FIN<font color="red">用来释放一个连接。当FIN=1时，表明此报文段的发送方的数据已发送完毕，并要求释放运输连接。</font></li>
+</ul>
+<p><img src="https://ituku.tk/di/XWD9E/qq-20160709155914.png" alt=""></p>
+<center><strong>图5.TCP报文段的首部格式</strong></center>
+
+
+
+<h1 id="TCP的运输连接管理"><a href="#TCP的运输连接管理" class="headerlink" title="TCP的运输连接管理"></a>TCP的运输连接管理</h1><p>TCP是面向连接的协议。<br>运输连接是用来传送TCP报文的。<br>TCP运输连接的建立和释放时每一次面向连接的通信中必不可少的过程。</p>
+<p>因此，运输连接就有三个阶段：<font color="green"><strong>连接建立、数据传送、连接释放。</strong></font></p>
+<p>运输连接的管理就是使运输连接的建立和释放都能正常进行。</p>
+<p>TCP连接建立过程中要解决三个问题：</p>
+<ul>
+<li>使每一方都能确知对方的存在。</li>
+<li>允许双方协商一些参数</li>
+<li>能够对运输实体资源进行分配</li>
+</ul>
+<p>TCP主动建立连接的应用进程叫做<strong>客户（client）</strong>，而被动等待连接建立的应用进程叫做<strong>服务器（server）。</strong></p>
+<h2 id="TCP的连接建立"><a href="#TCP的连接建立" class="headerlink" title="TCP的连接建立"></a>TCP的连接建立</h2><p><img src="https://ituku.tk/di/WHKKA/qq-20160709165024.png" alt=""></p>
+<center><strong>图6.用三次握手建立TCP连接</strong></center>
+
+<p>如上图，主机A运行TCP客户程序，B运行TCP服务器程序。<br>初始状态是两个进程都处于关闭状态。</p>
+<p>A主动打开连接，B被动打开连接。</p>
+<p>首先B的TCP服务器创建<strong>传输控制块TCB</strong>，准备接受客户进程的连接请求。服务器进程处于LISTEN状态，等待客户的连接请求。</p>
+<ul>
+<li>A的TCP客户端进程也先创建<strong>传输控制块TCB</strong>，然后向B发出连接请求报文段，<font color="red">此时同部位SYN=1，同时选择一个初始序号seq=x。TCP规定，SYN报文段不能携带数据，但是消耗一个序号。完成之后，TCP客户进程进入SYN-SENT（同步已发送）状态</font>。</li>
+<li>B 收到连接请求报文段后，如果同意连接，则向A发送确认。确认报文段中应该把<font color="brown">SYN和ACK位都置1，确认号是ack=x+1，同时也为自己选择一个初始序号seq=y。这个报文段也不能携带数据，但消耗一个序号。完成后，TCP服务器进程进入SYN-RCVD（同步收到）状态。</font></li>
+<li>TCP客户端进程收到B的确认后，还要向B给出确认。确认报文段的ACK置1，确认号ack=y+1，而自己的序号seq=x+1.此时，TCP建立，A进入ESTABLISHED(已建立连接)状态。</li>
+</ul>
+<p>上面的连接建立过程叫做三次握手。</p>
+<p>对于第三个过程——A发送确认——的解释：</p>
+<blockquote>
+<p>主要是为了防止已失效的连接请求报文段突然又传送到了B而产生错误。——已失效连接主要由超时连接重发造成。</p>
+</blockquote>
+<h2 id="TCP的连接释放"><a href="#TCP的连接释放" class="headerlink" title="TCP的连接释放"></a>TCP的连接释放</h2><p>数据传输结束后，通信的双方都可以释放连接。</p>
+<ul>
+<li><p>A的应用进程先向其TCP发出连接释放报文段，并停止再发送数据，主动关闭TCP连接。<br>A把连接释放报文段首部的FIN置1，其序号seq=u，u等于前面已经传送过的数据的最后一个字节的序号加1.<br>此时进入FIN-WAIT-1状态，等待B的确认。</p>
+</li>
+<li><p>B收到连接释放报文后发出确认，确认号是ack=u+1，而这个报文段自己的序号是v，等于B前面已传送过的数据的最后一个字节的序号加1.然后B进入CLOSE-WAIT（关闭等待）状态。<br>TCP服务器进程这时应通知高层应用进程，因而从A到B这个方向的连接被释放，此时TCP处于<strong>半关闭状态</strong>，即A已经没有数据要发送了，但B若发送数据，A仍要接收。即B到A的连接并未关闭。<br>A收到B的确认后，就进入FIN-WAIT-2的状态，等待B发出的连接释放报文段。</p>
+</li>
+<li>若B没有向A发送的数据，其应用进程通知TCP释放连接。此时报文段的连接释放报文段必须使FIN=1.假定B的序列号为w。B还必须重复上次已发送过的确认号ack=u+1.这时B进入了LAST-ACK（最后确认）状态，等待A的确认。</li>
+<li>A在收到B的连接释放报文段后，必须对此发出确认。再确认报文段中把ACK置1，确认号ack=w+1，而自己的序号是seq=u+1.然后进入到TIME-WAIT状态。现在TCP连接还没有是放电，必须经过<strong>时间等待计时器</strong>设置的时间2MSL后，A才进入到CLOSED状态。时间MSL叫做<strong>最长报文段寿命</strong>，从A进入到TIME-WAIT状态后，经过2个MSL时间后才进入到CLOSED状态，才能开始建立下一个新的连接。当A撤销相应的传输控制块TCB后，就结束了这次的TCP连接。</li>
+</ul>
+<p><img src="https://ituku.tk/di/2J25Y/1.png" alt=""></p>
+<center><strong>图7.TCP连接释放的过程</strong></center>
+
+
+<p><strong>关于A的TIME-WAIT状态必须等待2MSL时间的解释</strong></p>
+<ul>
+<li>为了保证A发送的最后一个ACK报文段能够到达B。在传输过程中，最后发送的确认信号ACK报文段有可能丢失，因而使处在LAST-ACK状态的B收不到A已发送的FIN+ACK报文段的确认。这时，因为超时，<font color="green">B会重新传送FIN+ACK报文段。这样A就能在2MSL时间内收到这个重传的FIN+ACK报文段。接着A重传一个确认，同时启动2MSL计时器</font>。最后，AB都正常进入关闭状态。</li>
+<li>防止“已失效的连接请求报文段”出现在本连接中。B只要收到了A的确认，就进入CLOSED状态。注意到<strong>B结束TCP连接的时间要比A早一些。</strong></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/09/computer-networks-05/" data-id="cjdfbdzsz002jj4jh49xnd87u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP/">TCP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UDP/">UDP</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/11/computer-networks-06/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          计算机网络（六）：应用层
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/07/computer-networks-04/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算机网络（四）：因特网的路由选择协议</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-11/">C++11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-小结/">C++小结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-S/">C/S</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIDR/">CIDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essential-C/">Essential C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitcafe/">Gitcafe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkdownPad/">MarkdownPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSFP/">OSFP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RIP/">RIP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cctype/">cctype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idndef/">idndef</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linggle/">linggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-once/">pragma once</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-pack/">pragma pack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sizeof/">sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this指针/">this指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-function-table/">virtual function table</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/voltile/">voltile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windeployqt/">windeployqt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中缀表达式/">中缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/位域/">位域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存对齐/">内存对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分页管理/">分页管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态绑定/">动态绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为OJ/">华为OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后缀表达式/">后缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/子网/">子网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串常量/">字符串常量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小端模式/">小端模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用工具/">常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能指针/">智能指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/析构/">析构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/查找/">查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/段式内存管理/">段式内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类型转换/">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网际协议/">网际协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯/">腾讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚函数/">虚函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转义字符/">转义字符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Beautiful-Soup/" style="font-size: 10px;">Beautiful Soup</a> <a href="/tags/C/" style="font-size: 18.57px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/C-11/" style="font-size: 10px;">C++11</a> <a href="/tags/C-小结/" style="font-size: 11.43px;">C++小结</a> <a href="/tags/C-S/" style="font-size: 10px;">C/S</a> <a href="/tags/CIDR/" style="font-size: 10px;">CIDR</a> <a href="/tags/Essential-C/" style="font-size: 10px;">Essential C++</a> <a href="/tags/Git/" style="font-size: 14.29px;">Git</a> <a href="/tags/Gitcafe/" style="font-size: 10px;">Gitcafe</a> <a href="/tags/Github/" style="font-size: 14.29px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Jekyll/" style="font-size: 12.86px;">Jekyll</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MarkdownPad/" style="font-size: 10px;">MarkdownPad</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OSFP/" style="font-size: 10px;">OSFP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Qt/" style="font-size: 11.43px;">Qt</a> <a href="/tags/RIP/" style="font-size: 10px;">RIP</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/UDP/" style="font-size: 10px;">UDP</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/cctype/" style="font-size: 10px;">cctype</a> <a href="/tags/idndef/" style="font-size: 10px;">idndef</a> <a href="/tags/linggle/" style="font-size: 10px;">linggle</a> <a href="/tags/pragma-once/" style="font-size: 10px;">pragma once</a> <a href="/tags/pragma-pack/" style="font-size: 10px;">pragma pack</a> <a href="/tags/python/" style="font-size: 14.29px;">python</a> <a href="/tags/sizeof/" style="font-size: 10px;">sizeof</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/this指针/" style="font-size: 10px;">this指针</a> <a href="/tags/virtual-function-table/" style="font-size: 10px;">virtual function table</a> <a href="/tags/voltile/" style="font-size: 10px;">voltile</a> <a href="/tags/windeployqt/" style="font-size: 10px;">windeployqt</a> <a href="/tags/中缀表达式/" style="font-size: 11.43px;">中缀表达式</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/位域/" style="font-size: 10px;">位域</a> <a href="/tags/内存对齐/" style="font-size: 10px;">内存对齐</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/分页管理/" style="font-size: 10px;">分页管理</a> <a href="/tags/动态绑定/" style="font-size: 10px;">动态绑定</a> <a href="/tags/华为OJ/" style="font-size: 14.29px;">华为OJ</a> <a href="/tags/后缀表达式/" style="font-size: 10px;">后缀表达式</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/子网/" style="font-size: 10px;">子网</a> <a href="/tags/字符串常量/" style="font-size: 10px;">字符串常量</a> <a href="/tags/小端模式/" style="font-size: 10px;">小端模式</a> <a href="/tags/常用工具/" style="font-size: 10px;">常用工具</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 17.14px;">操作系统</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/智能指针/" style="font-size: 10px;">智能指针</a> <a href="/tags/构造函数/" style="font-size: 10px;">构造函数</a> <a href="/tags/析构/" style="font-size: 10px;">析构</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/段式内存管理/" style="font-size: 10px;">段式内存管理</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 11.43px;">爬虫</a> <a href="/tags/算法/" style="font-size: 12.86px;">算法</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/类型转换/" style="font-size: 15.71px;">类型转换</a> <a href="/tags/编程语言/" style="font-size: 11.43px;">编程语言</a> <a href="/tags/网际协议/" style="font-size: 10px;">网际协议</a> <a href="/tags/腾讯/" style="font-size: 10px;">腾讯</a> <a href="/tags/虚函数/" style="font-size: 10px;">虚函数</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/转义字符/" style="font-size: 10px;">转义字符</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/09/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/python-learning/">Python学习</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/Python-sequence/">Python-列表和元组</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/15/python-spider-00/">python爬虫实战</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/14/Beautiful-soup/">Beautiful Soup常用语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

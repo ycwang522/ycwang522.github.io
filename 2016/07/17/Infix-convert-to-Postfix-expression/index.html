@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>中缀表达式转换为后缀表达式 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="使用的数据结构：栈 转换规则：  从左到右依次遍历中缀表达式的每个数字和运算符号。 如果遍历到数字，则输出称为后缀表达式的一部分； 如果遍历到运算符号，则判断当前符号与目前在栈顶的运算符的优先级，是右括号或优先级低于栈顶的元素（乘除优先加减）则栈顶元素依次出栈并输出，并将当前符号进栈，一直到最终输出后缀表达式为止。">
+<meta name="keywords" content="中缀表达式,后缀表达式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中缀表达式转换为后缀表达式">
+<meta property="og:url" content="http://yoursite.com/2016/07/17/Infix-convert-to-Postfix-expression/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用的数据结构：栈 转换规则：  从左到右依次遍历中缀表达式的每个数字和运算符号。 如果遍历到数字，则输出称为后缀表达式的一部分； 如果遍历到运算符号，则判断当前符号与目前在栈顶的运算符的优先级，是右括号或优先级低于栈顶的元素（乘除优先加减）则栈顶元素依次出栈并输出，并将当前符号进栈，一直到最终输出后缀表达式为止。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://www.nowamagic.net/librarys/images/201210/2012_10_22_08.jpg">
+<meta property="og:image" content="http://www.nowamagic.net/librarys/images/201210/2012_10_22_09.jpg">
+<meta property="og:image" content="http://www.nowamagic.net/librarys/images/201210/2012_10_22_10.jpg">
+<meta property="og:image" content="http://www.nowamagic.net/librarys/images/201210/2012_10_22_11.jpg">
+<meta property="og:image" content="http://www.nowamagic.net/librarys/images/201210/2012_10_22_12.jpg">
+<meta property="og:updated_time" content="2016-07-17T03:28:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="中缀表达式转换为后缀表达式">
+<meta name="twitter:description" content="使用的数据结构：栈 转换规则：  从左到右依次遍历中缀表达式的每个数字和运算符号。 如果遍历到数字，则输出称为后缀表达式的一部分； 如果遍历到运算符号，则判断当前符号与目前在栈顶的运算符的优先级，是右括号或优先级低于栈顶的元素（乘除优先加减）则栈顶元素依次出栈并输出，并将当前符号进栈，一直到最终输出后缀表达式为止。">
+<meta name="twitter:image" content="http://www.nowamagic.net/librarys/images/201210/2012_10_22_08.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Infix-convert-to-Postfix-expression" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/17/Infix-convert-to-Postfix-expression/" class="article-date">
+  <time datetime="2016-07-17T03:06:46.000Z" itemprop="datePublished">2016-07-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/数据结构/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      中缀表达式转换为后缀表达式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用的数据结构：栈</p>
+<p>转换规则：</p>
+<blockquote>
+<p>从左到右依次遍历中缀表达式的每个数字和运算符号。</p>
+<p>如果遍历到数字，则输出称为后缀表达式的一部分；</p>
+<p>如果遍历到运算符号，则判断当前符号与目前在栈顶的运算符的优先级，是右括号或优先级低于栈顶的元素（乘除优先加减）则栈顶元素依次出栈并输出，并将当前符号进栈，一直到最终输出后缀表达式为止。</p>
+</blockquote>
+<a id="more"></a>
+<p>以中缀表达式<code>“9+(3-1)*3+10/2”</code>转化为后缀表达式<code>“9 3 1-3*+ 10 2/+”</code>为例说明。</p>
+<ol>
+<li>初始化一空栈，用来对符号进出栈使用。</li>
+<li>第一个字符是数字9，输出9，然后是符号“+”，进栈。<br><img src="http://www.nowamagic.net/librarys/images/201210/2012_10_22_08.jpg" alt=""></li>
+<li>第三个字符是“(”,依然是符号，因其只是左括号，还未配对，故进栈。</li>
+<li><p>第四个字符是数字3，输出，总表达式为9 3,接着是“-”进栈。<br><img src="http://www.nowamagic.net/librarys/images/201210/2012_10_22_09.jpg" alt=""></p>
+</li>
+<li><p>接下来是数字1，输出，总表达式为9 3 1，后面是符号“)”，此时，我们需要去匹配此前的“(”，所以栈顶依次出栈，并输出，直到“(”出栈为止。此时左括号上方只有“-”，因此输出“-”，总的输出表达式为9 3 1 -</p>
+</li>
+<li><p>接着是数字3，输出，总的表达式为9 3 1 - 3 。紧接着是符号<code>“*”</code>，因为此时的栈顶符号为“+”号，优先级低于<code>“*”</code>，因此不输出，进栈。<br><img src="http://www.nowamagic.net/librarys/images/201210/2012_10_22_10.jpg" alt=""></p>
+</li>
+<li><p>之后是符号“+”，此时当前栈顶元素比这个“+”的优先级高，因此栈中元素出栈并输出（没有比“+”号更低的优先级，所以全部出栈），总输出表达式为 9 3 1 - 3 <em> +.然后将当前这个符号“+”进栈。也就是说，前6张图的栈底的“+”是指中缀表达式中开头的9后面那个“+”，而下图中的栈底（也是栈顶）的“+”是指“9+(3-1)</em>3+”中的最后一个“+”。</p>
+</li>
+<li>紧接着数字10，输出，总表达式变为9 3 1-3 * + 10。<br><img src="http://www.nowamagic.net/librarys/images/201210/2012_10_22_11.jpg" alt=""></li>
+<li>最后一个数字2,输出，总的表达式为 9 3 1-3*+ 10 2</li>
+<li>因已经到最后，所以将栈中符号全部出栈并输出。最终输出的后缀表达式结果为 9 3 1-3*+ 10 2/+<br><img src="http://www.nowamagic.net/librarys/images/201210/2012_10_22_12.jpg" alt=""></li>
+</ol>
+<hr>
+<p>转自：<a href="http://www.nowamagic.net/librarys/veda/detail/2307" target="_blank" rel="noopener">http://www.nowamagic.net/librarys/veda/detail/2307</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/17/Infix-convert-to-Postfix-expression/" data-id="cjdfbdzpa0009j4jh9me422ho" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中缀表达式/">中缀表达式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/后缀表达式/">后缀表达式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/17/Non-recursive-traversal-of-binary-tree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          二叉树的非递归遍历
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/11/computer-networks-06/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算机网络（六）：应用层</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-11/">C++11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-小结/">C++小结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-S/">C/S</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIDR/">CIDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essential-C/">Essential C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitcafe/">Gitcafe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkdownPad/">MarkdownPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSFP/">OSFP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RIP/">RIP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cctype/">cctype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idndef/">idndef</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linggle/">linggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-once/">pragma once</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-pack/">pragma pack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sizeof/">sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this指针/">this指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-function-table/">virtual function table</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/voltile/">voltile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windeployqt/">windeployqt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中缀表达式/">中缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/位域/">位域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存对齐/">内存对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分页管理/">分页管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态绑定/">动态绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为OJ/">华为OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后缀表达式/">后缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/子网/">子网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串常量/">字符串常量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小端模式/">小端模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用工具/">常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能指针/">智能指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/析构/">析构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/查找/">查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/段式内存管理/">段式内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类型转换/">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网际协议/">网际协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯/">腾讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚函数/">虚函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转义字符/">转义字符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Beautiful-Soup/" style="font-size: 10px;">Beautiful Soup</a> <a href="/tags/C/" style="font-size: 18.57px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/C-11/" style="font-size: 10px;">C++11</a> <a href="/tags/C-小结/" style="font-size: 11.43px;">C++小结</a> <a href="/tags/C-S/" style="font-size: 10px;">C/S</a> <a href="/tags/CIDR/" style="font-size: 10px;">CIDR</a> <a href="/tags/Essential-C/" style="font-size: 10px;">Essential C++</a> <a href="/tags/Git/" style="font-size: 14.29px;">Git</a> <a href="/tags/Gitcafe/" style="font-size: 10px;">Gitcafe</a> <a href="/tags/Github/" style="font-size: 14.29px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Jekyll/" style="font-size: 12.86px;">Jekyll</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MarkdownPad/" style="font-size: 10px;">MarkdownPad</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OSFP/" style="font-size: 10px;">OSFP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Qt/" style="font-size: 11.43px;">Qt</a> <a href="/tags/RIP/" style="font-size: 10px;">RIP</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/UDP/" style="font-size: 10px;">UDP</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/cctype/" style="font-size: 10px;">cctype</a> <a href="/tags/idndef/" style="font-size: 10px;">idndef</a> <a href="/tags/linggle/" style="font-size: 10px;">linggle</a> <a href="/tags/pragma-once/" style="font-size: 10px;">pragma once</a> <a href="/tags/pragma-pack/" style="font-size: 10px;">pragma pack</a> <a href="/tags/python/" style="font-size: 14.29px;">python</a> <a href="/tags/sizeof/" style="font-size: 10px;">sizeof</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/this指针/" style="font-size: 10px;">this指针</a> <a href="/tags/virtual-function-table/" style="font-size: 10px;">virtual function table</a> <a href="/tags/voltile/" style="font-size: 10px;">voltile</a> <a href="/tags/windeployqt/" style="font-size: 10px;">windeployqt</a> <a href="/tags/中缀表达式/" style="font-size: 11.43px;">中缀表达式</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/位域/" style="font-size: 10px;">位域</a> <a href="/tags/内存对齐/" style="font-size: 10px;">内存对齐</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/分页管理/" style="font-size: 10px;">分页管理</a> <a href="/tags/动态绑定/" style="font-size: 10px;">动态绑定</a> <a href="/tags/华为OJ/" style="font-size: 14.29px;">华为OJ</a> <a href="/tags/后缀表达式/" style="font-size: 10px;">后缀表达式</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/子网/" style="font-size: 10px;">子网</a> <a href="/tags/字符串常量/" style="font-size: 10px;">字符串常量</a> <a href="/tags/小端模式/" style="font-size: 10px;">小端模式</a> <a href="/tags/常用工具/" style="font-size: 10px;">常用工具</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 17.14px;">操作系统</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/智能指针/" style="font-size: 10px;">智能指针</a> <a href="/tags/构造函数/" style="font-size: 10px;">构造函数</a> <a href="/tags/析构/" style="font-size: 10px;">析构</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/段式内存管理/" style="font-size: 10px;">段式内存管理</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 11.43px;">爬虫</a> <a href="/tags/算法/" style="font-size: 12.86px;">算法</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/类型转换/" style="font-size: 15.71px;">类型转换</a> <a href="/tags/编程语言/" style="font-size: 11.43px;">编程语言</a> <a href="/tags/网际协议/" style="font-size: 10px;">网际协议</a> <a href="/tags/腾讯/" style="font-size: 10px;">腾讯</a> <a href="/tags/虚函数/" style="font-size: 10px;">虚函数</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/转义字符/" style="font-size: 10px;">转义字符</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/09/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/python-learning/">Python学习</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/Python-sequence/">Python-列表和元组</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/15/python-spider-00/">python爬虫实战</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/14/Beautiful-soup/">Beautiful Soup常用语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

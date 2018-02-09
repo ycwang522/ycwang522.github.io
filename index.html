@@ -68,6 +68,10 @@
   <time datetime="2018-02-09T01:17:45.309Z" itemprop="datePublished">2018-02-09</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -88,18 +92,570 @@
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/02/09/hello-world/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/02/09/hello-world/" data-id="cjdfbboog0000ykjhrm4lm2ab" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/02/09/hello-world/" data-id="cjdfbdzuq003pj4jho3dq4l9b" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-learning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/03/python-learning/" class="article-date">
+  <time datetime="2016-11-03T08:13:20.000Z" itemprop="datePublished">2016-11-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/03/python-learning/">Python学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h2><ul>
+<li><p>find()方法</p>
+</li>
+<li><p>join()方法:join方法与split()方法相逆，用来在队列中添加元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">seq=[<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>]</span><br><span class="line">sep=<span class="string">'+'</span></span><br><span class="line">sep.join(seq)</span><br><span class="line"><span class="comment">#-----output:-------</span></span><br><span class="line"><span class="number">1</span>+<span class="number">5</span>+<span class="number">5</span>+<span class="number">7</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>lower():返回字符串中的小写字母版</p>
+</li>
+<li><p>replace():返回某字符串的所有匹配项均被替换之后的字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">'This is a string'</span>.replace(<span class="string">'is'</span>,<span class="string">'ezz'</span>)</span><br><span class="line"><span class="comment">#------output:------</span></span><br><span class="line">Thezz ezz a string</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>split()方法：join逆方法。将字符串分隔成序列</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">'1+2+3+4+5'</span>.split(<span class="string">'+'</span>)</span><br><span class="line"><span class="comment">#-------output:-----------</span></span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>strip()方法：返回去除掉两侧空格的字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">'                      International     '</span>.strip()</span><br><span class="line"><span class="comment">#-------output:------------</span></span><br><span class="line">International</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/11/03/python-learning/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/11/03/python-learning/" data-id="cjdfbdzxk005rj4jhxwbbfoa9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Python-sequence" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/25/Python-sequence/" class="article-date">
+  <time datetime="2016-10-25T07:46:16.000Z" itemprop="datePublished">2016-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/25/Python-sequence/">Python-列表和元组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>两者最主要的区别：</p>
+<ul>
+<li>列表可以修改</li>
+<li>元组不可以修改</li>
+</ul>
+<p>序列中的元素可以是数字，可以是字符串，甚至可以是另一个序列。</p>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">edwad = [<span class="string">'Edward'</span>, <span class="number">42</span>]</span><br><span class="line">john = [<span class="string">'John Smith'</span>, <span class="number">50</span>]</span><br><span class="line">database = [edwad, john]</span><br><span class="line"><span class="keyword">print</span> database[<span class="number">0</span>]</span><br><span class="line"><span class="keyword">print</span> database[<span class="number">1</span>]</span><br><span class="line"><span class="keyword">print</span> database</span><br><span class="line"></span><br><span class="line">//运行以上代码，打印如下内容</span><br><span class="line"></span><br><span class="line">[<span class="string">'Edward'</span>, <span class="number">42</span>]</span><br><span class="line">[<span class="string">'John Smith'</span>, <span class="number">50</span>]</span><br><span class="line">[[<span class="string">'Edward'</span>, <span class="number">42</span>], [<span class="string">'John Smith'</span>, <span class="number">50</span>]]</span><br></pre></td></tr></table></figure>
+<h2 id="通用序列操作"><a href="#通用序列操作" class="headerlink" title="通用序列操作"></a>通用序列操作</h2><p>索引，分片，加、乘、检查某个元素是否属于序列成员。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/25/Python-sequence/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/25/Python-sequence/" data-id="cjdfbdzpw000oj4jh7k08uh9g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-spider-00" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/15/python-spider-00/" class="article-date">
+  <time datetime="2016-10-15T02:46:11.000Z" itemprop="datePublished">2016-10-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/15/python-spider-00/">python爬虫实战</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="爬虫分析过程"><a href="#爬虫分析过程" class="headerlink" title="爬虫分析过程"></a>爬虫分析过程</h1><p><img src="https://ituku.tk/di/3J7VW/-2.png" alt="爬虫分析过程"></p>
+<h2 id="待爬取目标分析"><a href="#待爬取目标分析" class="headerlink" title="待爬取目标分析"></a>待爬取目标分析</h2><ul>
+<li>目标：百度百科python词条的相关此条网页——标题及简介</li>
+</ul>
+<ul>
+<li>入口页：<a href="http://baidu.baidu.com/view/21087.htm" target="_blank" rel="noopener">http://baidu.baidu.com/view/21087.htm</a></li>
+</ul>
+<ul>
+<li><p>URL格式：</p>
+<ul>
+<li>词条页面URL：/view/125370.htm</li>
+</ul>
+</li>
+<li><p>数据格式：</p>
+<ul>
+<li>标题：</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;dd class="lemmaWgt-lemmaTitle-title"&gt;&lt;h1&gt;***&lt;/h1&gt;&lt;/dd&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>简介：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="lemma-summary"&gt;***&lt;div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>页面编码：UTF-8</li>
+</ul>
+<h1 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/15/python-spider-00/" data-id="cjdfbdzxb005jj4jh45e3l6jl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Beautiful-soup" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/14/Beautiful-soup/" class="article-date">
+  <time datetime="2016-10-14T07:37:14.000Z" itemprop="datePublished">2016-10-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/14/Beautiful-soup/">Beautiful Soup常用语法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Beautiful-Soup简介"><a href="#Beautiful-Soup简介" class="headerlink" title="Beautiful Soup简介"></a>Beautiful Soup简介</h1><blockquote>
+<p><a href="http://beautifulsoup.readthedocs.io/zh_CN/latest/" target="_blank" rel="noopener">Beautiful Soup</a>是一个可以从HTML或XML文件中提取数据的Python库。它能够通过你喜欢的转换器实现惯用的文档导航，查找，修改文档的方式。Beautiful Soup会帮你节省数小时甚至数天的工作时间。</p>
+</blockquote>
+<h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h1><p>下面的一段HTML代码将作为例子被多次用到.这是<em>爱丽丝梦游仙境的</em>的一段内容(以后内容中简称为 <em>爱丽丝</em> 的文档):</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">html_doc = """</span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span>The Dormouse's story<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>The Dormouse's story<span class="tag">&lt;/<span class="name">b</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"story"</span>&gt;</span>Once upon a time there were three little sisters; and their names were</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://example.com/elsie"</span> <span class="attr">class</span>=<span class="string">"sister"</span> <span class="attr">id</span>=<span class="string">"link1"</span>&gt;</span>Elsie<span class="tag">&lt;/<span class="name">a</span>&gt;</span>,</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://example.com/lacie"</span> <span class="attr">class</span>=<span class="string">"sister"</span> <span class="attr">id</span>=<span class="string">"link2"</span>&gt;</span>Lacie<span class="tag">&lt;/<span class="name">a</span>&gt;</span> and</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://example.com/tillie"</span> <span class="attr">class</span>=<span class="string">"sister"</span> <span class="attr">id</span>=<span class="string">"link3"</span>&gt;</span>Tillie<span class="tag">&lt;/<span class="name">a</span>&gt;</span>;</span><br><span class="line">and they lived at the bottom of a well.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"story"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">"""</span><br></pre></td></tr></table></figure>
+<h2 id="几个简单的浏览结构化数据的方法"><a href="#几个简单的浏览结构化数据的方法" class="headerlink" title="几个简单的浏览结构化数据的方法"></a>几个简单的浏览结构化数据的方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">soup.title</span><br><span class="line"><span class="comment"># &lt;title&gt; The Dormouse's story &lt;/title&gt;</span></span><br><span class="line"></span><br><span class="line">soup.title.name</span><br><span class="line"><span class="comment"># u'title'</span></span><br><span class="line"></span><br><span class="line">soup.title.string</span><br><span class="line"><span class="comment"># u'The Dormouse's story'</span></span><br><span class="line"></span><br><span class="line">soup.title.parent.name</span><br><span class="line"><span class="comment"># u'head'</span></span><br><span class="line"></span><br><span class="line">soup.p</span><br><span class="line"><span class="comment"># &lt;p class="tltle"&gt;&lt;b&gt;The Dormouse's story&lt;/b&gt;&lt;/p&gt;</span></span><br><span class="line"></span><br><span class="line">soup.p[<span class="string">'class'</span>]</span><br><span class="line"><span class="comment"># u'title'</span></span><br><span class="line"></span><br><span class="line">soup.a</span><br><span class="line"><span class="comment"># &lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;</span></span><br><span class="line"></span><br><span class="line">soup.find_all(<span class="string">'a'</span>)</span><br><span class="line"><span class="comment"># [&lt;a class="sister" href="http://example.com/elsie" id="link1"&gt;Elsie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/lacie" id="link2"&gt;Lacie&lt;/a&gt;,</span></span><br><span class="line"><span class="comment">#  &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;]</span></span><br><span class="line"></span><br><span class="line">soup.find(id=<span class="string">"link3"</span>)</span><br><span class="line"><span class="comment"># &lt;a class="sister" href="http://example.com/tillie" id="link3"&gt;Tillie&lt;/a&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/14/Beautiful-soup/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/14/Beautiful-soup/" data-id="cjdfbdzoc0004j4jhlnzhr3n3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/12/python-01/" class="article-date">
+  <time datetime="2016-10-12T13:01:38.000Z" itemprop="datePublished">2016-10-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/python/">python</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/12/python-01/">python入门学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="print命令和逗号"><a href="#print命令和逗号" class="headerlink" title="print命令和逗号"></a>print命令和逗号</h2><p>print “Enter your name:”</p>
+<p>然后使用raw_input()函数得到用户的相应，someName = raw_input() 。</p>
+<p>运行代码，键入名字，会得到“Enter your name:”和Name并未在同一行。如果希望在同一行，只需要在printf末尾放一个逗号即可。</p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="成员运算符"><a href="#成员运算符" class="headerlink" title="成员运算符"></a>成员运算符</h3><ul>
+<li>in 如果在指定的序列中找到值返回true，否则返回false</li>
+<li>not in 如果在指定的序列中没有找到值则返回true，否则返回false</li>
+</ul>
+<h3 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h3><ul>
+<li>is 是判断两个标识符是否是引用自一个对象</li>
+<li>is not 判断两个标识符是不是引用自不同对象</li>
+</ul>
+<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><p>python不支持switch语句，多个条件判断，只能用elif实现。</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/10/12/python-01/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/10/12/python-01/" data-id="cjdfbdzwg004wj4jhggphkrke" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-code-rules" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/17/code-rules/" class="article-date">
+  <time datetime="2016-09-17T03:27:46.000Z" itemprop="datePublished">2016-09-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/17/code-rules/">《高质量C++编程指南》读书笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>使用visual studio 2013的过程中，除了代码高亮，代码自动缩进等功能让人兴奋不已之外，代码行内的自动加空格也是一大亮点，一直在写代码的过程中琢磨它的行内代码规则，自己也总结了一些，终究是不够全面，而且市面上的书对代码格式规范总结的书也不多。直到看了林锐老师《高质量C++编程指南》，书中对这一部分做了很全面的总结。<br>对这一部分做了一个笔记，以便于对代码格式规范学习和时常查阅。</p>
+</blockquote>
+<h2 id="代码行内的空格："><a href="#代码行内的空格：" class="headerlink" title="代码行内的空格："></a>代码行内的空格：</h2><ul>
+<li><p>关键字之后留空格。</p>
+<ul>
+<li>像<code>const、virtual、inline、case</code> 等关键词之后至少留一个空格，否则无法辨析关键字。</li>
+<li>像<code>if、for、while</code>等关键字之后应留一个空格再跟左括号’(‘,以突出关键字。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>函数名之后不留空格，紧跟左括号，以与关键字区别。</p>
+</li>
+<li><p><code>‘（’向后紧跟，而‘）’、‘，’、‘；’</code>向前紧跟，紧跟处不留空格。</p>
+</li>
+<li><p>‘,’ 之后要留空格，如<code>Func(x, y, z)</code>。如果‘；’不是一行的结束符，其后要留空格，如<code>for (initialization; condition; update)</code>.</p>
+</li>
+<li><p>赋值操作符、比较操作符、算术操作符、逻辑操作符和位域操作符，比如<code>“=”、“+=”、“&gt;=”、“+”、“*”、“%”、“&amp;&amp;”、“&lt;&lt;”、“^”</code>等二元操作符的前后应加空格。</p>
+</li>
+<li><p>一元操作符如<code>“!”、“~”、“++”、“--”、“&amp;”</code>（地址运算符）等前后不加空格。</p>
+</li>
+<li><p>像<code>“［］”、“.”、“-&gt;”</code>这类操作符前后不加空格</p>
+</li>
+<li><p>对于表达式比较长的for语句和if语句，为了紧凑起见可以适当地去掉一些空格，如 <code>for (i=0; i&lt;10; i++)和if ((a&lt;=b) &amp;&amp; (c&lt;=d))</code></p>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/17/code-rules/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/17/code-rules/" data-id="cjdfbdzrw001uj4jh5854xj1e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码规范/">代码规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HuaWei-OJ-Seris-04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/06/HuaWei-OJ-Seris-04/" class="article-date">
+  <time datetime="2016-09-06T02:30:34.000Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/06/HuaWei-OJ-Seris-04/">华为OJ系列（四）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-名字的漂亮度"><a href="#1-名字的漂亮度" class="headerlink" title="1. 名字的漂亮度"></a>1. 名字的漂亮度</h1><p>题目描述</p>
+<blockquote>
+<p>给出一个名字，该名字有26个字符串组成，定义这个字符串的“漂亮度”是其所有字母“漂亮度”的总和。<br>每个字母都有一个“漂亮度”，范围在1到26之间。没有任何两个字母拥有相同的“漂亮度”。字母忽略大小写。<br>给出多个名字，计算每个名字最大可能的“漂亮度”。</p>
+</blockquote>
+<p>输入描述:</p>
+<blockquote>
+<p>整数N，后续N个名字</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>每个名称可能的最大漂亮程度</p>
+</blockquote>
+<p>输入例子:</p>
+<blockquote>
+<p>2<br>zhangsan<br>lisi</p>
+</blockquote>
+<p>输出例子:</p>
+<blockquote>
+<p>192<br>101</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2016/09/06/HuaWei-OJ-Seris-04/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/09/06/HuaWei-OJ-Seris-04/" data-id="cjdfbdzos0005j4jh3ecwv5s3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/华为OJ/">华为OJ</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-some-problems-01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/31/some-problems-01/" class="article-date">
+  <time datetime="2016-08-31T01:13:18.000Z" itemprop="datePublished">2016-08-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C-面试/">C++面试</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/31/some-problems-01/">笔试中应该注意的坑之基础篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-if语句"><a href="#1-if语句" class="headerlink" title="1. if语句"></a>1. if语句</h1><p>if语句中的坑主要是if语句与各种零值的比较语句写法：</p>
+<h2 id="布尔变量与零值的比较"><a href="#布尔变量与零值的比较" class="headerlink" title="布尔变量与零值的比较"></a>布尔变量与零值的比较</h2><p>布尔变量的语义，零值为“假”（记为FALSE），任何非零值都是“真”（记为TRUE）。TRUE的值究竟是什么并没有统一标准。例如VC++中将TRUE定义为1，而Visual Basic则将TRUE定义为-1.所以不能将布尔变量直接与TRUE，FALSE或者1、0进行比较。</p>
+<p>比较良好的写法如下：</p>
+<p>比如有一bool型变量flag，bool flag，判断flag与零值的比较的语句如下：</p>
+<pre><code>if(flag)    //如果flag为真则执行if语句
+</code></pre><p>以下写法均为不良风格，例如：</p>
+<pre><code>if (flag == TRUE)   
+if (flag == 1 )   
+if (flag == FALSE)   
+if (flag == 0) 
+</code></pre><h2 id="整型变量与零值比较"><a href="#整型变量与零值比较" class="headerlink" title="整型变量与零值比较"></a>整型变量与零值比较</h2><p>例如 int value与零值的比较可以写成如下：</p>
+<pre><code>if(value == 0)
+if(value != 0)
+</code></pre><p>而不可魔方布尔变量风格写成</p>
+<pre><code>if(value)
+if(!value)
+</code></pre><h2 id="浮点变量与零值比较"><a href="#浮点变量与零值比较" class="headerlink" title="浮点变量与零值比较"></a>浮点变量与零值比较</h2><p>如果有一double型变量x，其与零值的比较可以写为如下语句：</p>
+<pre><code>if(x-0.0&gt;1e-6)    //1e-6是允许的精度范围
+if ((x&gt;=-EPSINON) &amp;&amp; (x&lt;=EPSINON)) 
+</code></pre><p>其中EPSINON 是允许的误差（即精度）</p>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/31/some-problems-01/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/31/some-problems-01/" data-id="cjdfbdzz6006ij4jhu3183bfz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-some-functions-about-memory-operator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/28/some-functions-about-memory-operator/" class="article-date">
+  <time datetime="2016-08-28T13:29:53.000Z" itemprop="datePublished">2016-08-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/28/some-functions-about-memory-operator/">memcpy, memset,memmove区别分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-memcpy"><a href="#1-memcpy" class="headerlink" title="1. memcpy"></a>1. memcpy</h1><p>C和C++使用的内存拷贝函数，mencpy函数的功能是从源src所指的<strong>内存地址的起始位置</strong>开始拷贝<strong>n个字节</strong>到目标<strong>dest所指的内存地址的起始位置</strong>中。</p>
+<p>头文件：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>返回值<br>返回指向dest的指针<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span>* s = <span class="string">"GoldenGlobalView"</span>;</span><br><span class="line">	<span class="keyword">char</span> d[<span class="number">20</span>];</span><br><span class="line">	<span class="comment">//clrscr();</span></span><br><span class="line">	<span class="built_in">memcpy</span>(d, s, (<span class="built_in">strlen</span>(s) + <span class="number">1</span>));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, d);</span><br><span class="line">	getchar();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>输出结果：GoldenGlobalView<br>
+        
+          <p class="article-more-link">
+            <a href="/2016/08/28/some-functions-about-memory-operator/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/28/some-functions-about-memory-operator/" data-id="cjdfbdzz0006fj4jhb74umogt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+
     </footer>
   </div>
   
@@ -109,23 +665,49 @@
   
 
 
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
 </section>
         
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-11/">C++11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-小结/">C++小结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-S/">C/S</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIDR/">CIDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essential-C/">Essential C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitcafe/">Gitcafe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkdownPad/">MarkdownPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSFP/">OSFP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RIP/">RIP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cctype/">cctype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idndef/">idndef</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linggle/">linggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-once/">pragma once</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-pack/">pragma pack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sizeof/">sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this指针/">this指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-function-table/">virtual function table</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/voltile/">voltile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windeployqt/">windeployqt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中缀表达式/">中缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/位域/">位域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存对齐/">内存对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分页管理/">分页管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态绑定/">动态绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为OJ/">华为OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后缀表达式/">后缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/子网/">子网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串常量/">字符串常量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小端模式/">小端模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用工具/">常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能指针/">智能指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/析构/">析构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/查找/">查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/段式内存管理/">段式内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类型转换/">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网际协议/">网际协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯/">腾讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚函数/">虚函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转义字符/">转义字符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Beautiful-Soup/" style="font-size: 10px;">Beautiful Soup</a> <a href="/tags/C/" style="font-size: 18.57px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/C-11/" style="font-size: 10px;">C++11</a> <a href="/tags/C-小结/" style="font-size: 11.43px;">C++小结</a> <a href="/tags/C-S/" style="font-size: 10px;">C/S</a> <a href="/tags/CIDR/" style="font-size: 10px;">CIDR</a> <a href="/tags/Essential-C/" style="font-size: 10px;">Essential C++</a> <a href="/tags/Git/" style="font-size: 14.29px;">Git</a> <a href="/tags/Gitcafe/" style="font-size: 10px;">Gitcafe</a> <a href="/tags/Github/" style="font-size: 14.29px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Jekyll/" style="font-size: 12.86px;">Jekyll</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MarkdownPad/" style="font-size: 10px;">MarkdownPad</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OSFP/" style="font-size: 10px;">OSFP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Qt/" style="font-size: 11.43px;">Qt</a> <a href="/tags/RIP/" style="font-size: 10px;">RIP</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/UDP/" style="font-size: 10px;">UDP</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/cctype/" style="font-size: 10px;">cctype</a> <a href="/tags/idndef/" style="font-size: 10px;">idndef</a> <a href="/tags/linggle/" style="font-size: 10px;">linggle</a> <a href="/tags/pragma-once/" style="font-size: 10px;">pragma once</a> <a href="/tags/pragma-pack/" style="font-size: 10px;">pragma pack</a> <a href="/tags/python/" style="font-size: 14.29px;">python</a> <a href="/tags/sizeof/" style="font-size: 10px;">sizeof</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/this指针/" style="font-size: 10px;">this指针</a> <a href="/tags/virtual-function-table/" style="font-size: 10px;">virtual function table</a> <a href="/tags/voltile/" style="font-size: 10px;">voltile</a> <a href="/tags/windeployqt/" style="font-size: 10px;">windeployqt</a> <a href="/tags/中缀表达式/" style="font-size: 11.43px;">中缀表达式</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/位域/" style="font-size: 10px;">位域</a> <a href="/tags/内存对齐/" style="font-size: 10px;">内存对齐</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/分页管理/" style="font-size: 10px;">分页管理</a> <a href="/tags/动态绑定/" style="font-size: 10px;">动态绑定</a> <a href="/tags/华为OJ/" style="font-size: 14.29px;">华为OJ</a> <a href="/tags/后缀表达式/" style="font-size: 10px;">后缀表达式</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/子网/" style="font-size: 10px;">子网</a> <a href="/tags/字符串常量/" style="font-size: 10px;">字符串常量</a> <a href="/tags/小端模式/" style="font-size: 10px;">小端模式</a> <a href="/tags/常用工具/" style="font-size: 10px;">常用工具</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 17.14px;">操作系统</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/智能指针/" style="font-size: 10px;">智能指针</a> <a href="/tags/构造函数/" style="font-size: 10px;">构造函数</a> <a href="/tags/析构/" style="font-size: 10px;">析构</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/段式内存管理/" style="font-size: 10px;">段式内存管理</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 11.43px;">爬虫</a> <a href="/tags/算法/" style="font-size: 12.86px;">算法</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/类型转换/" style="font-size: 15.71px;">类型转换</a> <a href="/tags/编程语言/" style="font-size: 11.43px;">编程语言</a> <a href="/tags/网际协议/" style="font-size: 10px;">网际协议</a> <a href="/tags/腾讯/" style="font-size: 10px;">腾讯</a> <a href="/tags/虚函数/" style="font-size: 10px;">虚函数</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/转义字符/" style="font-size: 10px;">转义字符</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
   </div>
 
@@ -139,6 +721,22 @@
         
           <li>
             <a href="/2018/02/09/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/python-learning/">Python学习</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/Python-sequence/">Python-列表和元组</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/15/python-spider-00/">python爬虫实战</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/14/Beautiful-soup/">Beautiful Soup常用语法</a>
           </li>
         
       </ul>

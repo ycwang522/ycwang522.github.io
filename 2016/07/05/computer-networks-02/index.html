@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>计算机网络（二）：网际协议IP | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="网络层提供的两种服务因特网的设计思路：网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。网络层不提供服务质量的承诺。  这种设计思路可以使网络中的路由器可以做的比较简单，而且价格低廉。如果主机中的进程之间的通信需要是可靠的，就由网络的主机中的运输层负责（包括差错处理、流量控制等）。采用这种设计的好处是：网络的造价降低，运行方式灵活，能适应各种应用。  数据报数据报是通过网络传输的数">
+<meta name="keywords" content="网际协议,IP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络（二）：网际协议IP">
+<meta property="og:url" content="http://yoursite.com/2016/07/05/computer-networks-02/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="网络层提供的两种服务因特网的设计思路：网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。网络层不提供服务质量的承诺。  这种设计思路可以使网络中的路由器可以做的比较简单，而且价格低廉。如果主机中的进程之间的通信需要是可靠的，就由网络的主机中的运输层负责（包括差错处理、流量控制等）。采用这种设计的好处是：网络的造价降低，运行方式灵活，能适应各种应用。  数据报数据报是通过网络传输的数">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://ituku.tk/di/5BAJB/ip.png">
+<meta property="og:image" content="https://ituku.tk/di/NH9K0/ip-1-.png">
+<meta property="og:image" content="https://ituku.tk/di/ZMNBZ/1.png">
+<meta property="og:image" content="https://ituku.tk/di/PXYKI/2.png">
+<meta property="og:image" content="https://ituku.tk/di/LJB6G/rap.png">
+<meta property="og:image" content="https://ituku.tk/di/GXQ42/1.jpg">
+<meta property="og:updated_time" content="2016-07-12T02:27:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络（二）：网际协议IP">
+<meta name="twitter:description" content="网络层提供的两种服务因特网的设计思路：网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。网络层不提供服务质量的承诺。  这种设计思路可以使网络中的路由器可以做的比较简单，而且价格低廉。如果主机中的进程之间的通信需要是可靠的，就由网络的主机中的运输层负责（包括差错处理、流量控制等）。采用这种设计的好处是：网络的造价降低，运行方式灵活，能适应各种应用。  数据报数据报是通过网络传输的数">
+<meta name="twitter:image" content="https://ituku.tk/di/5BAJB/ip.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-computer-networks-02" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/05/computer-networks-02/" class="article-date">
+  <time datetime="2016-07-05T13:04:12.000Z" itemprop="datePublished">2016-07-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机网络/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机网络（二）：网际协议IP
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="网络层提供的两种服务"><a href="#网络层提供的两种服务" class="headerlink" title="网络层提供的两种服务"></a>网络层提供的两种服务</h2><p>因特网的设计思路：<strong>网络层向上只提供简单灵活的、无连接的、尽最大努力交付的数据报服务。网络层不提供服务质量的承诺。</strong></p>
+<blockquote>
+<p>这种设计思路可以使网络中的路由器可以做的比较简单，而且价格低廉。如果主机中的进程之间的通信需要是可靠的，就由网络的主机中的运输层负责（包括差错处理、流量控制等）。<br>采用这种设计的好处是：网络的造价降低，运行方式灵活，能适应各种应用。</p>
+</blockquote>
+<h3 id="数据报"><a href="#数据报" class="headerlink" title="数据报"></a>数据报</h3><p>数据报是<strong>通过网络传输的数据的基本单元，包含一个报头和数据本身。</strong></p>
+<ul>
+<li>报头：描述数据的目的地以及和其他数据之间的关系</li>
+<li>数据</li>
+</ul>
+<p>数据报是完备的、独立的数据实体，该实体携带要从源计算机传递到目的计算机的信息，该信息不依赖于以前在源计算机和目的计算机以及传输网络间的交换。</p>
+<p>在IP网络中传输的数据单位称为IP数据包。<br>IP数据包的报头至少为20个字节，其中包括版本号,报头长度，服务类型，数据报总长度，标识，标志，片偏移，生存时间，协议和头部校验和，源，目的IP地址，先项。</p>
+<a id="more"></a>
+<h2 id="网际协议IP"><a href="#网际协议IP" class="headerlink" title="网际协议IP"></a>网际协议IP</h2><p>与IP配套使用的协议还有四个</p>
+<ul>
+<li>地址解析协议ARP</li>
+<li>逆地址解析协议RARP</li>
+<li>网际控制报文协议ICMP</li>
+<li>网际组管理协议IGMP</li>
+</ul>
+<p>在IP网络层，其有如下关系：<br><img src="https://ituku.tk/di/5BAJB/ip.png" alt=""></p>
+<center><strong>图1.网际协议IP及其配套协议</strong></center>
+
+<p>上图中有两点需要注意：</p>
+<ul>
+<li>ICMP和IGMP画在了IP的上部，是因为它们需要使用IP协议</li>
+<li>ARP和RARP画在了IP下边，因为IP经常要使用这两个协议</li>
+</ul>
+<p>TCP/IP体系中的网络层通常称为<strong>网际层，或IP层。</strong></p>
+<p>将网络互联起来需要一些设备：</p>
+<ul>
+<li>物理层使用的中间设备是<strong>转发器（repeater）</strong></li>
+<li>数据链路层使用的中间设备叫做<strong>网桥或者桥接器（bridge）</strong></li>
+<li>网络层使用的中间设备叫做<strong>路由器（router）</strong></li>
+<li>网络层以上使用的中间设备叫做<strong>网关（gateway）</strong></li>
+</ul>
+<h3 id="分类的IP地址"><a href="#分类的IP地址" class="headerlink" title="分类的IP地址"></a>分类的IP地址</h3><h4 id="IP地址及其表示方法"><a href="#IP地址及其表示方法" class="headerlink" title="IP地址及其表示方法"></a>IP地址及其表示方法</h4><p>整个的因特网就是一个单一的、抽象的网络。<br>IP地址就是给因特网上的每一个主机（或路由器）的每一个接口分配一个在全世界范围是唯一的32位的标识符。</p>
+<p>IPv4的地址长度为32位，用<strong>点分十进制</strong>表示。<br>通常的格式为X.X.X.X，其中每个X为8位，每个X的值为0~255.</p>
+<p>分类的IP地址：将IP地址划分为若干个固定类，每一类地址都由两个固定长度的字段组成：</p>
+<ul>
+<li>第一个字段是<strong>网络号</strong>，标志主机所连接到的网络。一个网络号再整个因特网范围内必须是唯一的。</li>
+<li>第二个字段是<strong>主机号</strong>，标志该主机。一个主机号在网络号所指明的范围内必须是唯一的。</li>
+</ul>
+<p>由此可见，<strong>一个IP地址在整个因特网范围内是唯一的。</strong></p>
+<p>这种两级IP地址可以记为：</p>
+<pre><code>IP地址::={&lt;网络号&gt;,&lt;主机号&gt;}
+</code></pre><p>其中的<code>::=</code>表示“<strong>定义为</strong>”。</p>
+<p><img src="https://ituku.tk/di/NH9K0/ip-1-.png" alt=""></p>
+<center><strong>图2.IP地址中的网络号字段和主机号字段</strong></center>
+
+<p>其中：</p>
+<ul>
+<li>A、B和C类地址的网络号字段分别为1、2和3个字节长</li>
+<li>三类的主机号又分别为3、2和1个字节长。</li>
+<li>D类地址（前4位是1110）用于多播。</li>
+<li>E类地址保留为今后使用</li>
+</ul>
+<p>A类地址的网络号第一位为0，其余7位可以分配。<br>因此A类地址共有128块，每一块net ID不同。<br>第一块覆盖的地址范围为：0.0.0.0~0.255.255.255（net ID=0）<br>第二块覆盖的地址范围为：1.0.0.0~1.255.255.255（net ID=1）<br>最后一块覆盖的地址范围为：127.0.0.0~127.255.255.255（net ID=127）<br>由于网络号为全0的地址和首位为0，其余全为1的A类地址留作特殊用途，其余126块可以分配。<br>所有A类IP地址的网络只有126个。<br>使用A类IP的网络称为A类网络。</p>
+<p><strong>IP地址的一些重要特点：</strong></p>
+<ul>
+<li>每一个IP地址都由网络号和主机号两部分组成<ul>
+<li>IP地址管理分配IP时只分配网络号，剩下的主机号则由得到该网络的号的单位执行分配。</li>
+<li>路由器仅根据目的主机所连接的网络号来转发分组</li>
+</ul>
+</li>
+<li>IP地址是标志一个主机和一条链路的接口</li>
+<li>一个网络是指具有相同网络号net-ID的主机的集合</li>
+<li>IP地址中，所有分配到网络号的网络都是平等的</li>
+</ul>
+<p>对于互联网中的IP地址，有以下需要注意的：</p>
+<ul>
+<li>在同一个局域网上的主机或路由器的IP地址中的网络号必须是相同的</li>
+<li>用网桥互联的网段仍然是一个局域网</li>
+<li>路由器总是具有两个或两个以上的IP地址</li>
+<li>当两个路由器直接相连时，在连线两端的接口处，可以分配也可以不分配IP地址。现在为了节省IP资源，常常不分配IP地址。</li>
+</ul>
+<h3 id="IP地址与硬件地址"><a href="#IP地址与硬件地址" class="headerlink" title="IP地址与硬件地址"></a>IP地址与硬件地址</h3><p>物理地址是<strong>数据链路层和物理层</strong>使用的地址，而IP地址是网络层和以上各层使用的地址，是一种逻辑地址。</p>
+<blockquote>
+<p>发送数据时，数据从高层往下层传输，当传送到数据链路层时，数据链路层会将IP数据报封装成MAC帧。MAC帧在传送时使用的源地址和目的地址都是硬件地址，这两个硬件地址都写在ＭＡＣ帧的首部中。</p>
+</blockquote>
+<p><strong>IP地址放在IP数据报的首部，硬件地址则放在MAC帧的首部。</strong><br><strong>在网络层和网络层以上使用的是IP地址，而数据链路层及以下使用的是硬件地址。</strong></p>
+<p>有如下模型，三个局域网使用两个路由器R1和R2连接起来。主机H1要和主机H2通信。这两个主机的IP地址分别是IP1和IP2，而他们的硬件地址分别是HA1和HA2.</p>
+<p>通信的路径是：H1-&gt;经过R1转发-&gt;在经过R2转发-&gt;H2.<br>路由器R1因同时连接到两个局域网上，有两个硬件地址，即HA3和HA4。<br>同理，路由器有两个硬件地址HA5和HA6.</p>
+<p><img src="https://ituku.tk/di/ZMNBZ/1.png" alt=""><br><img src="https://ituku.tk/di/PXYKI/2.png" alt=""></p>
+<center><strong>图3.从不同层次看IP地址和硬件地址</strong></center><br><center><strong>上图：网络配置；下图，不同层次，不同区间的源地址和目的地址</strong></center>
+
+
+<p>需要强调的是：</p>
+<ul>
+<li>IP层抽象的互联网上只能看到IP数据报</li>
+<li>局域网的链路层，只能看到MAC帧。IP数据报被封装在MAC帧中。</li>
+<li>尽管互联在一起的网络的硬件地址体系不同，但<strong>IP层抽象的互联网却屏蔽了下层这些很复杂的细节。只要我们在网络层上讨论问题，就能使用统一的、抽象的IP地址研究主机和主机或路由器之间的通信</strong></li>
+</ul>
+<h3 id="地址解析协议ARP和逆地址解析协议RARP"><a href="#地址解析协议ARP和逆地址解析协议RARP" class="headerlink" title="地址解析协议ARP和逆地址解析协议RARP"></a>地址解析协议ARP和逆地址解析协议RARP</h3><p>ARP可以通过IP地址找出相应的物理地址。<br>RARP相反。<br><img src="https://ituku.tk/di/LJB6G/rap.png" alt=""></p>
+<center><strong>图4.ARP和RARP协议的作用</strong></center>
+
+<p><strong>地址解析协议ARP的工作流程</strong>：</p>
+<blockquote>
+<p>1.ARP进程在本局域网上广播发送一个ARP请求分组；<br>2.在本局域网上所有主机上运行的ARP进程都能收到此ARP请求分组；<br>3.主机B在ARP分组中见到自己的IP地址，就向A发送ARP响应分组，并写入自己的硬件地址；<br>4.主机A收到B的ARP响应分组后，就在其ARP高速缓存中写入主机B的IP地址到硬件地址的映射。</p>
+</blockquote>
+<p>RARP协议：逆地址协议，允许局域网的物理机器从网关服务器的ARP表或者缓存上请求其IP地址。</p>
+<h3 id="IP数据报的格式"><a href="#IP数据报的格式" class="headerlink" title="IP数据报的格式"></a>IP数据报的格式</h3><p>IP数据报能够说明IP协议都能具有什么样的功能。</p>
+<p>TCP/IP标准中，数据格式常常以32位为单位来描述，如下图所示是IP数据报的完整格式。</p>
+<p>IP数据报包括<strong>首部和数据部分</strong><br>其中，首部包含<strong>固定部分和可变部分</strong>。<br>固定部分占用20个字节。<br><img src="https://ituku.tk/di/GXQ42/1.jpg" alt=""></p>
+<center><strong>图5.IP数据报的格式</strong></center>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/05/computer-networks-02/" data-id="cjdfbdzsh0027j4jh6zr2mvxm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IP/">IP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网际协议/">网际协议</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/06/computer-networks-03/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          计算机网络（三）：划分子网和构造超网
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/04/computer-networks-01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算机网络（一）：计算机网络概述</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-11/">C++11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-小结/">C++小结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-S/">C/S</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIDR/">CIDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essential-C/">Essential C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitcafe/">Gitcafe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkdownPad/">MarkdownPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSFP/">OSFP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RIP/">RIP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cctype/">cctype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idndef/">idndef</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linggle/">linggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-once/">pragma once</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-pack/">pragma pack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sizeof/">sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this指针/">this指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-function-table/">virtual function table</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/voltile/">voltile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windeployqt/">windeployqt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中缀表达式/">中缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/位域/">位域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存对齐/">内存对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分页管理/">分页管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态绑定/">动态绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为OJ/">华为OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后缀表达式/">后缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/子网/">子网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串常量/">字符串常量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小端模式/">小端模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用工具/">常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能指针/">智能指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/析构/">析构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/查找/">查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/段式内存管理/">段式内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类型转换/">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网际协议/">网际协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯/">腾讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚函数/">虚函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转义字符/">转义字符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Beautiful-Soup/" style="font-size: 10px;">Beautiful Soup</a> <a href="/tags/C/" style="font-size: 18.57px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/C-11/" style="font-size: 10px;">C++11</a> <a href="/tags/C-小结/" style="font-size: 11.43px;">C++小结</a> <a href="/tags/C-S/" style="font-size: 10px;">C/S</a> <a href="/tags/CIDR/" style="font-size: 10px;">CIDR</a> <a href="/tags/Essential-C/" style="font-size: 10px;">Essential C++</a> <a href="/tags/Git/" style="font-size: 14.29px;">Git</a> <a href="/tags/Gitcafe/" style="font-size: 10px;">Gitcafe</a> <a href="/tags/Github/" style="font-size: 14.29px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Jekyll/" style="font-size: 12.86px;">Jekyll</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MarkdownPad/" style="font-size: 10px;">MarkdownPad</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OSFP/" style="font-size: 10px;">OSFP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Qt/" style="font-size: 11.43px;">Qt</a> <a href="/tags/RIP/" style="font-size: 10px;">RIP</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/UDP/" style="font-size: 10px;">UDP</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/cctype/" style="font-size: 10px;">cctype</a> <a href="/tags/idndef/" style="font-size: 10px;">idndef</a> <a href="/tags/linggle/" style="font-size: 10px;">linggle</a> <a href="/tags/pragma-once/" style="font-size: 10px;">pragma once</a> <a href="/tags/pragma-pack/" style="font-size: 10px;">pragma pack</a> <a href="/tags/python/" style="font-size: 14.29px;">python</a> <a href="/tags/sizeof/" style="font-size: 10px;">sizeof</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/this指针/" style="font-size: 10px;">this指针</a> <a href="/tags/virtual-function-table/" style="font-size: 10px;">virtual function table</a> <a href="/tags/voltile/" style="font-size: 10px;">voltile</a> <a href="/tags/windeployqt/" style="font-size: 10px;">windeployqt</a> <a href="/tags/中缀表达式/" style="font-size: 11.43px;">中缀表达式</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/位域/" style="font-size: 10px;">位域</a> <a href="/tags/内存对齐/" style="font-size: 10px;">内存对齐</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/分页管理/" style="font-size: 10px;">分页管理</a> <a href="/tags/动态绑定/" style="font-size: 10px;">动态绑定</a> <a href="/tags/华为OJ/" style="font-size: 14.29px;">华为OJ</a> <a href="/tags/后缀表达式/" style="font-size: 10px;">后缀表达式</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/子网/" style="font-size: 10px;">子网</a> <a href="/tags/字符串常量/" style="font-size: 10px;">字符串常量</a> <a href="/tags/小端模式/" style="font-size: 10px;">小端模式</a> <a href="/tags/常用工具/" style="font-size: 10px;">常用工具</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 17.14px;">操作系统</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/智能指针/" style="font-size: 10px;">智能指针</a> <a href="/tags/构造函数/" style="font-size: 10px;">构造函数</a> <a href="/tags/析构/" style="font-size: 10px;">析构</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/段式内存管理/" style="font-size: 10px;">段式内存管理</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 11.43px;">爬虫</a> <a href="/tags/算法/" style="font-size: 12.86px;">算法</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/类型转换/" style="font-size: 15.71px;">类型转换</a> <a href="/tags/编程语言/" style="font-size: 11.43px;">编程语言</a> <a href="/tags/网际协议/" style="font-size: 10px;">网际协议</a> <a href="/tags/腾讯/" style="font-size: 10px;">腾讯</a> <a href="/tags/虚函数/" style="font-size: 10px;">虚函数</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/转义字符/" style="font-size: 10px;">转义字符</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/09/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/python-learning/">Python学习</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/Python-sequence/">Python-列表和元组</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/15/python-spider-00/">python爬虫实战</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/14/Beautiful-soup/">Beautiful Soup常用语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

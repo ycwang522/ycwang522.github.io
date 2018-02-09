@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>计算机网络（六）：应用层 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="应用层整个因特网、硬件以及软件的设计和开发就是为应用层提供服务。 因特网的两个应用类型：  传统类型：客户-服务器模式（client-server-paradigm） 新类型：对等模式（peer-to-peer paradigm）  应用层模式提出：两个在不同地点的主机程序需要通过因特网基础设施彼此发送报文。然而，两者的关系应该清楚。是两者都应该能够请求和提供服务吗？还是应用程序仅仅实现这两种功能">
+<meta name="keywords" content="HTTP,C&#x2F;S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络（六）：应用层">
+<meta property="og:url" content="http://yoursite.com/2016/07/11/computer-networks-06/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="应用层整个因特网、硬件以及软件的设计和开发就是为应用层提供服务。 因特网的两个应用类型：  传统类型：客户-服务器模式（client-server-paradigm） 新类型：对等模式（peer-to-peer paradigm）  应用层模式提出：两个在不同地点的主机程序需要通过因特网基础设施彼此发送报文。然而，两者的关系应该清楚。是两者都应该能够请求和提供服务吗？还是应用程序仅仅实现这两种功能">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2016-07-17T09:30:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络（六）：应用层">
+<meta name="twitter:description" content="应用层整个因特网、硬件以及软件的设计和开发就是为应用层提供服务。 因特网的两个应用类型：  传统类型：客户-服务器模式（client-server-paradigm） 新类型：对等模式（peer-to-peer paradigm）  应用层模式提出：两个在不同地点的主机程序需要通过因特网基础设施彼此发送报文。然而，两者的关系应该清楚。是两者都应该能够请求和提供服务吗？还是应用程序仅仅实现这两种功能">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-computer-networks-06" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/11/computer-networks-06/" class="article-date">
+  <time datetime="2016-07-11T14:20:43.000Z" itemprop="datePublished">2016-07-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/计算机网络/">计算机网络</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      计算机网络（六）：应用层
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>整个因特网、硬件以及软件的设计和开发就是为应用层提供服务。</p>
+<p>因特网的两个应用类型：</p>
+<ul>
+<li>传统类型：客户-服务器模式（client-server-paradigm）</li>
+<li>新类型：对等模式（peer-to-peer paradigm）</li>
+</ul>
+<h2 id="应用层模式"><a href="#应用层模式" class="headerlink" title="应用层模式"></a>应用层模式</h2><p>提出：两个在不同地点的主机程序需要通过因特网基础设施彼此发送报文。然而，两者的关系应该清楚。是两者都应该能够请求和提供服务吗？还是应用程序仅仅实现这两种功能中的一个？</p>
+<a id="more"></a>
+<h2 id="新模式：对等（p2p模式）"><a href="#新模式：对等（p2p模式）" class="headerlink" title="新模式：对等（p2p模式）"></a>新模式：对等（p2p模式）</h2><p>连接到因特网的计算机既可以接受服务，也可以提供服务。</p>
+<p>对等模式无需一直运行和维护昂贵的服务器，它是容易扩展且经济划算的。</p>
+<p>其存在的主要挑战是安全问题，在分布式服务之间创建安全通信比在那些由专用服务器控制的服务之间建立安全通信要更困难。<br>另一个挑战是实用性。</p>
+<h2 id="混合模式"><a href="#混合模式" class="headerlink" title="混合模式"></a>混合模式</h2><p>一个应用可以通过结合这两种模式的优点来把这两者混合起来。<br>比如轻量级的c/s通信可以用来寻找可以提供服务的对等节点的地址。找到这个地址时，实际服务可以通过使用对等模式从对等结点中获得。</p>
+<h2 id="传统模式：客户-服务器（c-s）"><a href="#传统模式：客户-服务器（c-s）" class="headerlink" title="传统模式：客户-服务器（c/s）"></a>传统模式：客户-服务器（c/s）</h2><p>服务提供者是一个称为服务进程的应用程序，不断运行，等待另一个称为客户进程的应用程序通过因特网建立连接并请求服务。</p>
+<p>这种模式的问题是通信负荷集中在服务器上，这意味着服务器应该是一台强大的计算机。可能会面对大量客户同时尝试连接。另一个问题时花费。</p>
+<h3 id="应用程序接口"><a href="#应用程序接口" class="headerlink" title="应用程序接口"></a>应用程序接口</h3><p>应用程序接口（Application Programming Inteface，API）</p>
+<p>程序中的接口是两个实体之间的指令集。<br>一个实体是应用层中的进程，另一个是操作系统，操作系统封装了TCP/IP协议簇的前四层。<br>换句话说，电脑制造商将协议簇的前四层编写进操作系统中并包含了APU。</p>
+<p>三个常见的通信API：套接字接口、传输层接口以及STREAM。</p>
+<p><strong>套接字接口的位置：应用层和传输层之间</strong><br>套接字接口是提供应用层和操作系统间通信的指令集，是一个可以被某进程用来与另一个进程进行通信的指令集。</p>
+<h4 id="套接字"><a href="#套接字" class="headerlink" title="套接字"></a>套接字</h4><p>套接字不是物理实体，而是一种抽象。<br>套接字是提供应用程序创建和使用的数据结构。</p>
+<p>就应用层而言，客户进程和服务器进程间的通信时两个套接字之间的通信。</p>
+<h3 id="套接字地址"><a href="#套接字地址" class="headerlink" title="套接字地址"></a>套接字地址</h3><p>c/s的交互式双向通信。<br>双向通信时，需要一对地址：本地地址和远程地址。<br>由于c/s模式的通信是在套接字之间进行的，还需要一对<strong>套接字地址</strong>（一个本地套接字地址和一个远程套接字地址）。</p>
+<p>IP地址帮助定位到需要通信的计算机，然而计算机在同一时间可能有多个进程运行，这时就需要另一个标识符来识别。它就是<strong>端口</strong>。</p>
+<pre><code>于是乎，套接字地址应该是**一个IP地址和一个端口号的组合。**
+</code></pre><p>服务器站点：</p>
+<p><strong>本地（服务器）套接字地址：</strong></p>
+<p>由操作系统提供。<br>服务器进程的端口号需要被分配。如果这个服务器进程是因特网管理结构定义的标准进程，那么端口号就已经分配好了。<br>比如超文本传输协议（HTTP）的端口是80.</p>
+<p><strong>远程（客户）套接字地址</strong><br>客户套接字地址包含在发给服务器的请求报文中，它成为远程套接字地址来给客户提供相应。</p>
+<h3 id="使用传输层的服务"><a href="#使用传输层的服务" class="headerlink" title="使用传输层的服务"></a>使用传输层的服务</h3><p>UDP：无连接、不可靠的数据报服务。无连接意味着两个交换报文的终端之间没有逻辑连接。每个报文都是独立的实体，被封装在一个称为<strong>数据报</strong>分组中。UDP是不可靠协议。简单，速度快。</p>
+<p>TCP：面向连接的可靠的字节流传输。</p>
+<h2 id="标准客户-服务器应用"><a href="#标准客户-服务器应用" class="headerlink" title="标准客户-服务器应用"></a>标准客户-服务器应用</h2><h3 id="万维网WWW"><a href="#万维网WWW" class="headerlink" title="万维网WWW"></a>万维网WWW</h3><p>结构：</p>
+<blockquote>
+<p>如今的WWW是一个分布式客户-服务器服务。使用浏览器的用户可以访问一个正在服务器上运行的服务。<br>服务器分布在很多称为站点的地点上。每一个站点有一个或多个文档，它们可以成为网页。每个网页可以包含一些到其他网页的连接，那些被连接的网页可以在同一个站点也可以在其他站点。</p>
+</blockquote>
+<p>网络客户（浏览器）</p>
+<blockquote>
+<p>包括：控制程序、客户协议和解释程序。<br>控制程序：接收来自外设的输入并使用客户端程序来访问文档。文档被访问后，控制程序使用解释程序来在屏幕上显示文档。</p>
+</blockquote>
+<p>网络服务器</p>
+<blockquote>
+<p>为了提高效率，服务器通常将被请求的文件存储在内存的缓存中。<br>为了定义一个网页，需要以下三个标识符：主机、端口和路径。外加协议。<br>协议：绝大多数是HTTP，另外还有FTP等。<br>主机：主机标识符可以是服务器的IP地址或主机被给及的唯一名称。<br>端口：是一个16位的整数，通常为客户-服务器应用而预定义。比如用HTTP协议来访问网页，那么熟知端口号就是80.<br>路径：定义了下层的操作系统中文件的位置和名称。比如，/top/next/last/myfile是一个唯一定义myfile文件的路径。</p>
+<p>为了把这四部分组合在一起，设计出了统一资源定位符URL，其四个部分之间用三个不同的分隔符，如下所示：</p>
+</blockquote>
+<pre><code>protocol://host/path    绝大多数使用
+protocol://host:port/path    当需要标识出端口号时使用
+</code></pre><p>万维网上的文档可以分成三类：</p>
+<ul>
+<li>静态文档</li>
+<li>动态文档</li>
+<li>活动文档</li>
+</ul>
+<h4 id="超文本传输协议HTTP"><a href="#超文本传输协议HTTP" class="headerlink" title="超文本传输协议HTTP"></a>超文本传输协议HTTP</h4><p>HTTP是一种用来定义客户服务器程序如何编写和如何从万维网获取网页的协议。</p>
+<ul>
+<li>持续连接：HTTP1.1默认</li>
+<li>非持续连接</li>
+</ul>
+<p>报文格式：</p>
+<ul>
+<li>请求报文</li>
+<li>响应报文</li>
+</ul>
+<p><strong>Cookie</strong></p>
+<blockquote>
+<p>万维网起先被设计成无状态实体。客户发送请求；服务器响应。他们之间的关系就结束了。而cookie的设计使得客户端的信息存储在文件或字符串中而保存。</p>
+</blockquote>
+<p><strong>HTTP1.0的会话方式：</strong></p>
+<blockquote>
+<p>浏览器与WEB服务器的连接过程是短暂的，每次连接只处理一个请求和响应。<br>对每一个页面的访问，浏览器与WEB服务器都要建立一次单独的连接。<br>浏览器到WEB服务器之间的所有通讯都是完全独立分开的请求和响应对。</p>
+</blockquote>
+<p>HTTP客户机和服务器会话的四个步骤：<br>客户机-&gt;服务器：建立连接<br>客户机-&gt;服务器：发出请求信息<br>客户机&lt;-服务器：回送响应信息<br>客户机&lt;-服务器：关闭连接</p>
+<p><strong>HTTP1.1的特点</strong><br>在一个TCP连接上可以传送多个HTTP请求和响应<br>多个请求和响应过程可以重叠进行<br>增加了更多的请求和响应头。</p>
+<p><strong>HTTP1.0 和HTTP1.1的区别</strong><br>1.0协议中，客户端与WEB服务器建立连接后，只能获得一个web资源。<br>1.1协议中，允许客户端与web服务器建立连接后，在一个连接上获取多个web资源。</p>
+<p><strong>响应状态码典型情况</strong>：<br>200：<font color="green"><strong>正常</strong></font><br>302/307：<font color="green"><strong>临时重定向</strong></font>，指出被请求的文档已被临时移动到别处。<br>304：<font color="green"><strong>未修改</strong></font>，表示客户机缓存的版本是最新的，客户机应该继续使用它。<br>403：<font color="brown"><strong>禁止</strong></font>，服务器理解客户端请求，但拒绝处理它。通常由于服务器上文件的权限设置所致。<br>404：<font color="brown"><strong>找不到</strong></font>，服务器上不存在客户机请求的资源<br>500,：<font color="brown"><strong>内部服务器错误</strong></font></p>
+<h4 id="万维网高速缓存：代理服务器"><a href="#万维网高速缓存：代理服务器" class="headerlink" title="万维网高速缓存：代理服务器"></a>万维网高速缓存：代理服务器</h4><blockquote>
+<p>代理服务器是一台计算机，能够保存最近请求的响应的副本。HTTP客户端向代理服务器发送请求。代理服务器检查本地高速缓存。<br>代理服务器降低了原服务器的负载，减少了通信量并降低了延迟。但是，为了使用代理服务器，必须配置客户端访问代理服务器而不是目标服务器。</p>
+</blockquote>
+<h4 id="HTTP安全"><a href="#HTTP安全" class="headerlink" title="HTTP安全"></a>HTTP安全</h4><p>HTTP本质上并不提供安全。<br>然而，HTTP可以在安全套接层（SSL)上运行。这种情况下，HTTP称为HTTPS。<br>HTTPS提供保密性好，客户和服务器鉴别，以及数据完整性。</p>
+<h3 id="Ping命令"><a href="#Ping命令" class="headerlink" title="Ping命令"></a>Ping命令</h3><p>ping（Packet Internet Grope，因特网包探索器）是一个用于测试网络连接量的程序。</p>
+<p>它使用的是ICMP，ping发送一个ICMP（Internet Control and Message Protocol，因特网控制报文协议）请求消息给目的地并报告是否收听到所希望的ICMP应答。</p>
+<p>ICMP是TCP/IP协议簇的一个子协议，用于在IP主机、路由器之间传递控制消息。<strong>它是用来检查网络是否通畅或者网络连接速度的命令。</strong></p>
+<blockquote>
+<p>当给目标IP地址发送一个数据包时，对方返回一个同样大小的数据包，根据返回的数据包可以确定目标主机的存在，可以初步判断目标主机的操作系统等。</p>
+</blockquote>
+<h3 id="域名解析过程"><a href="#域名解析过程" class="headerlink" title="域名解析过程"></a>域名解析过程</h3><p>在浏览器地址栏中键入URL，按下回车之后发生的几个事情：</p>
+<ol>
+<li>浏览器向<font color="green">DNS服务器</font>请求解析该URL中的<font color="brown" size="3">域名所对应的IP地址</font>。</li>
+<li>解析出IP地址后，根据<font color="brow">该IP地址和默认端口80，和服务器建立TCP连接</font>；</li>
+<li>浏览器发出<font color="gree">读取文件（URL中域名后面部分对应的文件）的HTTP请求，该请求报文作为TCP三次握手的第三个报文的数据发送给服务器</font>；</li>
+<li><font color="orange">服务器给出响应</font>，将对应的html文本发送给浏览器；</li>
+<li>释放TCP连接；</li>
+<li>浏览器将该文本显示出来。</li>
+</ol>
+<h3 id="OSI七层协议每层对应的相关协议"><a href="#OSI七层协议每层对应的相关协议" class="headerlink" title="OSI七层协议每层对应的相关协议"></a>OSI七层协议每层对应的相关协议</h3><p>第一层：物理层</p>
+<p>第二层：数据链路层 802.2、802.3ATM、HDLC、FRAME RELAY </p>
+<p>第三层：网络层 IP、IPX、APPLETALK、ICMP </p>
+<p>第四层：传输层 TCP、UDP、SPX</p>
+<p>第五层：会话层 RPC、SQL、NFS 、X WINDOWS、ASP</p>
+<p>第六层： 表示层 ASCLL、PICT、TIFF、JPEG、 MIDI、MPEG </p>
+<p>第七层：应用层 HTTP,FTP,SNMP等</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/11/computer-networks-06/" data-id="cjdfbdzt6002mj4jhez150zvb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-S/">C/S</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/07/17/Infix-convert-to-Postfix-expression/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          中缀表达式转换为后缀表达式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/07/09/computer-networks-05/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">计算机网络（五）：运输层</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-11/">C++11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-小结/">C++小结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-S/">C/S</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIDR/">CIDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essential-C/">Essential C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitcafe/">Gitcafe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkdownPad/">MarkdownPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSFP/">OSFP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RIP/">RIP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cctype/">cctype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idndef/">idndef</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linggle/">linggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-once/">pragma once</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-pack/">pragma pack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sizeof/">sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this指针/">this指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-function-table/">virtual function table</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/voltile/">voltile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windeployqt/">windeployqt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中缀表达式/">中缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/位域/">位域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存对齐/">内存对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分页管理/">分页管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态绑定/">动态绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为OJ/">华为OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后缀表达式/">后缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/子网/">子网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串常量/">字符串常量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小端模式/">小端模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用工具/">常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能指针/">智能指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/析构/">析构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/查找/">查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/段式内存管理/">段式内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类型转换/">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网际协议/">网际协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯/">腾讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚函数/">虚函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转义字符/">转义字符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Beautiful-Soup/" style="font-size: 10px;">Beautiful Soup</a> <a href="/tags/C/" style="font-size: 18.57px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/C-11/" style="font-size: 10px;">C++11</a> <a href="/tags/C-小结/" style="font-size: 11.43px;">C++小结</a> <a href="/tags/C-S/" style="font-size: 10px;">C/S</a> <a href="/tags/CIDR/" style="font-size: 10px;">CIDR</a> <a href="/tags/Essential-C/" style="font-size: 10px;">Essential C++</a> <a href="/tags/Git/" style="font-size: 14.29px;">Git</a> <a href="/tags/Gitcafe/" style="font-size: 10px;">Gitcafe</a> <a href="/tags/Github/" style="font-size: 14.29px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Jekyll/" style="font-size: 12.86px;">Jekyll</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MarkdownPad/" style="font-size: 10px;">MarkdownPad</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OSFP/" style="font-size: 10px;">OSFP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Qt/" style="font-size: 11.43px;">Qt</a> <a href="/tags/RIP/" style="font-size: 10px;">RIP</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/UDP/" style="font-size: 10px;">UDP</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/cctype/" style="font-size: 10px;">cctype</a> <a href="/tags/idndef/" style="font-size: 10px;">idndef</a> <a href="/tags/linggle/" style="font-size: 10px;">linggle</a> <a href="/tags/pragma-once/" style="font-size: 10px;">pragma once</a> <a href="/tags/pragma-pack/" style="font-size: 10px;">pragma pack</a> <a href="/tags/python/" style="font-size: 14.29px;">python</a> <a href="/tags/sizeof/" style="font-size: 10px;">sizeof</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/this指针/" style="font-size: 10px;">this指针</a> <a href="/tags/virtual-function-table/" style="font-size: 10px;">virtual function table</a> <a href="/tags/voltile/" style="font-size: 10px;">voltile</a> <a href="/tags/windeployqt/" style="font-size: 10px;">windeployqt</a> <a href="/tags/中缀表达式/" style="font-size: 11.43px;">中缀表达式</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/位域/" style="font-size: 10px;">位域</a> <a href="/tags/内存对齐/" style="font-size: 10px;">内存对齐</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/分页管理/" style="font-size: 10px;">分页管理</a> <a href="/tags/动态绑定/" style="font-size: 10px;">动态绑定</a> <a href="/tags/华为OJ/" style="font-size: 14.29px;">华为OJ</a> <a href="/tags/后缀表达式/" style="font-size: 10px;">后缀表达式</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/子网/" style="font-size: 10px;">子网</a> <a href="/tags/字符串常量/" style="font-size: 10px;">字符串常量</a> <a href="/tags/小端模式/" style="font-size: 10px;">小端模式</a> <a href="/tags/常用工具/" style="font-size: 10px;">常用工具</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 17.14px;">操作系统</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/智能指针/" style="font-size: 10px;">智能指针</a> <a href="/tags/构造函数/" style="font-size: 10px;">构造函数</a> <a href="/tags/析构/" style="font-size: 10px;">析构</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/段式内存管理/" style="font-size: 10px;">段式内存管理</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 11.43px;">爬虫</a> <a href="/tags/算法/" style="font-size: 12.86px;">算法</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/类型转换/" style="font-size: 15.71px;">类型转换</a> <a href="/tags/编程语言/" style="font-size: 11.43px;">编程语言</a> <a href="/tags/网际协议/" style="font-size: 10px;">网际协议</a> <a href="/tags/腾讯/" style="font-size: 10px;">腾讯</a> <a href="/tags/虚函数/" style="font-size: 10px;">虚函数</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/转义字符/" style="font-size: 10px;">转义字符</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/09/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/python-learning/">Python学习</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/Python-sequence/">Python-列表和元组</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/15/python-spider-00/">python爬虫实战</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/14/Beautiful-soup/">Beautiful Soup常用语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

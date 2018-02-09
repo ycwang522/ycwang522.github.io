@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>华为OJ系列（三） | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 【中级】单词倒排题目描述  对字符串中的所有单词进行倒排。说明：1、每个单词是以26个大写或小写英文字母构成；2、非构成单词的字符均视为单词间隔符；3、要求倒排后的单词间隔符以一个空格表示；如果原字符串中相邻单词间有多个间隔符时，倒排转换后也只允许出现一个空格间隔符；4、每个单词最长20个字母；  输入描述:  输入一行以空格来分隔的句子  输出描述:  输出句子的逆序  输入例子:  I">
+<meta name="keywords" content="华为OJ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="华为OJ系列（三）">
+<meta property="og:url" content="http://yoursite.com/2016/08/18/HuaWei-OJ-Seris-03/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 【中级】单词倒排题目描述  对字符串中的所有单词进行倒排。说明：1、每个单词是以26个大写或小写英文字母构成；2、非构成单词的字符均视为单词间隔符；3、要求倒排后的单词间隔符以一个空格表示；如果原字符串中相邻单词间有多个间隔符时，倒排转换后也只允许出现一个空格间隔符；4、每个单词最长20个字母；  输入描述:  输入一行以空格来分隔的句子  输出描述:  输出句子的逆序  输入例子:  I">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2016-09-05T07:52:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="华为OJ系列（三）">
+<meta name="twitter:description" content="1. 【中级】单词倒排题目描述  对字符串中的所有单词进行倒排。说明：1、每个单词是以26个大写或小写英文字母构成；2、非构成单词的字符均视为单词间隔符；3、要求倒排后的单词间隔符以一个空格表示；如果原字符串中相邻单词间有多个间隔符时，倒排转换后也只允许出现一个空格间隔符；4、每个单词最长20个字母；  输入描述:  输入一行以空格来分隔的句子  输出描述:  输出句子的逆序  输入例子:  I">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-HuaWei-OJ-Seris-03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/18/HuaWei-OJ-Seris-03/" class="article-date">
+  <time datetime="2016-08-18T07:15:48.000Z" itemprop="datePublished">2016-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      华为OJ系列（三）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-【中级】单词倒排"><a href="#1-【中级】单词倒排" class="headerlink" title="1. 【中级】单词倒排"></a>1. 【中级】单词倒排</h1><p>题目描述</p>
+<blockquote>
+<p>对字符串中的所有单词进行倒排。<br>说明：<br>1、每个单词是以26个大写或小写英文字母构成；<br>2、非构成单词的字符均视为单词间隔符；<br>3、要求倒排后的单词间隔符以一个空格表示；如果原字符串中相邻单词间有多个间隔符时，倒排转换后也只允许出现一个空格间隔符；<br>4、每个单词最长20个字母；</p>
+</blockquote>
+<p>输入描述:</p>
+<blockquote>
+<p>输入一行以空格来分隔的句子</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>输出句子的逆序</p>
+</blockquote>
+<p>输入例子:</p>
+<blockquote>
+<p>I am a student</p>
+</blockquote>
+<p>输出例子:</p>
+<blockquote>
+<p>student a am I</p>
+</blockquote>
+<p>思路分析：</p>
+<pre><code>使用getline(cin,str)输入字符串
+
+判断字符串中的每个字符，将非字母转换成空格字符
+包括空格也进行转换
+
+设定一个游标k = 0，while(str[k] == &apos; &apos;) { ++ k; }
+使得k指向开头不为空的第一个字符
+
+同理，设定一个游标 j = str.size() -1指向字符串的最后一个字符
+while(str[j] == &apos; &apos;) { --j    ;} 
+使得j指向结尾最后一个不为空字符的字符
+
+当在j 和k之间遍历时，考虑中间为多个空格的情况
+
+对开头的第一个单词，单独进行输出
+</code></pre><p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">RevertSentence</span><span class="params">(<span class="built_in">string</span> str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; str.size(); i++)	<span class="comment">//将非字母转换为空格</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> ((str[i]&lt;<span class="string">'a'</span> &amp;&amp; str[i]&gt;<span class="string">'Z'</span>) || str[i] &gt; <span class="string">'z'</span> || str[i] &lt; <span class="string">'A'</span>)</span><br><span class="line">			str[i] = <span class="string">' '</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> j = str.size() - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (str[j] == <span class="string">' '</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		j--;		<span class="comment">//使得遍历从后边不为空格的第一个字母开始</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (str[k] == <span class="string">' '</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		++k;	<span class="comment">//使得遍历从开头不为空格的第一个字母开始</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = j; i &gt;= k; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (str[i] == <span class="string">' '</span>)	</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i1 = i + <span class="number">1</span>; i1 &lt;= j; i1++)</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; str[i1];</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span>;			</span><br><span class="line">			j = i - <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span> (str[j] == <span class="string">' '</span>)	<span class="comment">//去掉中间多余的空格</span></span><br><span class="line">			&#123;</span><br><span class="line">				--i; --j;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = k; i &lt;= j; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; str[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	getline(<span class="built_in">cin</span>, str);	</span><br><span class="line">	RevertSentence(str);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="2-字符串运用-密码截取"><a href="#2-字符串运用-密码截取" class="headerlink" title="2. 字符串运用-密码截取"></a>2. 字符串运用-密码截取</h1><p>题目描述</p>
+<blockquote>
+<p>Catcher是MCA国的情报员，他工作时发现敌国会用一些对称的密码进行通信，比如像这些ABBA，ABA，A，123321，但是他们有时会在开始或结束时加入一些无关的字符以防止别国破解。比如进行下列变化 ABBA-&gt;12ABBA,ABA-&gt;ABAKK,123321-&gt;51233214　。因为截获的串太长了，而且存在多种可能的情况（abaaab可看作是aba,或baaab的加密形式），Cathcer的工作量实在是太大了，他只能向电脑高手求助，你能帮Catcher找出最长的有效密码串吗？</p>
+</blockquote>
+<p>输入描述:</p>
+<blockquote>
+<p>输入一个字符串</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>返回有效密码串的最大长度</p>
+</blockquote>
+<p>输入例子:</p>
+<blockquote>
+<p>ABBA</p>
+</blockquote>
+<p>输出例子:</p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<p>解题思路：</p>
+<pre><code>设定两个指针，一个指针i从字符串开始处向后遍历
+另一个指针j从字符串末尾开始向前遍历，j遍历的判断条件是j&gt;i
+
+如果i和j对应的字符相同
+则判断其之间的字符是否相同
+
+其中有两种情况
+一种是奇数个对称（ABCBA），另一个是偶数个对称（ABBA）
+两种情况都要考虑
+
+这样会将所有的对称的字符的个数都会计算出来
+并且将其存储到vector中
+所有的字符遍历完毕之后
+对vector中的int排序
+输出vector中最后一个数，即为密码串的最大长度
+</code></pre><p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">vector</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CalculateLength</span><span class="params">(<span class="built_in">string</span> str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> last = str.size() <span class="number">-1</span> ;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ivec;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; last <span class="number">-1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//string::size_type k =i+1;</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="built_in">string</span>::size_type j = last; j &gt; i; j--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (str[i] == str[j])</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> k = <span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span> (i + <span class="number">1</span> == j)	<span class="comment">//内层相邻</span></span><br><span class="line">				&#123;</span><br><span class="line">					ivec.push_back(<span class="number">2</span> * k);</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (i + <span class="number">2</span> == j)</span><br><span class="line">				&#123;</span><br><span class="line">					ivec.push_back(<span class="number">2</span> * k + <span class="number">1</span>);</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">while</span> (str[i + k] == str[j - k])</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span> (i + k + <span class="number">1</span> == j - k)	<span class="comment">//相邻对称 总和=2（k+1）</span></span><br><span class="line">					&#123;</span><br><span class="line">						ivec.push_back(<span class="number">2</span> * (k + <span class="number">1</span>));</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (i + k + <span class="number">2</span> == j - k)	<span class="comment">//不相邻对称 总和 = 2（k+1）+1</span></span><br><span class="line">					&#123;</span><br><span class="line">						ivec.push_back(<span class="number">2</span> * (k + <span class="number">1</span>) + <span class="number">1</span>);</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					++k;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it = ivec.end();</span><br><span class="line">	sort(ivec.begin(), it);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; *(it<span class="number">-1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	<span class="keyword">while</span> (getline(<span class="built_in">cin</span>, str))</span><br><span class="line">	&#123;</span><br><span class="line">		CalculateLength(str);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3-整数与IP地址间的转换"><a href="#3-整数与IP地址间的转换" class="headerlink" title="3. 整数与IP地址间的转换"></a>3. 整数与IP地址间的转换</h1><p>题目描述</p>
+<blockquote>
+<p>原理：ip地址的每段可以看成是一个0-255的整数，把每段拆分成一个二进制形式组合起来，然后把这个二进制数转变成<br>一个长整数。</p>
+</blockquote>
+<p>举例：</p>
+<blockquote>
+<p>一个ip地址为10.0.3.193<br>每段数字             相对应的二进制数<br>10                   00001010<br>0                    00000000<br>3                    00000011<br>193                  11000001<br>组合起来即为：00001010 00000000 00000011 11000001,转换为10进制数就是：167773121，即该IP地址转换后的数字就是它了。</p>
+</blockquote>
+<p>的每段可以看成是一个0-255的整数，需要对IP地址进行校验</p>
+<p>输入描述:<br>输入 </p>
+<blockquote>
+<p>1 输入IP地址<br>2 输入10进制型的IP地址</p>
+</blockquote>
+<p>输出描述:<br>输出</p>
+<blockquote>
+<p>1 输出转换成10进制的IP地址<br>2 输出转换后的IP地址</p>
+</blockquote>
+<p>输入例子:</p>
+<blockquote>
+<p>10.0.3.193<br>167969729</p>
+</blockquote>
+<p>输出例子:</p>
+<blockquote>
+<p>167773121<br>10.3.3.193</p>
+</blockquote>
+<p>代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">stack</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::sort;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">vector</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">CharToInt</span><span class="params">(<span class="keyword">char</span> ch)</span>	<span class="comment">//数字字符转换十进制</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ch - <span class="string">'0'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt;ivecsum;	<span class="comment">//设为全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">IntToBi</span><span class="params">(<span class="keyword">long</span> sum)</span>	<span class="comment">//将单个的十进制的IP转换为二进制</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//vector&lt;long&gt;ivecsum;</span></span><br><span class="line">	<span class="built_in">stack</span>&lt;<span class="keyword">long</span>&gt;istack;</span><br><span class="line">	<span class="keyword">while</span> (sum)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">long</span> temp = sum % <span class="number">2</span>;</span><br><span class="line">		sum /= <span class="number">2</span>;</span><br><span class="line">		istack.push(temp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (istack.size() &lt; <span class="number">8</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = istack.size(); i &lt; <span class="number">8</span>; i++)</span><br><span class="line">			istack.push(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (!istack.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		ivecsum.push_back(istack.top());</span><br><span class="line">		istack.pop();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TransToInt</span><span class="params">(<span class="built_in">string</span> str)</span>	<span class="comment">//将十进制IP转换成一个长整型</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt;ivec;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	ivecsum.clear();		<span class="comment">//第二次调用时，清空全局的容器</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; str.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (str[i] == <span class="string">'.'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> k = i<span class="number">-1</span>; k &gt;= j; k--)</span><br><span class="line">				sum = sum + CharToInt(str[k])*<span class="built_in">pow</span>(<span class="number">10</span>, i-k<span class="number">-1</span>);</span><br><span class="line">			j = i + <span class="number">1</span>;</span><br><span class="line">			ivec.push_back(sum);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//单独处理最后一个</span></span><br><span class="line">	<span class="keyword">long</span> sum1 = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> length = str.size();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> ii = length - <span class="number">1</span>; ii &gt;= j; ii--)</span><br><span class="line">		sum1 = sum1 + CharToInt(str[ii]) *<span class="built_in">pow</span>(<span class="number">10</span>, length - <span class="number">1</span> - ii);</span><br><span class="line">	ivec.push_back(sum1);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (ivec[i] &lt;= <span class="number">255</span> &amp;&amp; ivec[i] &gt;= <span class="number">0</span>)</span><br><span class="line">			IntToBi(ivec[i]);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">long</span> sumsum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">31</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		sumsum = sumsum + ivecsum[i] * <span class="built_in">pow</span>(<span class="number">2</span>, <span class="number">32</span> - i - <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; sumsum &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TransToBi</span><span class="params">(<span class="keyword">long</span> number)</span>	<span class="comment">//将长整型转换成带分隔符的类型</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ivec1;</span><br><span class="line">	<span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt;istack1;</span><br><span class="line">	<span class="keyword">while</span> (number)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> tempp = number % <span class="number">2</span>;</span><br><span class="line">		istack1.push(tempp);</span><br><span class="line">		number /= <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (istack1.size() &lt; <span class="number">32</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = istack1.size(); i &lt; <span class="number">32</span>; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			istack1.push(<span class="number">0</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (!istack1.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		ivec1.push_back(istack1.top());</span><br><span class="line">		istack1.pop();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;	<span class="comment">//结尾位置</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;IvecResult;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++)</span><br><span class="line">	&#123;		</span><br><span class="line">		++num;	</span><br><span class="line">		<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (num == <span class="number">8</span>)	</span><br><span class="line">		&#123;</span><br><span class="line">			j = i+<span class="number">1</span>;			</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> kk = j - <span class="number">8</span>,k1 = <span class="number">0</span>; kk &lt; j, k1 &lt; <span class="number">8</span>; kk++, k1++)</span><br><span class="line">			&#123;</span><br><span class="line">				sum = sum + ivec1[kk] * <span class="built_in">pow</span>(<span class="number">2</span>, <span class="number">7</span> - k1);</span><br><span class="line">			&#125;</span><br><span class="line">			num = <span class="number">0</span>;</span><br><span class="line">			IvecResult.push_back(sum);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; IvecResult[i] &lt;&lt; <span class="string">"."</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; IvecResult[<span class="number">3</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str1;</span><br><span class="line">	<span class="keyword">long</span> number;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; str1 &gt;&gt; number)</span><br><span class="line">	&#123;</span><br><span class="line">		TransToInt(str1);</span><br><span class="line">		TransToBi(number);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="4-及格线"><a href="#4-及格线" class="headerlink" title="4. 及格线"></a>4. 及格线</h1><p>描述：</p>
+<blockquote>
+<p>10个学生考完期末考试评卷完成后，A老师需要划出及格线，要求如下：<br>(1) 及格线是10的倍数；<br>(2) 保证至少有60%的学生及格；<br>(3) 如果所有的学生都高于60分，则及格线为60分</p>
+</blockquote>
+<p>输入：</p>
+<blockquote>
+<p>输入10个整数，取值0~100</p>
+</blockquote>
+<p>输出：</p>
+<blockquote>
+<p>输出及格线，10的倍数</p>
+</blockquote>
+<p>输入样例：</p>
+<blockquote>
+<p>61 51 49 3020 10 70 80 90 99</p>
+</blockquote>
+<p>输出样例：</p>
+<blockquote>
+<p>50</p>
+</blockquote>
+<p>思路分析：</p>
+<pre><code>输入十个数之后，对数字存储到vector中进行排序
+要保证60%的学生及格，即6个学生
+所以判断排序之后第6个学生的成绩
+</code></pre><p>代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PassLine</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> passline=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ivec;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> temp;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">		ivec.push_back(temp);	<span class="comment">//将输入的十个数存入ivec中</span></span><br><span class="line">	&#125;</span><br><span class="line">	sort(ivec.begin(), ivec.end());</span><br><span class="line">	<span class="keyword">int</span> temp1 = ivec[<span class="number">4</span>];</span><br><span class="line">	<span class="keyword">if</span> (temp1 &gt;= <span class="number">60</span>)</span><br><span class="line">		passline = <span class="number">60</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		passline = temp1 - temp1 % <span class="number">10</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; passline;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">	PassLine(a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="5-蛇形矩阵"><a href="#5-蛇形矩阵" class="headerlink" title="5. 蛇形矩阵"></a>5. 蛇形矩阵</h1><p>题目描述</p>
+<p>题目说明</p>
+<blockquote>
+<p>蛇形矩阵是由1开始的自然数依次排列成的一个矩阵上三角形。</p>
+</blockquote>
+<p>样例输入<br>5<br>样例输出<br>1 3 6 10 15<br>2 5 9 14<br>4 8 13<br>7 12<br>11</p>
+<p>输入描述:</p>
+<blockquote>
+<p>输入正整数N（N不大于100）</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>输出一个N行的蛇形矩阵。</p>
+</blockquote>
+<p>输入例子:</p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<p>输出例子:</p>
+<blockquote>
+<p>1 3 6 10<br>2 5 9<br>4 8<br>7</p>
+</blockquote>
+<p>思路分析：</p>
+<pre><code>新建一N行N列的二维数组，用来存放蛇形矩阵
+
+根据蛇形矩阵的规律，先遍历将第1列的值计算出来
+
+设外层遍历索引为i，内层遍历索引为j
+则i为[0,N)，j的范围为[1，N)
+根据蛇形矩阵的规律，有如下关系式：
+ivec[i][j] = ivec[i][j - 1] + i + 1 + j;
+计算出矩阵中的各个数
+此时计算出来的数并不是蛇形矩阵，而是一个N行N列的矩阵
+
+蛇形矩阵在输出时体现，
+将N的值赋值给M    
+外层循环i的值为0到M
+内存循环每执行完一个j时，N执行--操作
+
+
+另外注意输出的空格，每一行的数字之间是用空格来间隔的
+但是每一行的第一个数字之前和最后一个数字之后是没有空格的。
+</code></pre><p>代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">vector</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Matrix</span><span class="params">(<span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;ivec(N);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ivec[i].resize(N);	<span class="comment">//建立一个N*N的二维数组；实际的数组维度</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">    ivec[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;	</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">1</span>; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</span><br><span class="line">		&#123;			</span><br><span class="line">			ivec[i][<span class="number">0</span>] = ivec[i<span class="number">-1</span>][<span class="number">0</span>] + i;</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; N; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			ivec[i][j] = ivec[i][j - <span class="number">1</span>] + i + <span class="number">1</span> + j;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> M = N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ivec[i][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; N; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">" "</span>&lt;&lt;ivec[i][j];	<span class="comment">//空格是在数字之间，最后一个数字之后不能有空格</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		--N;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> Number;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span>&gt;&gt;Number )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Number&gt;=<span class="number">1</span> &amp;&amp; Number	&lt;=<span class="number">100</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			Matrix(Number);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="6-字符串加密"><a href="#6-字符串加密" class="headerlink" title="6. 字符串加密"></a>6. 字符串加密</h1><p>题目描述</p>
+<blockquote>
+<p>有一种技巧可以对数据进行加密，它使用一个单词作为它的密匙。下面是它的工作原理：首先，选择一个单词作为密匙，如TRAILBLAZERS。如果单词中包含有重复的字母，只保留第1个，其余几个丢弃。现在，修改过的那个单词死于字母表的下面，如下所示：<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>T R A I L B Z E S C D F G H J K M N O P Q U V W X Y<br>上面其他用字母表中剩余的字母填充完整。在对信息进行加密时，信息中的每个字母被固定于顶上那行，并用下面那行的对应字母一一取代原文的字母(字母字符的大小写状态应该保留)。因此，使用这个密匙，Attack AT DAWN(黎明时攻击)就会被加密为Tpptad TP ITVH。</p>
+</blockquote>
+<p>输入描述:</p>
+<blockquote>
+<p>先输入key和要加密的字符串</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>返回加密后的字符串</p>
+</blockquote>
+<p>输入例子:</p>
+<blockquote>
+<p>nihao<br>ni</p>
+</blockquote>
+<p>输出例子:</p>
+<blockquote>
+<p>le</p>
+</blockquote>
+<p>思路分析：<br>    将输入转换成大写运行计算<br>    输出的时候再将对应的小写转换成大写</p>
+<p>代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">map</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">string</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">vector</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::pair;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddKey</span><span class="params">(<span class="built_in">string</span> Key,<span class="built_in">string</span> WaitToKey)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//将Key全部转换成大写</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; Key.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Key[i] &lt;= <span class="string">'z'</span> &amp;&amp; Key[i] &gt;= <span class="string">'a'</span>)</span><br><span class="line">			Key[i] = Key[i] - <span class="number">32</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//对Key去重</span></span><br><span class="line">	<span class="keyword">int</span> length = Key.size();</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; length<span class="number">-1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="built_in">string</span>::size_type j = length - <span class="number">1</span>; j &gt; i; j--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (Key[i] == Key[j])</span><br><span class="line">				Key[j] = <span class="string">'0'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;ivec;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; Key.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Key[i] != <span class="string">'0'</span>)</span><br><span class="line">			ivec.push_back(Key[i]);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//加上余下的字母</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; Key.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (Key[i] &lt;= <span class="string">'z'</span> &amp;&amp; Key[i] &gt;= <span class="string">'a'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">toupper</span>(Key[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ivec.push_back(<span class="string">'A'</span> + i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ivec.size() - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = ivec.size() - <span class="number">1</span>; j &gt; i; j--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (ivec[i] == ivec[j])</span><br><span class="line">				ivec[j] = <span class="string">'0'</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;ivec1;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ivec.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (ivec[i] != <span class="string">'0'</span>)</span><br><span class="line">			ivec1.push_back(ivec[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//加上余下的字母——完毕</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//构造关于key和明文的map</span></span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="keyword">char</span>,<span class="keyword">char</span>&gt;imap;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		imap.insert(pair&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt;(ivec1[i], <span class="string">'A'</span> + i));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">string</span> temp;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; WaitToKey.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//如果明文是小写字符，将其转换成大写，输出时再转换成对应的小写</span></span><br><span class="line">		<span class="keyword">if</span> (WaitToKey[i] &lt;= <span class="string">'z'</span> &amp;&amp; WaitToKey[i] &gt;= <span class="string">'a'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			WaitToKey[i] = WaitToKey[i] - <span class="number">32</span>;	<span class="comment">//将输入转换成大写</span></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt;::iterator it = imap.begin(); it != imap.end();it++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (WaitToKey[i] == it-&gt;second)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"%c"</span>,(it-&gt;first) +<span class="number">32</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (WaitToKey[i] &lt;= <span class="string">'Z'</span> &amp;&amp; WaitToKey[i] &gt;= <span class="string">'A'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">char</span>&gt;::iterator it = imap.begin(); it != imap.end(); it++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (WaitToKey[i] == it-&gt;second)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"%c"</span>, it-&gt;first);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>; </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str1, str2;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; str1 &gt;&gt; str2)</span><br><span class="line">	&#123;</span><br><span class="line">		AddKey(str1, str2);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="7-统计每个月兔子的总数"><a href="#7-统计每个月兔子的总数" class="headerlink" title="7. 统计每个月兔子的总数"></a>7. 统计每个月兔子的总数</h1><p>题目描述</p>
+<blockquote>
+<p>有一只兔子，从出生后第3个月起每个月都生一只兔子，小兔子长到第三个月后每个月又生一只兔子，假如兔子都不死，问每个月的兔子总数为多少？</p>
+</blockquote>
+<p>输入描述:</p>
+<blockquote>
+<p>输入int型表示month</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>输出兔子总数int型</p>
+</blockquote>
+<p>输入例子:</p>
+<blockquote>
+<p>9</p>
+</blockquote>
+<p>输出例子:</p>
+<blockquote>
+<p>34</p>
+</blockquote>
+<p>思路分析：<br>    归纳总结出递归</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">NumberOfRabbits</span><span class="params">(<span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(N&lt;=<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"Error Input!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">int</span> num[<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line">    <span class="keyword">if</span>(N&lt;=<span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> num[N<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> NumberOfRabbits(N<span class="number">-1</span>) + NumberOfRabbits(N<span class="number">-2</span>);</span><br><span class="line">        </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> Number;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;Number)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; NumberOfRabbits(Number)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="8-求小球落地5次后所经历的路程和第5次反弹的高度"><a href="#8-求小球落地5次后所经历的路程和第5次反弹的高度" class="headerlink" title="8. 求小球落地5次后所经历的路程和第5次反弹的高度"></a>8. 求小球落地5次后所经历的路程和第5次反弹的高度</h1><p>题目描述</p>
+<blockquote>
+<p>假设一个球从任意高度自由落下，每次落地后反跳回原高度的一半; 再落下, 求它在第5次落地时，共经历多少米?第5次反弹多高？ </p>
+</blockquote>
+<p>输入描述:</p>
+<blockquote>
+<p>输入起始高度，int型</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>分别输出第5次落地时，共经过多少米第5次反弹多高</p>
+</blockquote>
+<p>输入例子:</p>
+<blockquote>
+<p>1</p>
+</blockquote>
+<p>输出例子:</p>
+<blockquote>
+<p>2.875<br>0.03125</p>
+</blockquote>
+<p>思路分析：<br>    第n次反弹的高度为double H = height*pow(0.5, n);    //第五次反弹的高度</p>
+<p>代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">HeightOfBall</span><span class="params">(<span class="keyword">double</span> height)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">double</span> H = height*<span class="built_in">pow</span>(<span class="number">0.5</span>, <span class="number">5</span>);	<span class="comment">//第五次反弹的高度</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum = sum + height*<span class="built_in">pow</span>(<span class="number">0.5</span>, i) * <span class="number">2</span> ;	<span class="comment">//用每次的高度乘以2</span></span><br><span class="line">		<span class="comment">//在最后的结果中再减去一个初始高度</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; sum - height &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; H &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> height;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; height)</span><br><span class="line">	&#123;</span><br><span class="line">		HeightOfBall(height);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="9-字符串匹配（字符匹配）"><a href="#9-字符串匹配（字符匹配）" class="headerlink" title="9. 字符串匹配（字符匹配）"></a>9. 字符串匹配（字符匹配）</h1><p>题目描述</p>
+<p>题目标题：<br>判断短字符串中的<font color="red">所有字符是否在长字符串中全部出现</font></p>
+<p>输入描述:</p>
+<blockquote>
+<p>输入两个字符串。第一个为短字符，第二个为长字符。</p>
+</blockquote>
+<p>输出描述:</p>
+<blockquote>
+<p>返回值：</p>
+</blockquote>
+<p>输入例子:</p>
+<blockquote>
+<p>bc<br>abc</p>
+</blockquote>
+<p>输出例子:</p>
+<blockquote>
+<p>true</p>
+</blockquote>
+<p>思路分析</p>
+<pre><code>注意理解本题目的意思，判断短字符串中的字符是否全部在长字符串中出现
+是单个的字符匹配，而不是字符串匹配。
+假设两个字符串分别为ShortStr，LongStr
+不能使用Longstr.find(ShortStr)==string::npos的方法来判断
+
+不过可以遍历短字符串中的每个字符
+利用string.find()函数查找是否对应出现
+</code></pre><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">PiPei</span><span class="params">(<span class="built_in">string</span> ShortStr, <span class="built_in">string</span> LongStr)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">string</span>::size_type i = <span class="number">0</span>; i &lt; ShortStr.size(); i++)	<span class="comment">//遍历短串中的每个字符</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (LongStr.find(ShortStr[i]) == <span class="built_in">string</span>::npos)	<span class="comment">//如果其中一个在长串中不存在，则返回，并输出false</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str1, str2;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span>&gt;&gt;str1&gt;&gt;str2)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (PiPei(str1, str2))</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"true"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"false"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="10-数组中出现次数超过一半的数字"><a href="#10-数组中出现次数超过一半的数字" class="headerlink" title="10. 数组中出现次数超过一半的数字"></a>10. 数组中出现次数超过一半的数字</h1><p>题目描述</p>
+<blockquote>
+<p>数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，因此输出2。如果不存在则输出0。</p>
+</blockquote>
+<p>思路分析：</p>
+<pre><code>map&lt;key,value&gt;imap中的key和value分别表示关键词以及其对应的值。
+在本题中，遍历vector中的值，将其一个个存入map，如果之前没有则新加入map，如果之前有则对value进行++操作
+遍历vector中的数组，有imap[numbers[i]]++
+遍历完毕之后，map中的key表示关键词，而value则表示的是关键词出现的数量。
+只要it-&gt;second大于长度的一半即输出it-&gt;first
+</code></pre><p>代码示例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">MoreThanHalfNum_Solution</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; numbers)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (numbers.empty())</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;imap;</span><br><span class="line">        <span class="keyword">int</span> len = numbers.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            imap[numbers[i]]++;	<span class="comment">//将numbers中的值存入imap</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line">        <span class="keyword">for</span>(it=imap.begin();it!=imap.end();++it)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(it-&gt;second &gt; len/<span class="number">2</span>)</span><br><span class="line">                <span class="keyword">return</span> it-&gt;first;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/08/18/HuaWei-OJ-Seris-03/" data-id="cjdfbe008007aj4jh9yuzoafj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/华为OJ/">华为OJ</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/20/Tencent-OJ-Seris/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          腾讯研发编程题
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/15/HuaWei-OJ-Seris-02/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">华为OJ系列（二）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-11/">C++11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-小结/">C++小结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-S/">C/S</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIDR/">CIDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essential-C/">Essential C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitcafe/">Gitcafe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkdownPad/">MarkdownPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSFP/">OSFP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RIP/">RIP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cctype/">cctype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idndef/">idndef</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linggle/">linggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-once/">pragma once</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-pack/">pragma pack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sizeof/">sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this指针/">this指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-function-table/">virtual function table</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/voltile/">voltile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windeployqt/">windeployqt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中缀表达式/">中缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/位域/">位域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存对齐/">内存对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分页管理/">分页管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态绑定/">动态绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为OJ/">华为OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后缀表达式/">后缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/子网/">子网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串常量/">字符串常量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小端模式/">小端模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用工具/">常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能指针/">智能指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/析构/">析构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/查找/">查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/段式内存管理/">段式内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类型转换/">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网际协议/">网际协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯/">腾讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚函数/">虚函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转义字符/">转义字符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Beautiful-Soup/" style="font-size: 10px;">Beautiful Soup</a> <a href="/tags/C/" style="font-size: 18.57px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/C-11/" style="font-size: 10px;">C++11</a> <a href="/tags/C-小结/" style="font-size: 11.43px;">C++小结</a> <a href="/tags/C-S/" style="font-size: 10px;">C/S</a> <a href="/tags/CIDR/" style="font-size: 10px;">CIDR</a> <a href="/tags/Essential-C/" style="font-size: 10px;">Essential C++</a> <a href="/tags/Git/" style="font-size: 14.29px;">Git</a> <a href="/tags/Gitcafe/" style="font-size: 10px;">Gitcafe</a> <a href="/tags/Github/" style="font-size: 14.29px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Jekyll/" style="font-size: 12.86px;">Jekyll</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MarkdownPad/" style="font-size: 10px;">MarkdownPad</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OSFP/" style="font-size: 10px;">OSFP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Qt/" style="font-size: 11.43px;">Qt</a> <a href="/tags/RIP/" style="font-size: 10px;">RIP</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/UDP/" style="font-size: 10px;">UDP</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/cctype/" style="font-size: 10px;">cctype</a> <a href="/tags/idndef/" style="font-size: 10px;">idndef</a> <a href="/tags/linggle/" style="font-size: 10px;">linggle</a> <a href="/tags/pragma-once/" style="font-size: 10px;">pragma once</a> <a href="/tags/pragma-pack/" style="font-size: 10px;">pragma pack</a> <a href="/tags/python/" style="font-size: 14.29px;">python</a> <a href="/tags/sizeof/" style="font-size: 10px;">sizeof</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/this指针/" style="font-size: 10px;">this指针</a> <a href="/tags/virtual-function-table/" style="font-size: 10px;">virtual function table</a> <a href="/tags/voltile/" style="font-size: 10px;">voltile</a> <a href="/tags/windeployqt/" style="font-size: 10px;">windeployqt</a> <a href="/tags/中缀表达式/" style="font-size: 11.43px;">中缀表达式</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/位域/" style="font-size: 10px;">位域</a> <a href="/tags/内存对齐/" style="font-size: 10px;">内存对齐</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/分页管理/" style="font-size: 10px;">分页管理</a> <a href="/tags/动态绑定/" style="font-size: 10px;">动态绑定</a> <a href="/tags/华为OJ/" style="font-size: 14.29px;">华为OJ</a> <a href="/tags/后缀表达式/" style="font-size: 10px;">后缀表达式</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/子网/" style="font-size: 10px;">子网</a> <a href="/tags/字符串常量/" style="font-size: 10px;">字符串常量</a> <a href="/tags/小端模式/" style="font-size: 10px;">小端模式</a> <a href="/tags/常用工具/" style="font-size: 10px;">常用工具</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 17.14px;">操作系统</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/智能指针/" style="font-size: 10px;">智能指针</a> <a href="/tags/构造函数/" style="font-size: 10px;">构造函数</a> <a href="/tags/析构/" style="font-size: 10px;">析构</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/段式内存管理/" style="font-size: 10px;">段式内存管理</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 11.43px;">爬虫</a> <a href="/tags/算法/" style="font-size: 12.86px;">算法</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/类型转换/" style="font-size: 15.71px;">类型转换</a> <a href="/tags/编程语言/" style="font-size: 11.43px;">编程语言</a> <a href="/tags/网际协议/" style="font-size: 10px;">网际协议</a> <a href="/tags/腾讯/" style="font-size: 10px;">腾讯</a> <a href="/tags/虚函数/" style="font-size: 10px;">虚函数</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/转义字符/" style="font-size: 10px;">转义字符</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/09/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/python-learning/">Python学习</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/Python-sequence/">Python-列表和元组</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/15/python-spider-00/">python爬虫实战</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/14/Beautiful-soup/">Beautiful Soup常用语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

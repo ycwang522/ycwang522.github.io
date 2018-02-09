@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>C语言点滴 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="拜读赵岩老师的《C语言点滴》，目的是为了查漏补缺，在重新温习C语言基础的基础上对一些之前并未关注或者遗忘的细节给予重新定位和重视。——ycwang.2015-12-16 2.5编程风格 不应该写一个很长的函数，一个函数只实现一个功能。 编程字体的选择：等宽字体为佳。 常见的等宽字体   Monaco Lucida Console Lucida Sans Typewriter Consolas Co">
+<meta name="keywords" content="C,编程语言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言点滴">
+<meta property="og:url" content="http://yoursite.com/2016/05/30/c-point/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="拜读赵岩老师的《C语言点滴》，目的是为了查漏补缺，在重新温习C语言基础的基础上对一些之前并未关注或者遗忘的细节给予重新定位和重视。——ycwang.2015-12-16 2.5编程风格 不应该写一个很长的函数，一个函数只实现一个功能。 编程字体的选择：等宽字体为佳。 常见的等宽字体   Monaco Lucida Console Lucida Sans Typewriter Consolas Co">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://i12.tietuku.com/a9f7e802ae3a6c4d.png">
+<meta property="og:updated_time" content="2016-06-30T02:44:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C语言点滴">
+<meta name="twitter:description" content="拜读赵岩老师的《C语言点滴》，目的是为了查漏补缺，在重新温习C语言基础的基础上对一些之前并未关注或者遗忘的细节给予重新定位和重视。——ycwang.2015-12-16 2.5编程风格 不应该写一个很长的函数，一个函数只实现一个功能。 编程字体的选择：等宽字体为佳。 常见的等宽字体   Monaco Lucida Console Lucida Sans Typewriter Consolas Co">
+<meta name="twitter:image" content="http://i12.tietuku.com/a9f7e802ae3a6c4d.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-c-point" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/30/c-point/" class="article-date">
+  <time datetime="2016-05-30T01:53:48.000Z" itemprop="datePublished">2016-05-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C语言点滴
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>拜读赵岩老师的《C语言点滴》，目的是为了查漏补缺，在重新温习C语言基础的基础上对一些之前并未关注或者遗忘的细节给予重新定位和重视。——ycwang.2015-12-16</p>
+<h2 id="2-5编程风格"><a href="#2-5编程风格" class="headerlink" title="2.5编程风格"></a>2.5编程风格</h2><ul>
+<li>不应该写一个很长的函数，一个函数只实现一个功能。</li>
+<li>编程字体的选择：等宽字体为佳。<blockquote>
+<p>常见的等宽字体</p>
+</blockquote>
+</li>
+<li>Monaco</li>
+<li>Lucida Console</li>
+<li>Lucida Sans Typewriter</li>
+<li>Consolas</li>
+<li>Courier New</li>
+</ul>
+<h1 id="第3章-数据类型"><a href="#第3章-数据类型" class="headerlink" title="第3章 数据类型"></a><center><font color="brown">第3章 数据类型</font></center></h1><p>C语言中仅有四种数据类型，分别为<strong>整型、浮点型、指针型和聚合类型</strong>（包括数组和结构体），剩下的都是从这四种类型派生或组合而来的。——<a href="http://book.douban.com/subject/3012360/" target="_blank" rel="noopener">《C和指针》</a></p>
+<p>接上，例如char就是一个短整型。<br><a id="more"></a></p>
+<h2 id="原码、反码和补码"><a href="#原码、反码和补码" class="headerlink" title="原码、反码和补码"></a>原码、反码和补码</h2><blockquote>
+<ul>
+<li>原码：一种计算机中对数字的二进制表示方法，数码序列中最高位为符号位，符号位为0表示正数，符号位为1表示负数。</li>
+<li>反码：如果机器数是正数，则该机器数的反码与原码一样；如果机器数是负数，则该机器数的反码为对它的原码（符号位除外）各位取反而得到。</li>
+<li>补码：如果机器数是正数，则该机器数的补码与原码相同；如果机器数是负数，则该机器数的补码是对它的原码（符号位除外）各位取反，并在末尾加1.</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">码 型</th>
+<th style="text-align:center">正  数</th>
+<th style="text-align:center">负 数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">原码</td>
+<td style="text-align:center">数字二进制表示(符号位为0)</td>
+<td style="text-align:center">最高位符号位为1</td>
+</tr>
+<tr>
+<td style="text-align:center">反码</td>
+<td style="text-align:center">同原码</td>
+<td style="text-align:center">除符号位，对原码各位按位取反</td>
+</tr>
+<tr>
+<td style="text-align:center">补码</td>
+<td style="text-align:center">同原码</td>
+<td style="text-align:center">除符号位，对原码各位按位取反后在末尾加1</td>
+</tr>
+</tbody>
+</table>
+<p>用原码表示一个有符号数会带来问题：</p>
+<blockquote>
+<ul>
+<li><font color="brown">正负相加不等于零</font>。例如1+（-1）对应0001+1001=1010，按照原码表示等于-2.</li>
+<li><font color="brown">有两个零存在</font>。分别为0000和1000。因而，原码不适合表示有符号数。</li>
+</ul>
+</blockquote>
+<p>为了保证正负相加等于零。采用了反码的形式表示。但是第二个问题还没结局。因此引入补码机制。</p>
+<p>使用补码时，也符合正负相加等于零。<br>故而，<font color="red"><strong>整型数在计算机中，使用补码表示。</strong></font></p>
+<h2 id="3-2-整型数的溢出"><a href="#3-2-整型数的溢出" class="headerlink" title="3.2 整型数的溢出"></a>3.2 整型数的溢出</h2><blockquote>
+<p>C语言中int型所表示的“最大正整数”到底是多少呢？<br>不同的平台不同的编译器会有不同的定义。<br>为此，C语言在头文件 <strong>limits.h</strong> 中给出了相关的宏定义</p>
+</blockquote>
+<center>表3.1 整型数的极限值宏定义</center>
+
+<table>
+<thead>
+<tr>
+<th>char</th>
+<th>int</th>
+<th>short</th>
+<th>long</th>
+<th>long long</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SCHAR_MAX</td>
+<td>INT_MAX</td>
+<td>SHRT_MAX</td>
+<td>LONG_MAX</td>
+<td>LLONG_MAX</td>
+</tr>
+<tr>
+<td>SCHAR_MIN</td>
+<td>INT_MIN</td>
+<td>SHRT_MIN</td>
+<td>LONG_MIN</td>
+<td>LLONG_MIN</td>
+</tr>
+<tr>
+<td>UCHAR_MAX</td>
+<td>UINT_MAX</td>
+<td>USHRT_MAX</td>
+<td>ULONG_MAX</td>
+<td>ULLONG_MAX</td>
+</tr>
+<tr>
+<td>CHAR_MIN</td>
+</tr>
+<tr>
+<td>CHAR_MAX</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-5-int和char的关系"><a href="#3-5-int和char的关系" class="headerlink" title="3.5 int和char的关系"></a><font color="brown">3.5 int和char的关系</font></h2><p>关于getchar()<br>官方的定义是：</p>
+<blockquote>
+<p>int getchar()</p>
+</blockquote>
+<p><code>Question</code>：明明getchar返回的是一个字符，为何用int来接收？<br><code>Answer</code>：因为getchar（）读到末尾的时候，会返回EOF，而在stdio.h中，EOF被定义为-1.<br>例如有如下代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c;<span class="comment">//危险</span></span><br><span class="line"><span class="keyword">while</span>(c=getchar()!=EOF)</span><br><span class="line">&#123;</span><br><span class="line">............;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="3-9-sizeof运算符"><a href="#3-9-sizeof运算符" class="headerlink" title="3.9 sizeof运算符"></a><font color="brown">3.9 sizeof运算符</font></h2><p>sizeof是C中的一个关键字，不是函数，但是其行为却类似于一个函数，因为其返回一个类型为<code>size_t</code>的无符号的整型数。<br><code>size_t</code>其实就是一个无符号的整型数。因为任何一个类型的<code>size</code>都不应该是负数。<br>对于无符号数的减法，必须要保证被减数大于减数。如下的例子就是无符号的溢出带来的，其打印出的结果是<code>str2 is longer than str1</code>.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">char str1[]='abcdefg';</span><br><span class="line">char str2[]='abc';</span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">strlen</span>(str2)-<span class="built_in">strlen</span>(str1)&gt;<span class="number">0</span>)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"str2 is longer than str1"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这里正确的比较方法应该是：<code>if(strlen(str2)&gt;strlen(str1))</code></p>
+<h3 id="sizeof的用处"><a href="#sizeof的用处" class="headerlink" title="sizeof的用处"></a>sizeof的用处</h3><p>由于字节对其，C中struct的长度并不等于每个单个成员变量的数据类型的长度和。<br>所以当我们使用二进制来读写文件的时候，通常用<code>sizeof</code>来计算变量所占内存的真是尺寸。<br>例如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">100</span>];</span><br><span class="line">&#125;stu1;</span><br><span class="line">fwrite((<span class="keyword">char</span>*)stu1,<span class="keyword">sizeof</span>(stu1),<span class="number">1</span>,fp);</span><br></pre></td></tr></table></figure></p>
+<p>例，数组和指针在sizeof上的区别：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> c[]=&#123;<span class="string">'a'</span>,<span class="string">'b'</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> *ip=a;</span><br><span class="line"><span class="keyword">char</span> *cp=c;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"sizeof(ip)=%d\n"</span>,<span class="keyword">sizeof</span>(ip));</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"sizeof(cp)=%d\n"</span>,<span class="keyword">sizeof</span>(cp));</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"sizeof(a)=%d\n"</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"sizeof(c)=%d\n"</span>,<span class="keyword">sizeof</span>(c));</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"sizeof(a)/sizeof(a[0])=%d\n"</span>,<span class="keyword">sizeof</span>(a)/<span class="keyword">sizeof</span>(a[<span class="number">0</span>]));</span><br></pre></td></tr></table></figure></p>
+<p>输出结果为：</p>
+<blockquote>
+<p>sizeof(ip)=4<br>sizeof(cp)=4<br>sizeof(a)=24<br>sizeof(c)=2<br>sizeof(a)/sizeof(a[0])=6</p>
+</blockquote>
+<p>对任何类型的指针求sizeof得到的结果均是一个相同的值。C中，指针只保存一个地址，所以任何类型的指针都占用相同的字节数。<br>而对<font color="brown">数组名</font>sizeof的结果是整个数组所占的字节数。可以根据该技巧计算数组中元素的数量。<code>sizeof(a)/sizeof(a[0])</code></p>
+<p>==============<font color="red" size="5"><strong>本章完</strong></font>===============</p>
+<hr>
+<hr>
+<h1 id="第四章-表达式和运算符"><a href="#第四章-表达式和运算符" class="headerlink" title="第四章 表达式和运算符"></a><center><font color="brown">第四章 表达式和运算符</font></center></h1><h2 id="4-1-自增（减）运算法"><a href="#4-1-自增（减）运算法" class="headerlink" title="4.1 自增（减）运算法"></a>4.1 自增（减）运算法</h2><p>C有三大运算符</p>
+<ol>
+<li>算术</li>
+<li>关系与逻辑</li>
+<li>位操作</li>
+</ol>
+<p>另外还有一些特殊的运算符，用于完成一些特殊的操作：</p>
+<ol>
+<li>赋值运算符</li>
+<li>条件运算符</li>
+<li>指针运算符</li>
+</ol>
+<p>以下以自增运算符为例说明，自减运算符同理。</p>
+<p>对于自增运算符，只有用在表达式中前缀和后缀的区别才能有所体现。<br>为了说明前后椎的问题，可以将自增运算符分为两个步骤：</p>
+<ol>
+<li>一个步骤是复制一份变量的拷贝用于周围的表达式。</li>
+<li>另一个步骤是增加自身的值</li>
+</ol>
+<p>前缀和后缀的区别就是：</p>
+<ol>
+<li>前缀运算符首先增加变量的值，然后复制一份拷贝；</li>
+<li>后缀则先复制一份拷贝，而后增加值。</li>
+</ol>
+<center><strong>单目运算符都是右结合的</strong></center>
+
+<h2 id="4-2-左值和右值"><a href="#4-2-左值和右值" class="headerlink" title="4.2 左值和右值"></a>4.2 左值和右值</h2><p>左值得定义：<br>simple：能放到等号左边的就是左值。<br>学术定义：在内存中有一个确定位置的叫左值。</p>
+<h1 id="4-4-数据类型转换"><a href="#4-4-数据类型转换" class="headerlink" title="4.4 数据类型转换"></a>4.4 数据类型转换</h1><ol>
+<li>隐式转换</li>
+<li>强制转换</li>
+</ol>
+<p>隐式转换的步骤：<br><img src="http://i12.tietuku.com/a9f7e802ae3a6c4d.png" alt="隐式转换的步骤"></p>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p>格式：<code>（类型）表达式</code><br>例如：<code>（float）i</code></p>
+<p>逻辑运算符中注意的问题：<br><code>&amp;&amp;</code>与<code>||</code>均为从左向右的顺序进行。<br>在<code>&amp;&amp;</code>中，逻辑假与任何逻辑值<code>&amp;&amp;</code>都是假，所以<code>&amp;&amp;</code>右边的操作根本不执行，该行为称为逻辑运算符中的短路效应。同理，在<code>||</code>中也存在短路效应。<br>例：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="number">5</span>&lt;<span class="number">3</span> &amp;&amp; i++);</span><br><span class="line"><span class="keyword">if</span>(<span class="number">5</span>&gt;<span class="number">3</span> || i++);</span><br></pre></td></tr></table></figure></p>
+<p>在上式两行代码中，<code>&amp;&amp;</code>和<code>||</code>右边的操作根本<strong>不！执！行！</strong></p>
+<p>除了上述三个固定顺序的运算符（<code>&amp;&amp;，||，？：</code>）运算符外，其他的运算符号是没有计算顺序的，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int m;</span><br><span class="line">printf(&quot;%d%d&quot;,m,m=7)</span><br></pre></td></tr></table></figure>
+<p>谁能知道上边的这个代码竟然特么的会输出<code>7 7</code>，而不是我们希望看到的<code>1 7</code>。</p>
+<h2 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h2><p>功能：</p>
+<ul>
+<li>判断整除。通过a%b==0判断a是否能被b整除。</li>
+<li>映射到某个范围。给定任何一个数a，都可以通过<code>a%100+1</code>来把a映射到[1,100]的区间。例如，想模拟出扑克牌的过程，即可以通过<code>rand()%54+1</code>来模拟。</li>
+<li>得到后n位数。例如a%1000可以得到a的最后三位数。</li>
+<li>分别得到每一位上的值。运用上述思想拓展可得。<br>例如：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">1234</span>;</span><br><span class="line"><span class="keyword">while</span>(a)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a%<span class="number">10</span>);</span><br><span class="line">	a=a/<span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>又如，打印出整数的二进制表达式：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">1234</span>;</span><br><span class="line"><span class="keyword">while</span>(a)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,a%<span class="number">2</span>);</span><br><span class="line">	a=a/<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="4-7-位运算"><a href="#4-7-位运算" class="headerlink" title="4.7 位运算"></a><font color="brown">4.7 位运算</font></h2><p>位运算的一个技巧：</p>
+<blockquote>
+<p>生成一个每一位都为1的整型数，可以利用取反操作<code>int a=~(0)</code>。如果要生成从右边开始数，从第三位到第5位为1的一个整形数，可以通过以下步骤来完成：</p>
+<ol>
+<li>首先对0按位取反，<code>~0</code>得到<code>11111111</code>.</li>
+<li>将上述的结果左移两位，<code>(~0)&lt;&lt;2</code>， 可以得到<code>11111100</code></li>
+<li>再对上述结果按位取反，<code>~((~0)&lt;&lt;2)</code>,得到<code>00000011</code></li>
+<li>对上述结果左移三位，<code>(~((~0)&lt;&lt;2))&lt;&lt;3</code>,得到<code>00011000</code></li>
+</ol>
+</blockquote>
+<p>位运算重点总结</p>
+<blockquote>
+<ol>
+<li>无论是逻辑右移还是算术右移，都是对原来的结果除以2.</li>
+<li>对于无符号数采用逻辑右移，对有符号数采用算术右移。</li>
+<li>逻辑右移时，最高位移入0；算术右移时，最左面的符号位复制一份，插入到符号位的右面。</li>
+</ol>
+</blockquote>
+<hr>
+<h1 id="第五章-输入输出"><a href="#第五章-输入输出" class="headerlink" title="第五章 输入输出"></a><center><font color="brown">第五章 输入输出</font></center></h1><h2 id="5-3-单个字符输入输出"><a href="#5-3-单个字符输入输出" class="headerlink" title="5.3 单个字符输入输出"></a>5.3 单个字符输入输出</h2><blockquote>
+<p>能通过键盘输入的常见的空白字符有三个，分别是<br><code>空格</code>，由<code>&#39;\t&#39;</code>表示的tab键和由<code>&#39;\n&#39;</code>表示的Enter键。</p>
+</blockquote>
+<p><strong><code>int getchar()</code></strong><br>该函数顾名思义，即为从流中取出一个字符，默认从stdin中输入流中得到一个字符，也就是说从键盘输入中获得一个字符，与之相对于的输出函数是<strong><code>putchar()</code></strong>函数.</p>
+<p>例如，有如下程序：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> ch;</span><br><span class="line"><span class="comment">/*first*/</span></span><br><span class="line">ch=getchar();</span><br><span class="line"><span class="built_in">putchar</span>(<span class="string">'1'</span>);</span><br><span class="line"><span class="built_in">putchar</span>(ch);</span><br><span class="line"><span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*second*/</span></span><br><span class="line">ch=getchar();</span><br><span class="line"><span class="built_in">putchar</span>(<span class="string">'2'</span>);</span><br><span class="line"><span class="built_in">putchar</span>(ch);</span><br><span class="line"><span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>当输入<code>ab+Enter</code>,其中<code>+Enter</code>表示回车。<br>此时屏幕上输出为：</p>
+<blockquote>
+<p>ab<br>1a<br>2b<br>请按任意键继续…</p>
+</blockquote>
+<p>当输入a+Enter时，其中<code>+Enter</code>表示回车。<br>此时屏幕上输出为：</p>
+<blockquote>
+<p>a<br>1a<br>2<br>.<br>.<br>请按任意键继续…</p>
+</blockquote>
+<p>注意第二次的输出，<code>请按任意键继续</code>上边有两行空格。<br>此时，由于数字2的后边分别输入了两个回车。输入<code>a+Enter</code>时的<code>Enter</code>被<code>getchar</code>读入到ch中，然后被<code>putchar()</code>函数输出。</p>
+<font color="brown">由以上可以得出：getchar()函数每次只读入任意一个字符，包括回车<code>Enter</code>等空白字符。</font>
+
+<h2 id="5-4-字符串输入输出"><a href="#5-4-字符串输入输出" class="headerlink" title="5.4 字符串输入输出"></a>5.4 字符串输入输出</h2><p><code>gets()</code>和<code>puts()</code></p>
+<ul>
+<li>利用gets()函数读入键盘输入的字符串时，空格和tab键都是字符串的一部分</li>
+<li>gets函数读入字符串的时候，以回车或者EOF为字符串的终止符，它同时把回车从缓冲区读走。</li>
+</ul>
+<h5 id="scanf函数"><a href="#scanf函数" class="headerlink" title="scanf函数"></a>scanf函数</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> str[<span class="number">5</span>];</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">	<span class="keyword">short</span> <span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> result;</span><br><span class="line">	result=<span class="built_in">scanf</span>(<span class="string">"%c,%hd %5s"</span>,&amp;c,&amp;i,str);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于上述程序，如果输入<code>a,133 abc</code>，此时a被保存于c中，133保存于i中，abc保存于字符型数组str中。因为有三个变量被成功写入，因此scanf返回值为3.</p>
+<blockquote>
+<p>scanf函数会忽略<code>stdin</code>中的空白字符，即空格和tab都会被忽略掉。<br><strong>scanf函数的实参是变量的地址。</strong></p>
+</blockquote>
+<h4 id="scanf函数处理字符，数字和字符串"><a href="#scanf函数处理字符，数字和字符串" class="headerlink" title="scanf函数处理字符，数字和字符串"></a>scanf函数处理字符，数字和字符串</h4><ol>
+<li><code>scanf(&quot;%c&quot;,&amp;c)</code>读取一个从键盘上输入的字符时，输入中的任何字符，包括空白字符，tab字符和Enter，都不会被忽略，都会被scanf函数成功写入。这一点与getchar()函数一样</li>
+<li>但是，当用scanf输入一个整数时，会忽略所有的空格，回车和tab。</li>
+<li>与gets()函数不同，scanf函数输入时会忽略字符串前边的空格，tab和回车。</li>
+</ol>
+<p>许多输入有问题时因为缓冲区有上次输入的剩余字符或者错误的字符。<br>提供一种清空缓存区的方法<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"*\n"</span>);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line"><span class="keyword">while</span>((c=getchar())!=<span class="string">'\n'</span> &amp;&amp; c!=EOF)</span><br><span class="line">	;</span><br><span class="line"><span class="keyword">if</span>(<span class="number">111</span>==i)</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">&#125;<span class="keyword">while</span>(<span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用scanf函数的时候，判断其返回值是一个比较好的方法。</p>
+</blockquote>
+<h3 id="5-6-6-格式化输出printf函数"><a href="#5-6-6-格式化输出printf函数" class="headerlink" title="5.6.6 格式化输出printf函数"></a>5.6.6 格式化输出printf函数</h3><p>与scanf的区别</p>
+<ol>
+<li><code>printf</code>函数可以使用<code>%f</code>输出<code>double</code>和<code>float</code>两种类型，而<code>scanf</code>必须使用<code>%f</code>输入float型，而用<code>%lf</code>输入double型。</li>
+<li>scanf格式控制字符串中不能使用<code>&#39;\n&#39;</code></li>
+</ol>
+<p>printf格式化输出时，比较值得注意的是%后边的m.n格式，当作用于d整数，s字符串和f浮点数的时候不太一样。</p>
+<ul>
+<li>当作用于浮点数和字符串的时候，m代表输出至少要占m位（至少得意思是如果输出大于m位则正常输出，如果小于m位则输出m位，其余用空格填充）。n作用于浮点数时，代表小数点后边输出几位。n用作字符串时，用于输出几个字符。</li>
+</ul>
+<p>例如：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f1=<span class="number">123.456</span>；</span><br><span class="line"><span class="keyword">float</span> f2=<span class="number">12.34567</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%9.2f\t%9.2f\n"</span>,f1,f2);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%9.2f\t%9.2f\n"</span>,f2,f1);</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-6-输入规则全真七子"><a href="#5-6-输入规则全真七子" class="headerlink" title="5.6 输入规则全真七子"></a>5.6 输入规则全真七子</h2><blockquote>
+<ol>
+<li>键盘输入被保存于缓冲中，知道输入回车，输入函数采取缓冲区读取。</li>
+<li>getchar()每次读取任意一个字符，包括回车。</li>
+<li>gets读入字符串时，空格和tab都是字符串的一部分。gets以回车和EOF为字符串的终止符，同时把回车从缓冲区读走。</li>
+<li>scanf读入数字%d或字符串%s的时候，scanf忽略掉空格，tab，回车等空白字符。</li>
+<li>如果缓存区不为空，scanf按照自己的格式提取。成功或失败！</li>
+<li>掌握利用while循环清空缓存的方法，但是不要用fflush(stdin)</li>
+<li>尝试使用fgets和sscanf.</li>
+</ol>
+</blockquote>
+<h1 id="第七章"><a href="#第七章" class="headerlink" title="第七章"></a><center><font color="brown">第七章</font></center></h1><h3 id="7-1-3-宏替换"><a href="#7-1-3-宏替换" class="headerlink" title="7.1.3 宏替换"></a>7.1.3 宏替换</h3><p>两种形式：</p>
+<ul>
+<li>object-like<br>定义：#define<identifier> <replacement token="" list=""><br>例：#define PI 3.14159</replacement></identifier></li>
+<li>function-like<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">定义：</span><br><span class="line">#define&lt;identifier&gt;(&lt;replacement list&gt;)\ </span><br><span class="line">&lt;replacement token list&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>例：#define zhouchang(r) (2<em>PI</em>(r))</p>
+<h2 id="7-2-main函数"><a href="#7-2-main函数" class="headerlink" title="7.2 main函数"></a>7.2 main函数</h2><p>main函数的三种定义方式<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">/*无传入参数*/</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span><span class="comment">/*无传入参数*/</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span> *argv[])</span><span class="comment">/*有传入参数,其中argc代表传入的参数个数，argv为一个指针数组，其中每一个指针都都指向了传入参数的具体值*/</span></span></span><br></pre></td></tr></table></figure></p>
+<h2 id="7-4-static和const"><a href="#7-4-static和const" class="headerlink" title="7.4 static和const"></a>7.4 static和const</h2><p><code>const char *p 和 char *const p</code>的辨析<br>《Effictive C++》条款21中提供了一种方法，画一条垂直线穿过指针声明中的星号*。<br>如果const出现在直线的左边，表示指针指向的数据为常量<br>如果const出现在右边，表示指针本身为常量，不能改变指针p的指向。</p>
+<hr>
+<p><strong>static</strong><br>两大特性：静态和隐藏<br><strong>static的用法</strong><br>static和全局变量一样，都被存储在内存区的静态存储区。<br>static类型的变量，如果不予初始化，其初始值为0，而不像某些自动变量那样是一个随机数。<br>static比较经典的一个用法就是统计函数被调用了多少次。<br><strong>static的第二个特性</strong></p>
+<blockquote>
+<p>信息隐藏：static变量只在定义它的范围内可见，在其他范围内不可见。<br>如果static用来修饰函数，这个函数只在当前的.c文件中可见。这样我们就可以在不同的.c文件中定义同名函数，而不会引起冲突，只要其中一个函数被static修饰。</p>
+</blockquote>
+<p>如果要定义一个能被其他.c文件使用的全局变量，可以在任一个.c文件中定义这个全局变量，定义的时候不能用static修饰。在其他.c文件中使用该变量时，需要加上关键字extern对其进行修饰，表示该变量已经在其他.c文件中被定义。</p>
+<center><code>表7.1 static用法总结</code></center>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">变量类型</th>
+<th style="text-align:center">声明位置</th>
+<th style="text-align:center">储存位置</th>
+<th style="text-align:center">作用域</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">static全局变量</td>
+<td style="text-align:center">语句块之外</td>
+<td style="text-align:center">静态存储区</td>
+<td style="text-align:center">整个文件</td>
+<td style="text-align:center">不允许其他文件访问</td>
+</tr>
+<tr>
+<td style="text-align:center">static局部变量</td>
+<td style="text-align:center">语句块中</td>
+<td style="text-align:center">静态储存区</td>
+<td style="text-align:center">整个语句块</td>
+<td style="text-align:center">值在程序执行时一直保持:</td>
+</tr>
+</tbody>
+</table>
+<p><code>extern</code>单独讲解</p>
+<blockquote>
+<p>extern可置于变量或者函数前，以表示变量或者函数的定义在别的文件中，提示编译器遇到此变量或函数时，在其它模块中寻找其定义。另外，extern也可用来进行链接指定。</p>
+</blockquote>
+<p><strong><code>关于头文件包含</code></strong><br>当有多个.c文件同时使用同一个函数时，在每一个文件中申明函数显得累赘，因此此时可以将函数的声明放到一个头文件中，然后每一个使用该函数的.c文件用include包含进申明了该函数的头文件便可。这样写的好处，一是看着代码不累赘；二是当函数需要发生变化时不用每个c文件都做修改，只需要在包含函数的c文件中做修改即可。<br>再三说明：<strong><font color="red">头文件中只应该包含那些不申请内存的声明语句</font></strong></p>
+<p>一般来说，头文件中应该包含的内容有如下几类</p>
+<blockquote>
+<p>1.避免重复包含的#ifndef…#endif语句<br>2.宏定义<br>3.struct，union和enum等类型的typedef类型的定义<br>4.全局变量以及不申请内存的声明（变量前加extern，函数不给出具体定义）</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/30/c-point/" data-id="cjdfbdzrf001mj4jhfbbfv5v3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编程语言/">编程语言</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/30/resource-of-linggle/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linggle常用命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/27/hexo-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用Github+Hexo搭建博客</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-11/">C++11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-小结/">C++小结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-S/">C/S</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIDR/">CIDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essential-C/">Essential C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitcafe/">Gitcafe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkdownPad/">MarkdownPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSFP/">OSFP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RIP/">RIP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cctype/">cctype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idndef/">idndef</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linggle/">linggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-once/">pragma once</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-pack/">pragma pack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sizeof/">sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this指针/">this指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-function-table/">virtual function table</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/voltile/">voltile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windeployqt/">windeployqt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中缀表达式/">中缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/位域/">位域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存对齐/">内存对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分页管理/">分页管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态绑定/">动态绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为OJ/">华为OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后缀表达式/">后缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/子网/">子网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串常量/">字符串常量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小端模式/">小端模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用工具/">常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能指针/">智能指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/析构/">析构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/查找/">查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/段式内存管理/">段式内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类型转换/">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网际协议/">网际协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯/">腾讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚函数/">虚函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转义字符/">转义字符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Beautiful-Soup/" style="font-size: 10px;">Beautiful Soup</a> <a href="/tags/C/" style="font-size: 18.57px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/C-11/" style="font-size: 10px;">C++11</a> <a href="/tags/C-小结/" style="font-size: 11.43px;">C++小结</a> <a href="/tags/C-S/" style="font-size: 10px;">C/S</a> <a href="/tags/CIDR/" style="font-size: 10px;">CIDR</a> <a href="/tags/Essential-C/" style="font-size: 10px;">Essential C++</a> <a href="/tags/Git/" style="font-size: 14.29px;">Git</a> <a href="/tags/Gitcafe/" style="font-size: 10px;">Gitcafe</a> <a href="/tags/Github/" style="font-size: 14.29px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Jekyll/" style="font-size: 12.86px;">Jekyll</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MarkdownPad/" style="font-size: 10px;">MarkdownPad</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OSFP/" style="font-size: 10px;">OSFP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Qt/" style="font-size: 11.43px;">Qt</a> <a href="/tags/RIP/" style="font-size: 10px;">RIP</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/UDP/" style="font-size: 10px;">UDP</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/cctype/" style="font-size: 10px;">cctype</a> <a href="/tags/idndef/" style="font-size: 10px;">idndef</a> <a href="/tags/linggle/" style="font-size: 10px;">linggle</a> <a href="/tags/pragma-once/" style="font-size: 10px;">pragma once</a> <a href="/tags/pragma-pack/" style="font-size: 10px;">pragma pack</a> <a href="/tags/python/" style="font-size: 14.29px;">python</a> <a href="/tags/sizeof/" style="font-size: 10px;">sizeof</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/this指针/" style="font-size: 10px;">this指针</a> <a href="/tags/virtual-function-table/" style="font-size: 10px;">virtual function table</a> <a href="/tags/voltile/" style="font-size: 10px;">voltile</a> <a href="/tags/windeployqt/" style="font-size: 10px;">windeployqt</a> <a href="/tags/中缀表达式/" style="font-size: 11.43px;">中缀表达式</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/位域/" style="font-size: 10px;">位域</a> <a href="/tags/内存对齐/" style="font-size: 10px;">内存对齐</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/分页管理/" style="font-size: 10px;">分页管理</a> <a href="/tags/动态绑定/" style="font-size: 10px;">动态绑定</a> <a href="/tags/华为OJ/" style="font-size: 14.29px;">华为OJ</a> <a href="/tags/后缀表达式/" style="font-size: 10px;">后缀表达式</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/子网/" style="font-size: 10px;">子网</a> <a href="/tags/字符串常量/" style="font-size: 10px;">字符串常量</a> <a href="/tags/小端模式/" style="font-size: 10px;">小端模式</a> <a href="/tags/常用工具/" style="font-size: 10px;">常用工具</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 17.14px;">操作系统</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/智能指针/" style="font-size: 10px;">智能指针</a> <a href="/tags/构造函数/" style="font-size: 10px;">构造函数</a> <a href="/tags/析构/" style="font-size: 10px;">析构</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/段式内存管理/" style="font-size: 10px;">段式内存管理</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 11.43px;">爬虫</a> <a href="/tags/算法/" style="font-size: 12.86px;">算法</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/类型转换/" style="font-size: 15.71px;">类型转换</a> <a href="/tags/编程语言/" style="font-size: 11.43px;">编程语言</a> <a href="/tags/网际协议/" style="font-size: 10px;">网际协议</a> <a href="/tags/腾讯/" style="font-size: 10px;">腾讯</a> <a href="/tags/虚函数/" style="font-size: 10px;">虚函数</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/转义字符/" style="font-size: 10px;">转义字符</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/09/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/python-learning/">Python学习</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/Python-sequence/">Python-列表和元组</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/15/python-spider-00/">python爬虫实战</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/14/Beautiful-soup/">Beautiful Soup常用语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

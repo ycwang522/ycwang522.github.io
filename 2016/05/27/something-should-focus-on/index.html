@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>刷题遇上的知识点 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1 运算符号|（按位取或运算） 和&amp;amp;（按位取与运算），逗号运算符例题分析： 如果x=2014，下面函数的返回值是（） 123456789101112&amp;lt;?cppint fun(unsigned int x)&amp;#123;     int n=0;     while((x+1))     &amp;#123;         n++;         x=x|(x+1);     &amp;#125;">
+<meta name="keywords" content="C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="刷题遇上的知识点">
+<meta property="og:url" content="http://yoursite.com/2016/05/27/something-should-focus-on/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1 运算符号|（按位取或运算） 和&amp;amp;（按位取与运算），逗号运算符例题分析： 如果x=2014，下面函数的返回值是（） 123456789101112&amp;lt;?cppint fun(unsigned int x)&amp;#123;     int n=0;     while((x+1))     &amp;#123;         n++;         x=x|(x+1);     &amp;#125;">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?T(n)=O(log2n)">
+<meta property="og:updated_time" content="2016-06-30T02:43:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="刷题遇上的知识点">
+<meta name="twitter:description" content="1 运算符号|（按位取或运算） 和&amp;amp;（按位取与运算），逗号运算符例题分析： 如果x=2014，下面函数的返回值是（） 123456789101112&amp;lt;?cppint fun(unsigned int x)&amp;#123;     int n=0;     while((x+1))     &amp;#123;         n++;         x=x|(x+1);     &amp;#125;">
+<meta name="twitter:image" content="http://latex.codecogs.com/gif.latex?T(n)=O(log2n)">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-something-should-focus-on" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/27/something-should-focus-on/" class="article-date">
+  <time datetime="2016-05-27T05:36:36.000Z" itemprop="datePublished">2016-05-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      刷题遇上的知识点
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-运算符号-（按位取或运算）-和-amp-（按位取与运算），逗号运算符"><a href="#1-运算符号-（按位取或运算）-和-amp-（按位取与运算），逗号运算符" class="headerlink" title="1 运算符号|（按位取或运算） 和&amp;（按位取与运算），逗号运算符"></a>1 运算符号<code>|</code>（按位取或运算） 和<code>&amp;</code>（按位取与运算），逗号运算符</h1><p>例题分析：</p>
+<p>如果x=2014，下面函数的返回值是（）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?cpp</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> n=<span class="number">0</span>;</span><br><span class="line">     <span class="keyword">while</span>((x+<span class="number">1</span>))</span><br><span class="line">     &#123;</span><br><span class="line">         n++;</span><br><span class="line">         x=x|(x+<span class="number">1</span>);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>题目当中，有一个<code>x|(x+1)</code>的计算。</p>
+<p>对于<code>x|(x+1)</code>，是计算 x 的二进制中0的数量。</p>
+<p>而对于<code>x|(x-1)</code>，是计算 x 的二进制中1的数量。</p>
+<p>如题目中所述，2014的二进制表示为<code>0000 0000 0000 0000 0000 0011 1101 1111</code></p>
+<p>每次计算都是将 x 的二进制数中从右往左第一个 0 变成 1 ，直至所有的数都变成 1 溢出。</p>
+<p>例如</p>
+<p>第一次循环：</p>
+<p><code>0000 0000 0000 0000 0000 0011 1101 1111|0000 0000 0000 0000 0000 0011 1110 0000</code></p>
+<p>==<code>0000 0000 0000 0000 0000 0011 1111 1111</code></p>
+<p>以此类推。</p>
+<h2 id="1-1-逗号运算符"><a href="#1-1-逗号运算符" class="headerlink" title="1.1 逗号运算符"></a>1.1 逗号运算符</h2><ul>
+<li>在C语言中，多个表达式可以用逗号分开，其中用逗号分开的表达式的值分别结算，但<strong>整个表达式的值是最后一个表达式的值</strong>。</li>
+<li>逗号运算符的运算级别是所有运算符中最低的。如下例子。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int a=3, b=5, c;</span><br><span class="line">c = a&gt;b, a+b;// 运行后c值为0，因为逗号运算符的优先级低于赋值运算符，所以先将a&gt;b的结果(为0)赋值给c，之后运算a+b（结果不保存），所以c=0</span><br><span class="line"></span><br><span class="line">c = (a&gt;b, a+b); // 运行后c值为8，因为括号的优先级高于赋值运算符，所以先算括号内的表达式，此时计算结果为最后一个表达式的值，即a+b的值，所以c=8</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="2-sizeof求结构体的长度问题"><a href="#2-sizeof求结构体的长度问题" class="headerlink" title="2 sizeof求结构体的长度问题"></a>2 sizeof求结构体的长度问题</h1><p>用sizeof求结构体的长度时，不能简单地使用各个成员的长度和，而是要考虑系统在存储结构体变量时的地址对其问题。</p>
+<p>实际中，存储变量时地址要对其，应遵循两点原则：</p>
+<ol>
+<li>结构体变量中成员的偏移量必须是成员大小的整数倍。</li>
+<li>结构体大小必须是所有成员大小的整数倍，也就是所有成员大小的公倍数。即长度最大的成员的整数倍。</li>
+</ol>
+<p>例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">double</span> a;</span><br><span class="line">	<span class="keyword">int</span> b;</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">&#125; A;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>对A求sizeof的长度为double类型长度的整数倍，也即8的整数倍。</p>
+<p>又如，</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?c</span><br><span class="line"><span class="class"><span class="keyword">struct</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a;</span><br><span class="line">	<span class="keyword">char</span> b;</span><br><span class="line">&#125;B;</span><br><span class="line">?c&gt;</span><br></pre></td></tr></table></figure>
+<p>对B求sizeof的长度为int类型长度的整数倍，也即4的整数倍。</p>
+<p>来看一例题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">        int a;</span><br><span class="line">        short b;</span><br><span class="line">        int c;</span><br><span class="line">        char d;</span><br><span class="line">&#125;;</span><br><span class="line">class B</span><br><span class="line">&#123;</span><br><span class="line">        double a;</span><br><span class="line">        short b;</span><br><span class="line">        int c;</span><br><span class="line">        char d;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//在32位机器上用gcc编译以上代码，求sizeof(A),sizeof(B)分别是多少。</span><br></pre></td></tr></table></figure>
+<p>A中，a占4个字节，b本应占2个字节，但由于c占4个字节，为了满足条件： </p>
+<p>结构体内的成员的首地址相对于结构体首地址的偏移量是其类型大小的整数倍，比如说double型成员相对于结构体的首地址的地址偏移量应该是8的倍数<br>b多占用2个字节，为了满足条件1，d占用4个字节，一共16个字节。<br>B中，a占8个字节，b占2个字节，但由于c占4个字节，为了满足条件2，b多占用2个字节，<br>{: .notice}</p>
+<p>即abc共占用8+4+4=16个字节， </p>
+<p>为了满足条件1，d将占用8个字节，一共24个字节。</p>
+<h1 id="3-零碎的知识点"><a href="#3-零碎的知识点" class="headerlink" title="3 零碎的知识点"></a>3 零碎的知识点</h1><ul>
+<li>普通的运算符可以重载，特殊的不能重载，比如 . :: 等</li>
+<li>const是常对象，也就是不改变成员变量的值，而成员函数中只有const函数可以确保不改变成员变量的值</li>
+<li>析构函数一般定义为虚函数，构造函数不能是虚函数</li>
+<li>重载只要求函数名相同，参数类型和个数不同，不要求返回值类型</li>
+<li>虚函数不能是：内联函数、静态函数、构造函数</li>
+</ul>
+<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><ul>
+<li>宏的嵌套定义过多会影响程序的可读性，而且很容易出错</li>
+<li>相对于函数调用，宏定义可以提高程序的运行效率</li>
+<li>宏定义不检查参数正确性，会有安全隐患</li>
+</ul>
+<h2 id="动态分配的内存free释放"><a href="#动态分配的内存free释放" class="headerlink" title="动态分配的内存free释放"></a>动态分配的内存free释放</h2><p>当使用free释放掉一个指针内容时，需要程序员手动将该指针置为NULL，编译器不会自动置NULL，否则会产生野指针。</p>
+<h2 id="reinterpret-cast-————C-中的强制类型转换符"><a href="#reinterpret-cast-————C-中的强制类型转换符" class="headerlink" title="reinterpret_cast ————C++中的强制类型转换符"></a>reinterpret_cast ————C++中的强制类型转换符</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reinterpret_cast&lt;type-id&gt; (expression)</span><br></pre></td></tr></table></figure>
+<p>type-id 必须是一个指针、引用、算术类型、函数指针或者成员指针。</p>
+<p>它可以把一个指针转换成一个整数，也可以把一个整数转换成一个指针（先把一个指针转换成一个整数，再把该整数转换成原类型的指针，还可以得到原先的指针值）。</p>
+<p>有如下例题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//下面程序运行后的结果为：</span><br><span class="line">char str[] = &quot;glad to test something&quot;;</span><br><span class="line">char *p = str;</span><br><span class="line">p++;</span><br><span class="line">int *p1 = reinterpret_cast&lt;int *&gt;(p);</span><br><span class="line">p1++;</span><br><span class="line">p = reinterpret_cast&lt;char *&gt;(p1); </span><br><span class="line">printf(&quot;result is %s\n&quot;, p);</span><br><span class="line">//结果为：result is to test something</span><br></pre></td></tr></table></figure>
+<p>例题分析：<br>一开始，char类型的指针p指向str的首地址，即指向字符串中的g<br>执行p++，指向<code>l</code><br>然后将char类型的指针p，强制转换成int类型的指针p1<br>执行p1++，实际移动了四个字节，然后再将int类型的p1指针转换成char类型的p指针，<br>p指向了t。<br>所以结果输出为<code>result is to test something</code></p>
+<h1 id="4-strcat-and-strcpy"><a href="#4-strcat-and-strcpy" class="headerlink" title="4. strcat and strcpy"></a>4. strcat and strcpy</h1><p>strcat函数的原型是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">char *strcat(</span><br><span class="line">   char *strDestination,</span><br><span class="line">   const char *strSource </span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>strcat的作用是<strong>连接两个字符串</strong>，具体操作时，是<strong>将src所指的字符串添加到desk结尾处，覆盖掉desk结尾的‘\0’</strong></p>
+<p>strcpy函数的原型是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">char *strcpy(</span><br><span class="line">   char *strDestination,</span><br><span class="line">   const char *strSource </span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p>strcpy的作用是，<strong>src所指向的字符串复制到以desk开始的地址空间</strong></p>
+<p>区别：</p>
+<ul>
+<li>strcat是无空格连接两个字符串</li>
+<li>strcpy是覆盖掉前一个指针开始位置的字符串</li>
+</ul>
+<h1 id="5-复杂度计算"><a href="#5-复杂度计算" class="headerlink" title="5.复杂度计算"></a>5.复杂度计算</h1><div markdown="0"><a href="#" class="btn btn-success">复杂度的排列</a></div>
+
+
+
+<p>常数阶：$$O(1)$$ &lt; 对数阶（$$O(log_2n$$） &lt; 线形阶（$$O(n)$$）&lt; 线形对数阶（$$O(n*log_2n)$$）</p>
+<div markdown="0"><a href="#" class="btn btn-warning">复杂度计算</a></div>
+
+<p>例1：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum = 0;							1次</span><br><span class="line">for(int i = 0; i &lt; n; i ++ )		n次</span><br><span class="line">	for(int j = 0; j &lt; n; j ++)     n^2次</span><br><span class="line">		sum++;                      n^2次</span><br></pre></td></tr></table></figure>
+<p>因为$Θ(2n^2+n+1)=n^2$（Θ即：去低阶项，去掉常数项，去掉高阶项的常参得到），所以$T(n)= =O(n^2)$；</p>
+<p>例2：$O(n^2)$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (i=1;i&lt;n;i++)  </span><br><span class="line"> &#123;   </span><br><span class="line">     y=y+1;         ①     </span><br><span class="line">     for (j=0;j&lt;=(2*n);j++)      </span><br><span class="line">        x++;         ②        </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>解： 语句1的频度是$n-1$</p>
+<p>语句2的频度是$\ (n-1)(2n+1) = (2n^2-n-1)$        </p>
+<p>所以有$f(n)=2n^2-n-1+(n-1)=2n^2-2$</p>
+<p>又有$O(2^2-2)=n^2$<br>该程序的时间复杂度$T(n)=O(n^2)$.  </p>
+<p>一般情况下，对<strong>步进循环</strong>语句<strong>只需考虑循环体中语句的执行次数，忽略该语句中步长加1、终值判别、控制转移等成分</strong>，当有若干个循环语句时，算法的时间复杂度是由<strong>嵌套层数最多的循环语句中最内层语句的频度f(n)决定的</strong>。   </p>
+<p>例3：$O(log_2 n)$  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i=1;     ①  </span><br><span class="line">while (i&lt;=n)  </span><br><span class="line">  i=i*2; ②</span><br></pre></td></tr></table></figure>
+<p>解：语句1的频度是1；</p>
+<p>语句2的频度是$f(n)$,则有$2^{f(n)}&lt;=n;f(n)&lt;=log_2{n}    $</p>
+<p>取最大值$f(n)=log_2n$,</p>
+<p>$T(n)=O(log_2n )$</p>
+<p><a href="http://www.codecogs.com/eqnedit.php?latex=T(n)=O(log2n)" target="_blank"><img src="http://latex.codecogs.com/gif.latex?T(n)=O(log2n)" title="T(n)=O(log2n)"></a></p>
+<p>常用的算法时间复杂度和空间复杂度</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">排序法</th>
+<th style="text-align:center">平均时间</th>
+<th style="text-align:right">最差情形</th>
+<th style="text-align:right">稳定度</th>
+<th style="text-align:right">额外空间</th>
+<th style="text-align:right">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">冒泡</td>
+<td style="text-align:center">$O(n^2)$</td>
+<td style="text-align:right">$O(n^2)$</td>
+<td style="text-align:right">稳定</td>
+<td style="text-align:right">$O(1)$</td>
+<td style="text-align:right">n小时较好</td>
+</tr>
+<tr>
+<td style="text-align:left">交换</td>
+<td style="text-align:center">$O(n^2)$</td>
+<td style="text-align:right">$O(n^2)$</td>
+<td style="text-align:right">不稳定</td>
+<td style="text-align:right">$O(1)$</td>
+<td style="text-align:right">n小时较好</td>
+</tr>
+<tr>
+<td style="text-align:left">——</td>
+</tr>
+<tr>
+<td style="text-align:left">选择</td>
+<td style="text-align:center">$O(n^2)$</td>
+<td style="text-align:right">$O(n^2)$</td>
+<td style="text-align:right">不稳定</td>
+<td style="text-align:right">$O(1)$</td>
+<td style="text-align:right">n小时较好</td>
+</tr>
+<tr>
+<td style="text-align:left">插入</td>
+<td style="text-align:center">$O(n^2)$</td>
+<td style="text-align:right">$O(n^2)$</td>
+<td style="text-align:right">稳定</td>
+<td style="text-align:right">$O(1)$</td>
+<td style="text-align:right">大部分已排序时较好</td>
+</tr>
+<tr>
+<td style="text-align:left">—-</td>
+</tr>
+<tr>
+<td style="text-align:left">快速</td>
+<td style="text-align:center">$O(logn)$</td>
+<td style="text-align:right">$O(n^2)$</td>
+<td style="text-align:right">不稳定</td>
+<td style="text-align:right">$O(logn)$</td>
+<td style="text-align:right">n大时较好</td>
+</tr>
+<tr>
+<td style="text-align:left">归并</td>
+<td style="text-align:center">$O(logn)$</td>
+<td style="text-align:right">$O(n^2)$</td>
+<td style="text-align:right">稳定</td>
+<td style="text-align:right">$O(1)$</td>
+<td style="text-align:right">n大时较好</td>
+</tr>
+<tr>
+<td style="text-align:left">堆</td>
+<td style="text-align:center">$O(logn)$</td>
+<td style="text-align:right">$O(n^2)$</td>
+<td style="text-align:right">不稳定</td>
+<td style="text-align:right">$O(logn)$</td>
+<td style="text-align:right">n大时较好</td>
+</tr>
+<tr>
+<td style="text-align:left">—-</td>
+</tr>
+</tbody>
+</table>
+<p>{: rules=”groups”}</p>
+<p>参考：<a href="http://blog.csdn.net/zolalad/article/details/11848739" target="_blank" rel="noopener">zolalad的专栏</a><br>{: .notice}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/27/something-should-focus-on/" data-id="cjdfbe04x00c9j4jhlcsb3z70" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/27/git-resouce/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git常用资源
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/27/ESSENTIAL C++ 读书笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ESSENTIAL C++ 读书笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C-面试/">C++面试</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Gitcafe/">Gitcafe</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo博客搭建/">Hexo博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll/">Jekyll</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Jekyll博客搭建/">Jekyll博客搭建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Qt/">Qt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Shell/">Shell</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/操作系统/">操作系统</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构/">数据结构</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/汇编/">汇编</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/算法/">算法</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/计算机网络/">计算机网络</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Beautiful-Soup/">Beautiful Soup</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-11/">C++11</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-小结/">C++小结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-S/">C/S</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIDR/">CIDR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Essential-C/">Essential C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Gitcafe/">Gitcafe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jekyll/">Jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MarkdownPad/">MarkdownPad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OSFP/">OSFP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RIP/">RIP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Shell/">Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP-IP/">TCP/IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows/">Windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cctype/">cctype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idndef/">idndef</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linggle/">linggle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-once/">pragma once</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pragma-pack/">pragma pack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sizeof/">sizeof</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/this指针/">this指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtual-function-table/">virtual function table</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/voltile/">voltile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windeployqt/">windeployqt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中缀表达式/">中缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二叉树/">二叉树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/位域/">位域</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存对齐/">内存对齐</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存管理/">内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/分页管理/">分页管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态绑定/">动态绑定</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/华为OJ/">华为OJ</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后缀表达式/">后缀表达式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/子网/">子网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串常量/">字符串常量</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/小端模式/">小端模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用工具/">常用工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异常处理/">异常处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智能指针/">智能指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构造函数/">构造函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/析构/">析构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/查找/">查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/段式内存管理/">段式内存管理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类/">类</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/类型转换/">类型转换</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编程语言/">编程语言</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网际协议/">网际协议</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/腾讯/">腾讯</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/虚函数/">虚函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转义字符/">转义字符</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链表/">链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面向对象/">面向对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Beautiful-Soup/" style="font-size: 10px;">Beautiful Soup</a> <a href="/tags/C/" style="font-size: 18.57px;">C</a> <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/C-11/" style="font-size: 10px;">C++11</a> <a href="/tags/C-小结/" style="font-size: 11.43px;">C++小结</a> <a href="/tags/C-S/" style="font-size: 10px;">C/S</a> <a href="/tags/CIDR/" style="font-size: 10px;">CIDR</a> <a href="/tags/Essential-C/" style="font-size: 10px;">Essential C++</a> <a href="/tags/Git/" style="font-size: 14.29px;">Git</a> <a href="/tags/Gitcafe/" style="font-size: 10px;">Gitcafe</a> <a href="/tags/Github/" style="font-size: 14.29px;">Github</a> <a href="/tags/HTTP/" style="font-size: 10px;">HTTP</a> <a href="/tags/Hexo/" style="font-size: 11.43px;">Hexo</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Jekyll/" style="font-size: 12.86px;">Jekyll</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MarkdownPad/" style="font-size: 10px;">MarkdownPad</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/OSFP/" style="font-size: 10px;">OSFP</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Qt/" style="font-size: 11.43px;">Qt</a> <a href="/tags/RIP/" style="font-size: 10px;">RIP</a> <a href="/tags/STL/" style="font-size: 10px;">STL</a> <a href="/tags/Shell/" style="font-size: 10px;">Shell</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TCP-IP/" style="font-size: 10px;">TCP/IP</a> <a href="/tags/UDP/" style="font-size: 10px;">UDP</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/cctype/" style="font-size: 10px;">cctype</a> <a href="/tags/idndef/" style="font-size: 10px;">idndef</a> <a href="/tags/linggle/" style="font-size: 10px;">linggle</a> <a href="/tags/pragma-once/" style="font-size: 10px;">pragma once</a> <a href="/tags/pragma-pack/" style="font-size: 10px;">pragma pack</a> <a href="/tags/python/" style="font-size: 14.29px;">python</a> <a href="/tags/sizeof/" style="font-size: 10px;">sizeof</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/this指针/" style="font-size: 10px;">this指针</a> <a href="/tags/virtual-function-table/" style="font-size: 10px;">virtual function table</a> <a href="/tags/voltile/" style="font-size: 10px;">voltile</a> <a href="/tags/windeployqt/" style="font-size: 10px;">windeployqt</a> <a href="/tags/中缀表达式/" style="font-size: 11.43px;">中缀表达式</a> <a href="/tags/二叉树/" style="font-size: 10px;">二叉树</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/位域/" style="font-size: 10px;">位域</a> <a href="/tags/内存对齐/" style="font-size: 10px;">内存对齐</a> <a href="/tags/内存管理/" style="font-size: 10px;">内存管理</a> <a href="/tags/分页管理/" style="font-size: 10px;">分页管理</a> <a href="/tags/动态绑定/" style="font-size: 10px;">动态绑定</a> <a href="/tags/华为OJ/" style="font-size: 14.29px;">华为OJ</a> <a href="/tags/后缀表达式/" style="font-size: 10px;">后缀表达式</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/子网/" style="font-size: 10px;">子网</a> <a href="/tags/字符串常量/" style="font-size: 10px;">字符串常量</a> <a href="/tags/小端模式/" style="font-size: 10px;">小端模式</a> <a href="/tags/常用工具/" style="font-size: 10px;">常用工具</a> <a href="/tags/异常处理/" style="font-size: 10px;">异常处理</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 17.14px;">操作系统</a> <a href="/tags/数据结构/" style="font-size: 11.43px;">数据结构</a> <a href="/tags/智能指针/" style="font-size: 10px;">智能指针</a> <a href="/tags/构造函数/" style="font-size: 10px;">构造函数</a> <a href="/tags/析构/" style="font-size: 10px;">析构</a> <a href="/tags/查找/" style="font-size: 10px;">查找</a> <a href="/tags/段式内存管理/" style="font-size: 10px;">段式内存管理</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/爬虫/" style="font-size: 11.43px;">爬虫</a> <a href="/tags/算法/" style="font-size: 12.86px;">算法</a> <a href="/tags/类/" style="font-size: 10px;">类</a> <a href="/tags/类型转换/" style="font-size: 15.71px;">类型转换</a> <a href="/tags/编程语言/" style="font-size: 11.43px;">编程语言</a> <a href="/tags/网际协议/" style="font-size: 10px;">网际协议</a> <a href="/tags/腾讯/" style="font-size: 10px;">腾讯</a> <a href="/tags/虚函数/" style="font-size: 10px;">虚函数</a> <a href="/tags/计算机网络/" style="font-size: 10px;">计算机网络</a> <a href="/tags/转义字符/" style="font-size: 10px;">转义字符</a> <a href="/tags/链表/" style="font-size: 10px;">链表</a> <a href="/tags/面向对象/" style="font-size: 10px;">面向对象</a> <a href="/tags/面试/" style="font-size: 11.43px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/02/09/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/11/03/python-learning/">Python学习</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/25/Python-sequence/">Python-列表和元组</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/15/python-spider-00/">python爬虫实战</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/14/Beautiful-soup/">Beautiful Soup常用语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
